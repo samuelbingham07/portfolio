@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Side Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Same font + styles as main site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-logo">Sam Bingham</div>
+    <nav class="site-nav">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail">
+        <h2>Side Projects</h2>
+
+        <p>
+          Here are some of the smaller projects I've worked on in my free time!
+        </p>
+
+        <h2 class="side-heading">Narrative Game</h2>
+
+
+        <!-- Optional buttons / links -->
+        <div class="image-wrapper" style="margin-top: 24px;">
+            <img src="images/narrativeGame3.png" alt="Narrative Game cover image">
+          </div>                
+          <p> This is a narrative game I made using p5.js! It features a branching storyline where your choices affect the outcome.</p>
+          <p style="margin-top: 24px;">
+          <!-- Replace with your actual shop link if you want -->
+          <a class="primary-button" href="https://editor.p5js.org/samuelbingham07/full/tWTd79WJ4" target="_blank" rel="noopener noreferrer">
+            Explore for yourself!
+          </a>
+        </p>
+
+        <h2 class="side-heading">Dance Game</h2>
+
+        <div class="video-wrapper" style="margin-top: 24px;">
+            <video controls>
+              <source src="videos/danceGame.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p style="margin-top: 24px;">
+          <!-- Replace with your actual shop link if you want -->
+        <p>
+              This is a dance game I made using p5.js and PoseNet! It uses your webcam to track your movements and score you based on how well you mimic the dance moves shown on screen. Inspired by Just Dance and Tomodahi Life.
+        </p>
+          <a class="primary-button" href="https://editor.p5js.org/samuelbingham07/full/ea069ACsE" target="_blank" rel="noopener noreferrer">
+            Get some exercise and play!
+          </a>
+        </p>
+
+        <h2 class="side-heading">TheVault.</h2>
+
+        <div class="image-wrapper" style="margin-top: 24px;">
+            <img src="images/sparkathonProduct.png" alt="Designathon Product cover image">
+          </div>                
+          <p style="margin-top: 24px;"> 
+               <p>This was a fun project I did for a designathon that protects elders against impersonation scams by creating a familiar, digital phonebook that helps them verify the identity of their contacts if they are suspicious of scam callers.</p>     
+           <a class="primary-button" href="https://gramps-guard-dial.lovable.app/" target="_blank" rel="noopener noreferrer">
+            Check out the demo I made using Lovable!
+          </a>
+        </p>
+
+        <p style="margin-top: 24px;">
+          <a class="primary-button" href="https://www.canva.com/design/DAG47_Ynw7Y/6OCGvg9ivK-e5ajrR7UpIA/edit" target="_blank" rel="noopener noreferrer">
+            Check out our final presentation!
+          </a>
+        </p>
+
+        <h2 class="side-heading">Machine Learning Art</h2>
+
+        <div class="video-wrapper" style="margin-top: 24px;">
+            <video controls>
+              <source src="videos/mlFinalProduct.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p style="margin-top: 24px;">
+            This project was super random but I used ML to generate art! Not sure how I feel about AI art but I feel like I just used it as a tool here but I wouldn't dare to call it real art!
+            Along with the video above, I made a bunch more that got lost in my Machine Learning class. I learned AnimateDiff, DeForum, Lora models, Control Net, Deep Dream, Stable Diffusion, IPAdapter, and t-SNE to create this and the others.
+          <p style="margin-top: 24px;">
+        
+
+        <p style="margin-top: 24px;">
+          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
+            ← Back to all projects
+          </a>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

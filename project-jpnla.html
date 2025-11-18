@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JPNLAvintage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Same font + styles as main site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-logo">Sam Bingham</div>
+    <nav class="site-nav">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail">
+        <h2>JPNLAvintage</h2>
+
+        <!-- Big hero image for the project (optional) -->
+    <p> Check out the Website Showcase and Behind The Scenes!</p>
+          <p style="margin-top: 24px;"></p>
+ <div class="project-thumb video-wrapper">
+    <video autoplay loop muted playsinline>
+        <source src="videos/jpnlaVideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<p style="margin-top: 24px;"></p>
+<div class = "project-thumb video-wrapper">
+ <video controls>
+        <source src="videos/jpnlaBTS.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<p style="margin-top: 24px;"></p>
+        <p>
+          JPNLAvintage is my vintage clothing brand turned online small business, where I
+          curate pieces sourced between Japan and Los Angeles. I run everything from
+          inventory sourcing and photography to pricing, social media, and customer support.
+        200+ products are already up, and there are hundreds more ready to be listed!
+        </p>
+        <p style="margin-top: 24px;"></p>
+        <p>
+          Through this project I’ve learned a ton about:
+        </p>
+        <ul>
+          <li>Entrepreneurship and small business operations</li>
+          <li>Ecommerce strategy & marketplace dynamics</li>
+          <li>Social media marketing & competitor analysis</li>
+          <li>UI/UX for vintage clothing & ecommerce</li>
+          <li>Branding, visual identity, and copywriting</li>
+        </ul>
+
+        <!-- Optional buttons / links -->
+        <p>
+          <!-- Replace with your actual shop link if you want -->
+          <a class="primary-button" href="https://jpnlavintage.com" target="_blank" rel="noopener noreferrer">
+            View shop 
+          </a>
+          <span></span>(When I'm in school I can't run it so it may be inactive!)</span>
+        </p>
+
+        <p style="margin-top: 24px;">
+          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
+            ← Back to all projects
+          </a>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

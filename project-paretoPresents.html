@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JPNLAvintage – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Same font + styles as main site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-logo">Sam Bingham</div>
+    <nav class="site-nav">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail">
+        <h2>Pareto Presents</h2>
+
+        <!-- Big hero image for the project (optional) -->
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/paretoPresentLandingPage.png" alt="Pareto Presents cover image">
+        </div>
+
+        <p>
+          Pareto Presents is a project that showcases the intersection of art and technology,
+          featuring a series of digital installations and interactive experiences. I was responsible for
+          the overall concept, design, and execution of the project.
+
+        <p>
+          Through this project I've learned and practiced the front-end and back-end of web development, including:
+        </p>
+        <ul>
+          <li>Backend, API, and databases (Supabase, FastAPI, Docker, Fly.io, React)</li>
+          <li>Frontend and deployment (Next.js, Tailwind CSS, TypeScript, shadcn/ui, Vercel)</li>
+          <li>Web design principles, UI/UX, branding, logo design (Figma, Procreate, Aseprite)</li>
+        </ul>
+
+        <!-- Optional buttons / links -->
+        <p>
+          <!-- Replace with your actual shop link if you want -->
+          <a class="primary-button" href="https://paretopresents.com" target="_blank" rel="noopener noreferrer">
+            See and use the simulation!
+          </a>
+        </p>
+
+        <p style="margin-top: 24px;">
+          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
+            ← Back to all projects
+          </a>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
