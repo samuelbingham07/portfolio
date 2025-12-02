@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JPNLAvintage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Same font + styles as main site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-logo">Sam Bingham</div>
+    <nav class="site-nav">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+ 
+  <main>
+    <section class="project-details">
+      <article class="project-detail">
+        <h2>Hobbies!</h2>
+
+        <p>
+          Here's what I do with my free time! Video games and board games are big ones but I don't have a way to show it off here.
+        </p>
+
+        <h2 class="side-heading">Backpacking</h2>
+
+        <!-- Optional buttons / links -->
+        <div class="image-wrapper" style="margin-top: 24px;">
+            <img src="images/backpackingThumbnail.png" alt="Backpacking cover image">
+          </div>                
+          <p> Whenever I have a free couple weeks or more (and the budget), my favorite thing to do is explore a new country. Just me and my backpack, picking up phrases of new languages, trying new foods, and meeting new, different people. 
+            My favorite country out of my ~100 days of solo backpacking was Morocco, Germany, or Albania, and my favorite city was hands down Vienna. Tokyo and Japan will always be my all-time though! </p>
+          <p style="margin-top: 24px;">
+          <!-- Replace with your actual shop link if you want -->
+          <a class="primary-button" href="https://www.instagram.com/samandhisbackpack/" target="_blank" rel="noopener noreferrer">
+            My travel documentation insta!
+          </a>
+        </p>
+
+        <h2 class="side-heading">Cocktails</h2>
+
+        <div class="video-wrapper" style="margin-top: 24px;">
+            <img src="images/cocktail.png" alt="Cocktails cover image">
+          </div>
+          <p style="margin-top: 24px;">
+          <!-- Replace with your actual shop link if you want -->
+        <p>
+              My latest hobby is making cocktails--I'm starting by learning the basics and getting the classics down. Mojitos take the longest but they taste the best, so reconsider ordering one during a rush for the sake of your bartender!
+        </p>
+
+        <h2 class="side-heading">Part-time Jobs</h2>
+
+        <div class="image-wrapper" style="margin-top: 24px;">
+            <img src="images/goldbar.png" alt="Goldbar cover image">
+          </div>                
+          <p style="margin-top: 24px;"> 
+            <p>I've worked at a couple restaurants and bars before, but Gold Bar at Edition, a Marriott proprety in Tokyo was by far the best. My friends/coworkers were incredible and I will be visiting them, the customers (some celebrities) were fun, and I learned so much about hospitality and bartending from some of the best in the business.
+        </p>
+
+        <h2 class="side-heading">Thrifting</h2>
+
+        <div class="video-wrapper" style="margin-top: 24px;">
+            <img src="images/fleaMarket.png" alt="Thrifting cover image">
+          </div>
+          <p style="margin-top: 24px;">
+            <p>Thrift stores are my third space. I love hunting for vintage clothes on weekends and curating my closet. My clothes lifecycle goes like this: thrift for $1 at the bins, wear until I find a similar piece I like a bit more, and sell the previous one for a deal at my flea markets.</p>
+        
+        <h2 class="side-heading">Fashion</h2>
+
+        <div class="video-wrapper" style="margin-top: 24px;">
+            <img src="images/outfits.png" alt="Fashion cover image">
+          </div>
+          <p style="margin-top: 24px;">
+            <p>I really like putting on something fun regardless of the occassion. I had a phase where I took pictures like these so I thought I'd put them somewhere to be seen!</p>
+        
+        <p style="margin-top: 24px;">
+          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
+            ← Back to all projects
+          </a>
+        </p>
+
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
