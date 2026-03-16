@@ -212,7 +212,7 @@ a {
 .project-detail {
   padding: 22px 20px 26px;
   border-radius: var(--radius-lg);
-  background-color: var(--bg-elevated);
+  background-color: var(--card);
   box-shadow: var(--shadow-soft);
 }
 
@@ -246,7 +246,7 @@ a {
 .video-wrapper video {
   width: 100%;
   border-radius: 16px;
-  border: 2px solid var(--bg-elevated);
+  border: 2px solid var(--card);
   box-shadow: var(--shadow-soft);
   background-color: #fff;
   object-fit: contain;
