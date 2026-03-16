@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>QuickDraw – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-logo">Sam Bingham</div>
+    <nav class="site-nav">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail">
+        <h2>QuickDraw</h2>
+
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/quickDrawThumbnail.png" alt="QuickDraw cover image">
+        </div>
+
+        <p>
+          QuickDraw is a fully functioning bullet-hell game built in just 3 days for the 2026 Western Game Jam, following the themes of <em>Western</em> and <em>Everything Goes Wrong</em>. Every mechanic, sprite, and level was designed and coded from scratch under the jam's time constraint.
+        </p>
+
+        <p>
+          Through this project I've learned and practiced:
+        </p>
+        <ul>
+          <li>Godot engine and GDScript</li>
+          <li>Bullet-hell game design and balancing</li>
+          <li>2D pixel art with Aseprite</li>
+          <li>Rapid prototyping and scoping under a deadline</li>
+        </ul>
+
+        <p style="margin-top: 24px;">
+          <a href="index.html#side-projects" style="color: var(--accent); text-decoration: underline;">
+            ← Back to all projects
+          </a>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
