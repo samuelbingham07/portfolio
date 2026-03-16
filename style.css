@@ -185,6 +185,7 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  border: 2px solid #000;
 }
 
 .project-content {
@@ -194,11 +195,12 @@ a {
 .project-content h3 {
   margin: 0 0 6px;
   font-size: 1.05rem;
+  color: #000;
 }
 
 .project-content p {
   margin: 0;
-  color: var(--text-muted);
+  color: #000;
   font-size: 0.95rem;
   line-height: 1.5;
 }
