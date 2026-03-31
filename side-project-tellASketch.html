@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tell-A-Sketch – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-logo">Sam Bingham</div>
+    <nav class="site-nav">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail">
+        <h2>Tell-A-Sketch</h2>
+
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/tellASketchThumbnail.png" alt="Tell-A-Sketch cover image">
+        </div>
+
+        <p>
+          Tell-A-Sketch is a generative creative studio built for kids — the result of a 24-hour Google Gemini Hackathon sprint with a team of four. A child speaks their idea, sketches out a character, and watches it come to life through real-time AI: generated video, sound, and narrative all in one seamless experience. It was built as a direct antidote to the fast-paced, passive, overstimulating content dominating kids' screens today.
+        </p>
+
+        <p><strong>The Problem</strong></p>
+        <p>
+          Children are consuming more than ever and creating less than ever. The educational entertainment space — think Cocomelon and algorithmic YouTube autoplay — is designed to capture attention, not spark it. Parents get pushed out of the loop, attention spans shrink, and genuine creative thought barely gets a chance. Tell-A-Sketch was built to hand that creative power back.
+        </p>
+
+        <p><strong>How It Works</strong></p>
+        <p>
+          The app opens with Simon the Star, a narrator character who guides the child through a "World Building" phase. The child picks a setting — Deep Ocean, Space, Dino Island — and then moves to a drawing canvas where they sketch their hero. A "Character Interview" overlay follows, where Simon asks the character's name, what they love to do, and one randomized personality question pulled from a question bank. With that input collected, the pipeline fires:
+        </p>
+        <ul>
+          <li>The <strong>Gemini Live API</strong> conducts a real-time voice session — Simon asks "what happens next?" and the child narrates the episode.</li>
+          <li><strong>Gemini Nano (Nano Banana)</strong> takes the child's doodle and transforms it into a consistently styled character frame, preserving all the original shapes, colors, and "messiness" of the drawing.</li>
+          <li><strong>Veo</strong> animates those styled frames into 8-second cinematic clips, stitched together with slow-paced edits, long scene holds, and calm transitions — the deliberate opposite of Cocomelon's rapid cuts.</li>
+          <li><strong>Lyria</strong> generates a unique, mood-matched instrumental score per episode based on the child's story direction.</li>
+          <li>A <strong>Neon PostgreSQL</strong> database maintains a "show bible" — characters, episode history, and world state — so that Episode 4 still remembers Blobby the Dragon's wonky ear from Episode 1.</li>
+        </ul>
+
+        <p><strong>My Role — Backend & Pipeline Glue</strong></p>
+        <p>
+          I owned the backend and the orchestration layer that connected all four models together. From the first hour, my job was to make sure every other team member had something to plug into. Here's what I shipped over the 15-hour build window:
+        </p>
+        <ul>
+          <li>Designed and seeded the Neon schema: <code>characters</code>, <code>episodes</code>, and <code>world_state</code> tables, with relational linking for show bible persistence across sessions.</li>
+          <li>Built the REST API layer — <code>GET /api/show-bible</code>, <code>POST /api/episode</code>, <code>POST /api/character</code> — so the frontend and generation pipeline could read and write without stepping on each other.</li>
+          <li>Built the orchestration endpoint (<code>/api/orchestrate</code>) that took a Gemini Live API voice transcript and converted it into a ready-made Veo prompt and Lyria prompt, ready to fire.</li>
+          <li>Maintained world state updates via Gemini 2.5 Flash, which parsed each transcript and updated the show bible after every episode.</li>
+          <li>Ran the end-to-end integration test at hour 13 (feature freeze), confirmed full pipeline: voice in → show bible updated → episode generated → playback working.</li>
+        </ul>
+
+        <p><strong>Challenges</strong></p>
+        <p>
+          Veo's 8-second generation limit (~2 minutes per clip) meant live generation on stage was never an option — we pre-baked all demo clips during hours 6–10 and used Veo 3 Standard only for the final hero clips shown to judges. The biggest integration friction came from merging the frontend and backend across parallel workstreams under time pressure; the solution was strict API contracts agreed on at hour 3 and a hardcoded JSON fallback in case the DB layer broke. The Live API voice session was the live "wow" moment on stage, with a text-input fallback built into the same screen so the pipeline would still run identically if the mic dropped.
+        </p>
+
+        <p>
+          Through this project I've learned and practiced:
+        </p>
+        <ul>
+          <li>Designing and shipping a multi-model AI pipeline under extreme time constraints</li>
+          <li>PostgreSQL schema design for persistent, relational "story state" across user sessions</li>
+          <li>REST API development as a shared contract for parallel frontend and model workstreams</li>
+          <li>Prompt engineering for Veo and Lyria — specifically tuning for slow-paced, child-appropriate output</li>
+          <li>Integrating the Gemini Live API (WebSocket) into a real-time voice-driven narrative loop</li>
+          <li>Hackathon-level scoping: knowing when to cut features, when to fake outputs, and when to freeze</li>
+        </ul>
+
+        <p style="margin-top: 24px;">
+          <a href="index.html#side-projects" style="color: var(--accent); text-decoration: underline;">
+            ← Back to all projects
+          </a>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
