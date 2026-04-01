@@ -30,17 +30,52 @@
         </div>
 
         <p>
-          Clicktionary is a Chrome extension that lets you click on any Spanish word while browsing and save it to a personal word bank. Words can then be studied Quizlet-style with flashcards directly in the extension. Coming to the Chrome Store soon!
+          Clicktionary is a Chrome extension that lets you highlight any word on any webpage and instantly get a translation in 10 languages — then save it to your personal word bank and practice later with flashcards and multiple choice. It lives entirely in the browser: no new tab, no copy-pasting, no losing your place in the article you were reading. Coming to the Chrome Store soon.
+        </p>
+
+        <p><strong>The Problem</strong></p>
+        <p>
+          Learning a language by reading real content — news, books, blogs — is one of the most effective methods, but it comes with constant friction. Every time you hit an unfamiliar word, you have to switch tabs, open a translator, copy the word in, read the definition, then find your way back. You lose your reading flow, and because there's no structured follow-up, you forget the word within hours. Clicktionary removes that friction entirely: the translation comes to you, inline, in under two seconds, and the words you care about go straight into a study queue.
+        </p>
+
+        <p><strong>How It Works</strong></p>
+        <p>
+          The extension injects a content script into every webpage. When you highlight text, a tooltip appears with the translation fetched from Lingva Translate — a free, open-source Google Translate-quality API — with MyMemory as a fallback. From the tooltip you can add the word to your word bank with one click, or type your own definition if the automatic lookup misses. The full pipeline:
+        </p>
+        <ul>
+          <li>Multiple <strong>Lingva Translate</strong> instances are queried in parallel via <code>Promise.any()</code> with a 2-second timeout — whichever instance responds first wins, making translations feel instant even when one server is slow.</li>
+          <li>On every page load, the extension silently <strong>prefetches the 10 hardest words</strong> on the page (longest unique words, which are statistically rarer vocabulary) so that if you highlight one of them, the result is already cached.</li>
+          <li>An <strong>in-memory translation cache</strong> means repeat lookups on the same word are instant, with no extra network calls.</li>
+          <li>Words you save go to a <strong>Supabase</strong> database (when signed in) with row-level security, or fall back to <code>chrome.storage.local</code> so the extension works fully offline.</li>
+          <li>A companion <strong>GitHub Pages site</strong> hosts the full word bank and practice interface — flashcards, multiple choice, and a 0–5 mastery strength tracker synced to Supabase.</li>
+          <li>A <strong>bridge content script</strong> (<code>bridge.js</code>) is injected into the GitHub Pages site to pass the stored Supabase session over, so you stay logged in across extension and website without re-authenticating.</li>
+        </ul>
+
+        <p><strong>Technical Highlights</strong></p>
+        <ul>
+          <li>Built on <strong>Manifest V3</strong> — the current Chrome extension standard — with a background service worker handling auth, Supabase sync, and word bank operations.</li>
+          <li><strong>Google OAuth</strong> implemented via <code>chrome.identity.launchWebAuthFlow</code>, with the extension's ID locked to a stable value via an RSA key in the manifest so the OAuth redirect URI never changes.</li>
+          <li><strong>Duplicate detection</strong> on word saves, custom definition fallback if translation fails, and an on/off toggle that persists across sessions.</li>
+          <li>Supports 10 languages: Spanish, French, German, Italian, Portuguese, Japanese, Chinese, Korean, Arabic, and Russian — with correct Unicode range detection to decide whether highlighted text could belong to the selected language before showing a tooltip.</li>
+        </ul>
+
+        <p>
+          <a class="primary-button" href="https://samuelbingham07.github.io/clicktionarywebextension/" target="_blank" rel="noopener noreferrer">
+            Visit the word bank site
+          </a>
         </p>
 
         <p>
           Through this project I've learned and practiced:
         </p>
         <ul>
-          <li>Chrome Extension architecture and APIs</li>
-          <li>Backend integration with Supabase</li>
-          <li>Product management and scoping for browser tools</li>
-          <li>HTML/CSS for extension UI</li>
+          <li>Chrome Extension architecture (Manifest V3): content scripts, service workers, popup, and cross-context messaging</li>
+          <li>Browser extension auth flows — Google OAuth via <code>chrome.identity</code>, session bridging between extension and hosted website</li>
+          <li>Translation API design — parallel instance racing, timeout handling, fallback chaining, and in-memory caching</li>
+          <li>Supabase: row-level security, REST API, and real-time session management</li>
+          <li>Speculative prefetching as a UX performance technique</li>
+          <li>Offline-first design with <code>chrome.storage.local</code> as a graceful fallback</li>
+          <li>Product scoping for a zero-friction browser tool — every interaction had to feel instant or it defeats the purpose</li>
         </ul>
 
         <p style="margin-top: 24px;">

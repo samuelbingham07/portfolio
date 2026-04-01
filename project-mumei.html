@@ -2,85 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Mumei</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Same font + styles as main site -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="site-logo">Sam Bingham</div>
-    <nav class="site-nav">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="project-details">
-      <article class="project-detail">
-        <h2>Mumei</h2>
-
-        <!-- Big hero image for the project (optional) -->
-        <div class="video-wrapper" style="margin-top: 24px;">
-          <video autoplay loop muted playsinline>
-            <source src="videos/mumeiAnimation.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <p>
-        Mumei is my first game built with Unity! I collaborated with my friend to develop a Japanese-learning RPG from scratch.
-        </p>
-        <a class="primary-button" href="https://github.com/samuelbingham07/MUMEI.git">Github Repository</a>
-
-        <p>
-          Through this project, I’ve learned about and practiced the game development process, including:
-        </p>
-        <ul>
-          <li>Game design principles</li>
-          <li>Unity engine capabilities, usage, and C#</li>
-          <li>How all major game engines work (Unreal, Godot, GameMaker, Lua)</li>
-          <li>Storytelling and narrative/character design</li>
-          <li>2D/3D art (Aseprite, Procreate, Blender)</li>
-        </ul>
-
-        <!-- Optional buttons / links -->
-        <p>Check out the web demo below!
-          <!-- Replace with your actual shop link if you want -->
-          <a class="primary-button" href="https://samuelbingham07.itch.io/mumei" target="_blank" rel="noopener noreferrer">
-            View demo
-          </a>
-        </p>
-
-        <p style="margin-top: 24px;">
-          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
-            ← Back to all projects
-          </a>
-        </p>
-      </article>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Samuel Bingham</p>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Mumei</title>
+  <title>Mumei – Samuel Bingham</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,26 +32,60 @@
             Your browser does not support the video tag.
           </video>
         </div>
+
         <p>
-        Mumei is my first game built with Unity! I collaborated with my friend to develop a Japanese-learning RPG from scratch.
+          Mumei (無名 — "nameless") is a top-down pixel art RPG built in Unity that teaches Japanese by making the language inseparable from the game itself. It's a personal project I'm building with my friend Peter, who handles music, narrative, and level design while I own all the programming and art. A playable demo is live now.
+        </p>
+
+        <p><strong>The Concept</strong></p>
+        <p>
+          Most language learning games feel like Duolingo wrapped in a thin story. Mumei inverts that: the Japanese is the game. You play as an amnesiac man in 1980s Japan who wakes up with no memory of who he is. The only way to piece together your identity — to understand where you are, what people are saying, what the documents and signs around you mean — is to learn the language. The learning goal stays in your subconscious; what feels like mystery and exploration is, structurally, a language curriculum. By the end, a player who finishes the game should be able to read hiragana and katakana, recognize 100 kanji, and have working familiarity with JLPT N5 vocabulary (~800 words).
+        </p>
+
+        <p><strong>The Story</strong></p>
+        <p>
+          Following the death of his wife, the protagonist begins experiencing schizophrenic visions of her. Desperate for treatment — and unable to afford anything reputable — he goes through with a procedure at a sketchy trauma center. The procedure doesn't cure him. It erases him. The center, realizing the failure, disposes of his body. He survives, and the game begins with him waking up with no name, no past, and no language he can read. The goal is to find out who he was and what was done to him. The themes of memory, identity, and disintegration run through both the story and the language learning design — forgetting and relearning mirror each other throughout.
+        </p>
+
+        <p><strong>How the Language Learning Works</strong></p>
+        <p>
+          Japanese is never presented as a lesson. It appears as dialogue from NPCs (all voiced by native speakers), documents and signage in the environment, and puzzles built around the written systems themselves. The tutorial introduces hiragana through an environmental puzzle: a large floor grid where tiles bearing each hiragana character are scattered, missing, or misplaced. The player picks up tiles, listens to their pronunciations, and places them in the correct positions in the chart — discovering the vowel columns and consonant rows through spatial reasoning rather than rote memorization. Dakuten and handakuten are unlocked via levers in the room. A follow-up puzzle has a statue "sing" sequences of syllables that the player must echo back by selecting the correct tiles in order.
+        </p>
+        <p>
+          Early-game dialogue is deliberately repetitive and isolates core vocabulary, giving the player repeated exposure before complexity increases. As chapters progress, sentences grow longer and vocabulary broadens — but key words keep reappearing in new contexts to reinforce retention.
+        </p>
+
+        <p><strong>Two Paths, Two Endings</strong></p>
+        <p>
+          At a mid-game branch point, the player's playstyle steers them toward one of two paths — ideally without them realizing a choice is being made. The <strong>Path of Disintegration</strong> (自壊の道) leans into the chaos: abilities include mind-reading, mind-control, and entering one's own painful memories — ultimately dissolving the boundary between reality and the schizophrenic world. The <strong>Path of Integration</strong> (統合の道) confronts and heals that same pain: abilities include interacting with memories as if they were living NPCs and limited time travel back into them. Both paths cover the same kanji and grammar. The name carries an intentional double meaning — 統合失調症 is the Japanese word for schizophrenia, but 統合 alone means "integration." The disorder that splits the mind is named after the act of putting it back together.
+        </p>
+
+        <p><strong>My Role — All Programming and Art</strong></p>
+        <p>
+          I built everything technical and visual: the Unity codebase in C#, all pixel art assets in Aseprite, and character and environment art in Procreate and Blender. The hardest engineering challenge so far has been the <strong>dialogue engine</strong> — it needs to handle voiced audio synced to on-screen text, word-level audio replay when the player hovers over individual words, subtitles that scroll a highlight dot under each syllable as it's spoken, and branching NPC conversation states. Building a system flexible enough to handle all of that while staying editable for Peter's narrative work has been the core technical problem of the project.
         </p>
 
         <p>
-          Through this project I’ve learned about and practiced the game development process, including:
-        </p>
-        <ul>
-          <li>Game design principles</li>
-          <li>Unity engine capabilities, usage, and C#</li>
-          <li>How all major game engines work (Unreal, Godot, GameMaker, Lua)</li>
-          <li>Storytelling and narrative/character design</li>
-          <li>2D/3D art (Aseprite, Procreate, Blender)</li>
-        </ul>
-
-        <p>Check out the web demo below!
           <a class="primary-button" href="https://samuelbingham07.itch.io/mumei-draft-2" target="_blank" rel="noopener noreferrer">
-            View demo
+            Play the demo
+          </a>
+          <a class="primary-button" href="https://github.com/samuelbingham07/MUMEI.git" target="_blank" rel="noopener noreferrer">
+            GitHub Repository
           </a>
         </p>
+
+        <p>
+          Through this project I've learned and practiced:
+        </p>
+        <ul>
+          <li>Unity engine and C# — building a full game system from scratch including player movement, NPC interaction, puzzle logic, and inventory</li>
+          <li>Dialogue engine design — syncing voiced audio to text, word-level replay, branching conversation states</li>
+          <li>Game design principles — pacing, non-linear exploration, difficulty curves, and branching narrative paths</li>
+          <li>Pixel art in Aseprite — character sprites, tilesets, environmental art, and animation</li>
+          <li>2D/3D art in Procreate and Blender for concept art and assets</li>
+          <li>Designing language learning systems that feel like gameplay rather than lessons</li>
+          <li>Long-term personal project management — scoping, prioritizing, and iterating with a two-person team over an extended build</li>
+        </ul>
 
         <p style="margin-top: 24px;">
           <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">

@@ -31,26 +31,52 @@
         </div>
 
         <p>
-          Pareto Presents is a project that showcases the intersection of art and technology,
-          featuring a series of digital installations and interactive experiences. I was responsible for
-          the overall concept, design, and execution of the project.
+          Pareto Presents is a Secret Santa matching web app that uses Pareto-optimal assignment to make gift exchanges actually satisfying. Group members submit their preferences through a survey, and a simulation engine finds the assignment where no one can be matched better without making someone else worse off — the Pareto optimum. The results are visualized on an interactive dashboard for the whole group to see.
         </p>
-        <a class="primary-button" href="https://github.com/swangtree/p-resents.git">Github Repository</a>
 
+        <p><strong>The Problem</strong></p>
         <p>
-          Through this project, I've learned and practiced the front-end and back-end of web development, including:
+          Traditional Secret Santa draws are random. You might get matched with someone whose interests you know nothing about, or get assigned to give a gift in a category you have no idea how to shop for. Pareto Presents treats the matching as what it actually is — an optimization problem — and solves it properly. Every member submits preferences, and the simulation finds the assignment that maximizes collective satisfaction, so the group as a whole ends up better matched than any random draw could achieve.
+        </p>
+
+        <p><strong>How It Works</strong></p>
+        <p>
+          The system is built across three layers that work together event-driven, without the frontend ever having to trigger a calculation manually:
         </p>
         <ul>
-          <li>Backend, API, and databases (Supabase, FastAPI, Docker, Fly.io, React)</li>
-          <li>Frontend and deployment (Next.js, Tailwind CSS, TypeScript, shadcn/ui, Vercel)</li>
-          <li>Web design principles, UI/UX, branding, logo design (Figma, Procreate, Aseprite)</li>
+          <li>A user creates a group and shares an invite code. Members join and submit their preferences through the dashboard survey. All of this is stored in a <strong>Supabase PostgreSQL</strong> database with tables for groups, memberships, preferences (<code>JSONB</code>), and cached simulation results.</li>
+          <li>When anyone joins or updates their preferences, a <strong>Supabase Database Webhook</strong> fires automatically, sending the affected <code>group_id</code> to the Python API — no manual trigger needed.</li>
+          <li>The <strong>FastAPI simulation service</strong> (Dockerized, deployed on Fly.io) receives the webhook, fetches all current preferences for the group, runs the Pareto-optimal matching algorithm, and writes the new results back to the <code>simulation_results</code> table.</li>
+          <li>The <strong>Next.js frontend</strong> simply reads the latest cached results from that table and renders them as interactive charts via <strong>Recharts</strong>. It never needs to know when or how the calculation ran.</li>
         </ul>
+
+        <p><strong>My Role — Art, Design, Product, and About Page</strong></p>
+        <p>
+          I wore several hats on this project. As <strong>product manager</strong>, I helped shape the feature scope and user flow — what the key pages needed to do, how the group invite system should work, and what the dashboard experience should feel like. As the <strong>designer</strong>, I handled the visual identity: the branding, logo, color system, and UI design in Figma, as well as all digital art assets in Procreate and Aseprite. On the <strong>frontend team</strong>, I built the About page — introducing the team and explaining the simulation methodology for users who want to understand the math behind their matches.
+        </p>
 
         <p>
           <a class="primary-button" href="https://p-resents-web.vercel.app/" target="_blank" rel="noopener noreferrer">
-            Use the simulation!
+            Try the simulation
+          </a>
+          <a class="primary-button" href="https://github.com/swangtree/p-resents.git" target="_blank" rel="noopener noreferrer">
+            GitHub Repository
           </a>
         </p>
+
+        <p>
+          Through this project I've learned and practiced:
+        </p>
+        <ul>
+          <li>Product management — defining scope, user flows, and feature priorities for a full-stack web app</li>
+          <li>Next.js with TypeScript and Tailwind CSS for a production-deployed frontend</li>
+          <li>Event-driven architecture — Supabase Database Webhooks triggering a separate Python microservice</li>
+          <li>FastAPI and Docker for packaging and deploying a standalone simulation service on Fly.io</li>
+          <li>Supabase: PostgreSQL schema design with JSONB columns, row-level security, and Auth</li>
+          <li>Recharts for interactive data visualization of simulation outputs</li>
+          <li>Branding and visual identity design — logo, color system, and UI in Figma, Procreate, and Aseprite</li>
+          <li>Communicating a technical concept (Pareto optimality) through clear, accessible product writing</li>
+        </ul>
 
         <p style="margin-top: 24px;">
           <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
