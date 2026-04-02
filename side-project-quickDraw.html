@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>QuickDraw – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-logo">Sam Bingham</div>
+    <nav class="site-nav">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail">
+        <h2>QuickDraw</h2>
+
+        <div class="video-wrapper" style="margin-top: 24px;">
+          <video controls>
+            <source src="videos/quickDraw.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <p style="margin-top: 24px;">
+          QuickDraw is a bullet-hell game built in 3 days for the 2026 Western Game Jam, following the themes of <em>Western</em> and <em>Everything Goes Wrong</em>. Every mechanic, sprite, and level was designed and coded from scratch under the jam's time constraint by me and Xavier Johnson — we split programming and art evenly across the build.
+        </p>
+
+        <p><strong>The Theme</strong></p>
+        <p>
+          "Everything Goes Wrong" isn't just flavor text — it's baked into the mechanics. Your gun jams mid-fight, forcing you to deal with enemies while waiting for it to clear. UI elements on screen are deliberately broken and don't do what they appear to. Debuffs stack up as the game progresses, constantly putting you at a disadvantage. The joke is that you're a gunslinger in the Wild West and absolutely nothing is on your side.
+        </p>
+
+        <p><strong>The Hardest Part</strong></p>
+        <p>
+          The enemy spawn system was the most difficult thing to build under the time pressure. A bullet-hell lives or dies on its spawn logic — enemies need to arrive in patterns that feel intentional and escalating, not random, while still being varied enough that the player doesn't memorize a fixed sequence. Getting that system designed, implemented, and tuned to feel good within a 3-day window was the core engineering challenge of the jam.
+        </p>
+
+        <p>
+          <a class="primary-button" href="https://samuelbingham07.itch.io/quickdraw" target="_blank" rel="noopener noreferrer">
+            Play QuickDraw
+          </a>
+        </p>
+
+        <p>
+          Through this project I've learned and practiced:
+        </p>
+        <ul>
+          <li>Godot engine and GDScript — building a complete bullet-hell from scratch</li>
+          <li>Enemy spawn system design — creating wave patterns that escalate without feeling scripted</li>
+          <li>Bullet-hell game design and balancing — tuning difficulty, hitboxes, and debuff timing</li>
+          <li>2D pixel art in Aseprite — characters, enemies, and UI assets under a tight deadline</li>
+          <li>Using game mechanics to directly express a design theme</li>
+          <li>Rapid prototyping and scoping under a 3-day jam constraint — knowing what to cut and what to ship</li>
+          <li>Splitting a codebase and art pipeline with a collaborator under time pressure</li>
+        </ul>
+
+        <p style="margin-top: 24px;">
+          <a href="index.html#side-projects" style="color: var(--accent); text-decoration: underline;">
+            ← Back to all projects
+          </a>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

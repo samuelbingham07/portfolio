@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dance Game – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-logo">Sam Bingham</div>
+    <nav class="site-nav">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail">
+        <h2>Dance Game</h2>
+
+        <div class="video-wrapper" style="margin-top: 24px;">
+          <video controls>
+            <source src="videos/danceGame.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <p style="margin-top: 24px;">
+          A Just Dance-inspired movement game built in p5.js for a class project with a group. It uses your webcam and PoseNet to track your body in real time, scoring you based on how well you match the dance moves shown on screen. Inspired by Just Dance and Tomodachi Life.
+        </p>
+
+        <p><strong>How It Works</strong></p>
+        <p>
+          PoseNet continuously reads keypoints from the webcam feed — joints like elbows, shoulders, wrists, and hips. Rather than comparing full pose similarity scores, the scoring system checks whether specific geometric conditions are met for each move: things like whether an elbow is above a shoulder, or whether a wrist has crossed the midline of the body. Each dance move is defined as a set of these conditions, and you score points when your body satisfies them within the timing window.
+        </p>
+
+        <p><strong>The Hard Part</strong></p>
+        <p>
+          The scoring system was entirely manual — every condition for every pose had to be hand-authored by figuring out which joint relationships actually captured what the move looked like, then tuning the thresholds so the game felt fair without being too strict or too forgiving. There's no ground truth to work from: you're translating a visual dance move into a set of boolean geometric rules, and getting that translation right for every move in the game took most of the development time.
+        </p>
+
+        <p>
+          <a class="primary-button" href="https://editor.p5js.org/samuelbingham07/full/ea069ACsE" target="_blank" rel="noopener noreferrer">
+            Play it yourself
+          </a>
+        </p>
+
+        <p>
+          Through this project I've learned and practiced:
+        </p>
+        <ul>
+          <li>PoseNet for real-time human pose estimation via webcam</li>
+          <li>p5.js for interactive, browser-based creative coding</li>
+          <li>Translating visual movement into programmatic geometric conditions</li>
+          <li>Manual scoring system design — defining, tuning, and balancing pose detection thresholds</li>
+          <li>Collaborating on a creative coding project with a group under a class deadline</li>
+        </ul>
+
+        <p style="margin-top: 24px;">
+          <a href="index.html#side-projects" style="color: var(--accent); text-decoration: underline;">
+            ← Back to all projects
+          </a>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

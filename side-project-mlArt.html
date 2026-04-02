@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Machine Learning Art – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-logo">Sam Bingham</div>
+    <nav class="site-nav">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail">
+        <h2>Machine Learning Art</h2>
+
+        <div class="video-wrapper" style="margin-top: 24px;">
+          <video controls>
+            <source src="videos/mlFinalProduct.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <p style="margin-top: 24px;">
+          This project came out of a course called ML for Artists — a class that treated machine learning as a creative medium rather than an engineering tool. The concept I explored was video game addiction: the psychological phenomenon where someone becomes so deeply invested in a game that the boundary between themselves and their character begins to dissolve. They don't just play the character — they start to see themselves as the character.
+        </p>
+
+        <p>
+          The video above is the surviving piece from a larger series. I used a stack of ML tools — AnimateDiff, DeForum, Stable Diffusion, LoRA models, ControlNet, IPAdapter, and Deep Dream — to produce generated video that visualizes that identity collapse: a human figure slowly morphing into and becoming indistinguishable from a game character. The other pieces from the series were unfortunately lost. I have mixed feelings about AI-generated art as a category, but using these tools to say something specific about a real psychological experience felt different from using them as a shortcut — more like using a medium to make a point about the medium itself.
+        </p>
+
+        <p>
+          Through this project I've learned and practiced:
+        </p>
+        <ul>
+          <li>Stable Diffusion and LoRA model fine-tuning for consistent character and style generation</li>
+          <li>AnimateDiff and DeForum for AI video generation and frame interpolation</li>
+          <li>ControlNet and IPAdapter for guided image generation with reference inputs</li>
+          <li>Deep Dream for psychedelic, recursive visual transformation</li>
+          <li>t-SNE for visualizing high-dimensional data embeddings</li>
+          <li>Using ML tools with a deliberate creative concept rather than generating for its own sake</li>
+        </ul>
+
+        <p style="margin-top: 24px;">
+          <a href="index.html#side-projects" style="color: var(--accent); text-decoration: underline;">
+            ← Back to all projects
+          </a>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>5C2C – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-logo">Sam Bingham</div>
+    <nav class="site-nav">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail">
+        <h2>5C2C</h2>
+
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/5c2cThumbnail.png" alt="5C2C cover image">
+        </div>
+
+        <p>
+          5C2C is a campus marketplace built for the Claremont College Consortium — a platform where students can formalize their side hustles, post services, and get paid for what they do best. Nail art, graphic design, music production, hair styling, henna, rides — all of it in one place, visible to the exact community that wants it.
+        </p>
+
+        <p><strong>The Problem</strong></p>
+        <p>
+          The 5Cs are full of talented students running real services, but almost all of it lives on scattered Instagram accounts and word-of-mouth group chats. There's no central place to discover what's available, no structured way to book or pay, and no visibility for the students doing the work. Buyers have to know the right people. Sellers have no way to grow beyond their existing social circle. 5C2C fixes that by giving student freelancers a proper storefront and buyers a proper marketplace — built by students, for students, right on campus.
+        </p>
+
+        <p><strong>What It Does</strong></p>
+        <p>
+          The platform has two sides. As a service provider, you create a shop: upload photos of your work, set your prices, write your story, and manage your listings and availability. As a buyer, you browse a card-based feed of services (Instagram-style), filter by category, view detailed profiles with portfolios and ratings, book appointments, and message sellers directly through real-time chat. The full feature set includes:
+        </p>
+        <ul>
+          <li>Browse and search services with category filters (nails, design, rides, etc.)</li>
+          <li>Seller profile pages with portfolio photos, pricing, and average ratings</li>
+          <li>"Create Listing" flow with image upload to Supabase Storage</li>
+          <li>Booking system: pick a service, select a time, confirm details</li>
+          <li>Reviews and ratings displayed on listings and profiles</li>
+          <li>Real-time messaging via Socket.io with unread message indicators</li>
+          <li>.edu email verification so the marketplace stays within the 5C community</li>
+        </ul>
+
+        <p><strong>My Role — All Frontend</strong></p>
+        <p>
+          I owned the entire frontend of the application. The project runs on a React.js + Tailwind CSS stack, with a Node.js/Express backend and Supabase handling auth, database (PostgreSQL), and file storage. My work covered every user-facing screen and component:
+        </p>
+        <ul>
+          <li>Built the homepage, browse/search page, listing cards, and individual listing detail pages</li>
+          <li>Implemented category filters, search bar, and the Instagram-style grid layout for service browsing</li>
+          <li>Built the seller profile pages (portfolio, bio, ratings display) and the buyer-facing booking flow</li>
+          <li>Created the "Create Listing" and "My Listings" management pages, including image upload UI connected to Supabase Storage</li>
+          <li>Built the chat interface — message list, input, send button, inbox/conversations list, and unread indicators — integrated with the Socket.io real-time layer from the backend</li>
+          <li>Implemented protected routes, the navigation bar, and the overall app structure</li>
+          <li>Connected all frontend components to the backend REST APIs throughout the build</li>
+        </ul>
+
+        <p>
+          The project is co-managed by Arushi Bhandari and Vanisha Kheterpal (both Harvey Mudd '29), and built by a team of 5–7 students across a 10-week sprint.
+        </p>
+
+        <p>
+          Through this project I've learned and practiced:
+        </p>
+        <ul>
+          <li>React.js component architecture and state management across a multi-page application</li>
+          <li>Tailwind CSS for consistent, responsive UI design at scale</li>
+          <li>Connecting a React frontend to a Node.js/Express REST API</li>
+          <li>Supabase Storage integration for user-uploaded images</li>
+          <li>Real-time UI with Socket.io — building a live chat interface that updates without refreshing</li>
+          <li>Marketplace UI/UX patterns: listing cards, filters, booking flows, and profile pages</li>
+          <li>Collaborating on a shared codebase via GitHub with a cross-functional student team</li>
+        </ul>
+
+        <p style="margin-top: 24px;">
+          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
+            ← Back to all projects
+          </a>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

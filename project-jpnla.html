@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JPNLAvintage – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-logo">Sam Bingham</div>
+    <nav class="site-nav">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail">
+        <h2>JPNLAvintage</h2>
+
+        <p>Check out the website showcase and behind the scenes!</p>
+
+        <div class="project-thumb video-wrapper" style="margin-top: 24px;">
+          <video autoplay loop muted playsinline>
+            <source src="videos/jpnlaVideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="project-thumb video-wrapper" style="margin-top: 24px;">
+          <video controls>
+            <source src="videos/jpnlaBTS.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <p style="margin-top: 24px;">
+          JPNLAvintage is my vintage clothing brand and online small business, built around a simple idea: I've spent a third of my life in Japan and a third in Los Angeles, and the vintage scenes in both places are worlds apart. Japan hoards incredible American vintage — deadstock, workwear, military surplus, pieces that are genuinely hard to find in the US anymore. The US has pieces that never made it to Japan at all. JPNLAvintage bridges those two worlds, sourcing from both countries and bringing them to one storefront.
+        </p>
+
+        <p><strong>The Concept</strong></p>
+        <p>
+          The name says it directly: Japan meets LA. The long-term vision is a two-way exchange — US vintage sold in Japan, Japanese vintage sold in the US. Right now the shop operates in the US, with Japan sales coming soon. I source pieces on buying trips in both countries, selecting for quality, age, and the kind of cross-cultural provenance that makes a garment actually interesting.
+        </p>
+
+        <p><strong>How It's Built</strong></p>
+        <p>
+          The shop runs on Shopify with a custom domain. With 250+ items listed and more ready to go, running it at this scale means every part of the operation has to be deliberate:
+        </p>
+        <ul>
+          <li><strong>Dating pieces:</strong> I've developed my own formula for estimating a garment's age — reading tags, stitching patterns, fabric composition labels, and country-of-origin markings to pin down an era. Getting the age right is what separates accurate pricing from guessing.</li>
+          <li><strong>Photography:</strong> I run a proper photography setup for every listing — consistent lighting, styling, and shot angles so the catalog looks cohesive at scale.</li>
+          <li><strong>Pricing and market research:</strong> Each piece is priced against comparable sold listings across the vintage market. I track what's selling, what's sitting, and what categories are trending to inform what I source next.</li>
+          <li><strong>Social media:</strong> I handle all content strategy and posting, building the brand identity alongside the catalog.</li>
+        </ul>
+
+        <p>
+          <a class="primary-button" href="https://jpnlavintage.com" target="_blank" rel="noopener noreferrer">
+            View the shop
+          </a>
+        </p>
+        <p><em>(When I'm in school I can't run it full time, so the shop may be in a slower period!)</em></p>
+
+        <p>
+          Through this project I've learned and practiced:
+        </p>
+        <ul>
+          <li>Entrepreneurship and end-to-end small business operations — sourcing, inventory, pricing, fulfillment, and customer support</li>
+          <li>Ecommerce strategy and marketplace dynamics — what moves, what doesn't, and how to position a brand in a crowded niche</li>
+          <li>Vintage garment authentication — developing a repeatable process for dating pieces by tag, construction, and material</li>
+          <li>Product photography — building a consistent, professional-looking catalog shoot setup</li>
+          <li>Social media marketing and competitor analysis</li>
+          <li>Shopify store management, UI/UX, and branding for an ecommerce storefront</li>
+          <li>Cross-cultural market knowledge — understanding what resonates in the Japanese vintage market vs. the US market</li>
+        </ul>
+
+        <p style="margin-top: 24px;">
+          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
+            ← Back to all projects
+          </a>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
