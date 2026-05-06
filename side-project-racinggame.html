@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ISOGE – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .isoge-accent { color: #2d7de0; }
+    .isoge-red { color: #cc3333; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #2d7de0;
+      margin: 28px 0 8px;
+    }
+
+    .quote-pull {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      border-left: 3px solid #2d7de0;
+      padding-left: 16px;
+      margin: 20px 0;
+    }
+
+    .mechanic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin: 16px 0 24px;
+    }
+
+    .mechanic-card {
+      background: rgba(45, 125, 224, 0.1);
+      border: 1px solid rgba(45, 125, 224, 0.25);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .mechanic-card .label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #2d7de0;
+      margin-bottom: 6px;
+    }
+
+    .mechanic-card .title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .mechanic-card p {
+      margin: 0 !important;
+      font-size: 0.88rem !important;
+      color: rgba(255,255,255,0.72) !important;
+    }
+
+    .line-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 20px;
+    }
+
+    .line-tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.04em;
+    }
+
+    .advisory-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 24px;
+    }
+
+    .advisory-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.93rem;
+      line-height: 1.55;
+    }
+
+    .advisory-list li:last-child {
+      border-bottom: none;
+    }
+
+    .advisory-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #22aa44;
+      color: white;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .kanji-display {
+      font-size: 3rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.15);
+      position: absolute;
+      right: 20px;
+      top: 0;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .title-block {
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-logo" style="font-weight: 700; font-size: 30px;">Sam Bingham</div>
+    <nav class="site-nav">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail">
+
+        <p class="section-label">Advanced Game Design — Racing Game</p>
+        <div class="title-block">
+          <h2>ISOGE <span class="isoge-accent">急げ</span></h2>
+          <span class="kanji-display">急</span>
+        </div>
+        <p><em>/I-SO-GE/ — the imperative form of ISOGU (急ぐ), meaning "to hurry"</em></p>
+        <p><strong>Format:</strong> Analog racing game, wall-mounted poster board &nbsp;|&nbsp; <strong>Players:</strong> 4 &nbsp;|&nbsp; <strong>Solo project</strong></p>
+
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/isogeThumbnail.svg" alt="ISOGE Japan metro game thumbnail">
+        </div>
+
+        <p>
+          ISOGE is a Japan metro racing game played on a large printed poster mounted to the wall. Players are <em>transiters</em> — commuters racing across a stylized map of Japan, moving magnetic train tokens between stations, completing route cards, and managing a shared network of five color-coded lines. First to 30 points wins, but the round finishes and every player is penalized for incomplete routes.
+        </p>
+
+        <p class="section-label">Where It Came From</p>
+
+        <div class="quote-pull">
+          Growing up in Tokyo means knowing the train. Everyone is always rushing — ISOGE. The metro map is a familiar grid that everyone navigates a little differently, and I wanted a game that felt like that: same board, different strategies, constantly in each other's way.
+        </div>
+
+        <p>
+          ISOGE is personal. Living in Tokyo, the train was the backbone of daily life — a system of intersecting lines, color-coded and memorized, where every commuter has a route and everyone is perpetually in a hurry. That rhythm of movement, planning, and interference became the core of the game.
+        </p>
+
+        <p class="section-label">The Board</p>
+
+        <p>
+          The game board is a custom-designed poster printed and mounted to the wall for play. Twelve stations span a stylized map of Japan — 墨田区, 神宮前, 東京, 原宿, 浅草, 奈良, 渋谷, 京都, 大阪, 富士山, 山梨 — connected by five colored lines. Japanese landmark illustrations (Tokyo Tower, Senso-ji, Mt. Fuji, Himeji Castle) fill the map alongside the line network. Score trackers for each player run along the right side, with 30 circled as the target.
+        </p>
+
+        <div class="line-tags">
+          <span class="line-tag" style="background:#2255cc;">Blue Line</span>
+          <span class="line-tag" style="background:#c8a000;">Yellow Line</span>
+          <span class="line-tag" style="background:#22aa44;">Green Line</span>
+          <span class="line-tag" style="background:#cc2222;">Red Line</span>
+          <span class="line-tag" style="background:#e06020;">Orange Line</span>
+        </div>
+
+        <p>Magnetic train tokens sit directly on the poster. Moving them along the wall-mounted board gives the game a physical presence that tabletop games rarely have.</p>
+
+        <p class="section-label">Core Rules (Directory)</p>
+
+        <div class="mechanic-grid">
+          <div class="mechanic-card">
+            <div class="label">Setup</div>
+            <div class="title">Dice Determine Starting Position & Turn Order</div>
+            <p>Transiters roll 2 dice and move their train to the corresponding station. The results also set turn order for the round — lowest goes first. A clean dual-purpose roll that starts the game with immediate positioning tension.</p>
+          </div>
+          <div class="mechanic-card">
+            <div class="label">Route Cards</div>
+            <div class="title">Choose 5, Discard Freely</div>
+            <p>Each transiter draws 5 route cards from the shuffled deck and may discard as many as they like before play begins. Routes define which stations you need to connect — and unfinished routes cost you points at game end.</p>
+          </div>
+          <div class="mechanic-card">
+            <div class="label">On Your Turn</div>
+            <div class="title">Move or Draw — Not Both</div>
+            <p>Each turn is a binary choice: Roll 1 die and move by half the result (rounded down) along the network — no reversing mid-turn, all moves must be used. Or draw any number of route cards and discard up to 2. The draw action lets you manage your hand without moving, but burns a turn.</p>
+          </div>
+          <div class="mechanic-card">
+            <div class="label">Winning</div>
+            <div class="title">30 Points, But Count the Penalties</div>
+            <p>The first transiter to 30 points ends the game after the full round finishes. Then all players subtract their unfinished routes from their total. The highest score after penalties wins — so rushing to 30 without finishing your routes can lose you the game.</p>
+          </div>
+        </div>
+
+        <p class="section-label">Advanced Rules (Advisory)</p>
+
+        <ul class="advisory-list">
+          <li>
+            <span class="advisory-num">1</span>
+            <span><strong>Special routes</strong> — 10 line routes are worth 10 points each, but must be completed in full without any deviation. High risk, high reward.</span>
+          </li>
+          <li>
+            <span class="advisory-num">2</span>
+            <span><strong>Crowded stations</strong> — landing on an occupied station bumps the previous occupant back to the last numbered station they passed through. Numbered stations are safe — a spatial safety net that makes positioning meaningful.</span>
+          </li>
+          <li>
+            <span class="advisory-num">3</span>
+            <span><strong>Efficient transit</strong> — transferring between lines (when the station color changes) earns 1 point. Transfers don't award points past 29, preventing a shortcut to game end.</span>
+          </li>
+          <li>
+            <span class="advisory-num" style="background:#cc2222;">4</span>
+            <span><strong>Price hike</strong> — the first time any player hits 10 and 20 points, they roll a die and price-hike the corresponding line. All transiters must pay 2 points to transfer onto that line from then on. This mechanic introduces real-time economic friction — the leader actively makes the network more expensive for everyone.</span>
+          </li>
+          <li>
+            <span class="advisory-num">5</span>
+            <span><strong>Multiple routes</strong> — transiters may complete multiple routes simultaneously, as long as they held those route cards when they started moving. A single path can score two routes at once if planned correctly.</span>
+          </li>
+        </ul>
+
+        <p class="section-label">Design Highlights</p>
+
+        <p>
+          The <strong>Price Hike</strong> mechanic is the game's sharpest edge. At exactly the moments when a player is succeeding (hitting 10 and 20 points), they introduce an economic cost to part of the network. The leader gets a tool to slow others down, but the specific line is random — they can't target directly. It keeps the leader from feeling untouchable while avoiding pure spite mechanics.
+        </p>
+        <p>
+          The <strong>penalty-at-game-end</strong> structure means the race to 30 isn't straightforward. Holding incomplete routes punishes overcommitting — so the player who manages their hand best, not just the fastest mover, tends to win. This mirrors how the real Tokyo metro works: knowing when to switch trains, when to stay put, and when to commit to a longer route is half the skill.
+        </p>
+        <p>
+          <strong>Playing on the wall</strong> was a deliberate physical design choice. Metro maps are public infrastructure — they live on station walls, not tabletops. Mounting the board vertically gives all players an equal view, makes the spatial layout intuitive, and makes the game feel like the thing it's about.
+        </p>
+
+        <p class="section-label">Playtesting</p>
+        <p>
+          ISOGE was playtested across multiple sessions and received positive feedback. Key iteration areas included tuning the movement dice fraction (dividing by 2 and rounding down), calibrating the 30-point target against average route values, and balancing the Price Hike timing so it created tension without feeling punishing too early.
+        </p>
+
+        <p class="section-label">Physical Production</p>
+        <p>
+          ISOGE was produced as a high-quality physical game using the Harvey Mudd Makerspace and Scripps Fab Lab. The board is a large-format poster printed at full resolution and wall-mounted for play. Train tokens are custom magnetic pieces that cling directly to the board. Route cards, the Advisory, and the Directory reference cards were printed, cut, and finished by hand. The final product functions as both a playable game and a graphic design artifact — the poster is designed to be read as a transit map even when not in play.
+        </p>
+
+        <p class="section-label">Skills & Tools</p>
+        <ul>
+          <li><strong>Adobe Illustrator</strong> — full board design, metro line layout, station iconography, route card layout, score tracker design, and the Advisory and Directory reference cards</li>
+          <li><strong>Adobe Photoshop</strong> — landmark illustrations and poster composition for large-format print</li>
+          <li><strong>Large-format print production</strong> — designing for wall-mounted poster dimensions, managing bleed and resolution for physical output</li>
+          <li><strong>Magnetic component fabrication</strong> — train tokens designed and produced as magnetic pieces for wall-mounted play</li>
+          <li><strong>Racing game systems design</strong> — building a point-race with meaningful catch-up mechanics (Price Hike), hand management tension (route penalties), and spatial positioning (crowded stations)</li>
+          <li><strong>Playtesting and iteration</strong> — multiple sessions refining movement values, point thresholds, and the Price Hike timing</li>
+        </ul>
+
+        <p style="margin-top: 28px;">
+          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
+            ← Back to all projects
+          </a>
+        </p>
+
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
