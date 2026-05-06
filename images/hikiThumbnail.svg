@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#FF2D78"/>
+  <!-- 2x2 grid icon -->
+  <rect x="130" y="100" width="60" height="60" rx="8" fill="none" stroke="#fff" stroke-width="6"/>
+  <rect x="210" y="100" width="60" height="60" rx="8" fill="none" stroke="#fff" stroke-width="6"/>
+  <rect x="130" y="180" width="60" height="60" rx="8" fill="none" stroke="#fff" stroke-width="6"/>
+  <rect x="210" y="180" width="60" height="60" rx="8" fill="none" stroke="#fff" stroke-width="6"/>
+  <!-- dot in one cell to suggest placement -->
+  <circle cx="160" cy="210" r="10" fill="#fff"/>
+  <!-- text -->
+  <text x="200" y="295" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="52" fill="#fff" text-anchor="middle">HIKI</text>
+  <text x="200" y="330" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="18" fill="rgba(255,255,255,0.8)" text-anchor="middle">Reimagining Matching</text>
+</svg>

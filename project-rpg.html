@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Haunting of the Whitcomb Manor – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .manor-accent { color: #9b8fd4; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9b8fd4;
+      margin: 28px 0 8px;
+    }
+
+    .quote-pull {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      border-left: 3px solid #9b8fd4;
+      padding-left: 16px;
+      margin: 20px 0;
+    }
+
+    .system-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin: 16px 0 24px;
+    }
+
+    .system-card {
+      background: rgba(155, 143, 212, 0.1);
+      border: 1px solid rgba(155, 143, 212, 0.25);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .system-card .label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #9b8fd4;
+      margin-bottom: 6px;
+    }
+
+    .system-card .title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .system-card p {
+      margin: 0 !important;
+      font-size: 0.88rem !important;
+      color: rgba(255,255,255,0.72) !important;
+    }
+
+    .sanity-bar {
+      display: flex;
+      gap: 10px;
+      margin: 16px 0 24px;
+      flex-wrap: wrap;
+    }
+
+    .sanity-tier {
+      flex: 1 1 140px;
+      background: rgba(155,143,212,0.1);
+      border: 1px solid rgba(155,143,212,0.25);
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .sanity-tier .tier-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #9b8fd4;
+      margin-bottom: 4px;
+    }
+
+    .sanity-tier .tier-range {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .sanity-tier p {
+      margin: 0 !important;
+      font-size: 0.82rem !important;
+      color: rgba(255,255,255,0.65) !important;
+    }
+
+    .role-tag {
+      display: inline-block;
+      background: rgba(155, 143, 212, 0.2);
+      border: 1px solid rgba(155, 143, 212, 0.4);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #c8bef0;
+      margin: 0 4px 6px 0;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-logo" style="font-weight: 700; font-size: 30px;">Sam Bingham</div>
+    <nav class="site-nav">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail">
+
+        <p class="section-label">Advanced Game Design — Role Playing Game</p>
+        <h2>Haunting of the <span class="manor-accent">Whitcomb Manor</span></h2>
+        <p><strong>Team:</strong> Ari, Dante, Elisa, Sam &nbsp;|&nbsp; <strong>Format:</strong> GM-less cooperative horror RPG &nbsp;|&nbsp; <strong>Players:</strong> 4</p>
+        <p>
+          <span class="role-tag">Narrative Design</span>
+          <span class="role-tag">Game Mechanics</span>
+          <span class="role-tag">Game Design</span>
+          <span class="role-tag">Visual Design</span>
+        </p>
+
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/rpgThumbnail.svg" alt="Haunting of the Whitcomb Manor thumbnail">
+        </div>
+
+        <p>
+          <em>Haunting of the Whitcomb Manor</em> is a GM-less cooperative horror RPG for four players, built on the structural foundation of <em>Escape the Dark Castle</em>. Players are teenagers who decide to explore the abandoned manor on the edge of town — filled with chapter cards, enemies, and things that test their resolve. The object is to survive with everyone alive and sane. If anyone runs away or loses their mind, the haunting wins.
+        </p>
+
+        <p class="section-label">The Premise</p>
+
+        <div class="quote-pull">
+          As curious, rebellious, or just stupid teenagers you and your friends decide to explore the "haunted" manor on the edge of town. It is filled to the brim with rooms ready to challenge, horrify, and test you — each of which is represented by a chapter card.
+        </div>
+
+        <p>
+          The manor is structured across three acts of increasing difficulty — each act sealed with a boss encounter before the next opens. Players work together to turn chapter cards, read the italic story text aloud, and navigate the supernatural through dice rolls, item management, and collective decision-making. There is no game master: the group decides everything together.
+        </p>
+
+        <p class="section-label">Key Design Systems</p>
+
+        <div class="system-grid">
+          <div class="system-card">
+            <div class="label">Characters</div>
+            <div class="title">Brawns, Brains, Charm</div>
+            <p>Each character is built around three stats and a special ability. Custom character dice show those stat symbols — so the character you pick shapes which dice faces you roll with throughout the game.</p>
+          </div>
+          <div class="system-card">
+            <div class="label">Two Resources</div>
+            <div class="title">Willpower & Sanity</div>
+            <p>Willpower (starts at 15) represents physical stamina and will to continue. Sanity (starts at 12) represents mental fortitude against the manor's supernatural horrors. Both can be lost. Neither can be recovered past their starting value.</p>
+          </div>
+          <div class="system-card">
+            <div class="label">No Turn Order</div>
+            <div class="title">Collective Agency</div>
+            <p>There is no prescribed turn order. The group decides together who turns the next chapter card — a design choice that makes every encounter feel like a shared negotiation. Some consequences only fall on the player who turned the card, which makes the decision genuinely tense.</p>
+          </div>
+          <div class="system-card">
+            <div class="label">Combat</div>
+            <div class="title">Dice Matching System</div>
+            <p>Enemies are represented by a row of chapter dice placed beneath their card. Players simultaneously roll their character dice and try to match the enemy's dice symbols to remove them. Doublets and quadruplets require multiple players to coordinate — making group strategy essential.</p>
+          </div>
+          <div class="system-card">
+            <div class="label">Items</div>
+            <div class="title">Two-Handed Inventory</div>
+            <p>Each character can carry exactly two items — one in each hand. Items are drawn face-up for the group to see, distributed collectively, and tradeable only between chapters. The two-item limit forces real prioritization at every step.</p>
+          </div>
+          <div class="system-card">
+            <div class="label">Narrative</div>
+            <div class="title">Read Aloud, Roleplay Encouraged</div>
+            <p>Each chapter card opens with italic text read aloud to set the scene. Players are encouraged to roleplay their characters. The rulebook itself reads: "Don't skip the italic text. This game is all about atmosphere and storytelling."</p>
+          </div>
+        </div>
+
+        <p class="section-label">The Standout Mechanic — Sanity</p>
+
+        <div class="quote-pull">
+          As your character goes insane, their capacities increase and unlock new abilities. Is it the manor enchanting them? Or their own minds liberating them?
+        </div>
+
+        <p>
+          The Sanity system is the heart of the game's design tension. Losing Sanity is bad — hit zero and you lose. But the three Sanity tiers correspond to three progressively stronger character dice, meaning the more unhinged your character becomes, the more powerful their rolls. At the second tier, characters unlock their special ability permanently.
+        </p>
+
+        <div class="sanity-bar">
+          <div class="sanity-tier">
+            <div class="tier-label">Tier 1 — Stable</div>
+            <div class="tier-range">12 – 9</div>
+            <p>Starting die. Reliable stats, no special ability yet.</p>
+          </div>
+          <div class="sanity-tier">
+            <div class="tier-label">Tier 2 — Shaken</div>
+            <div class="tier-range">8 – 5</div>
+            <p>Upgraded die. Special ability unlocked permanently.</p>
+          </div>
+          <div class="sanity-tier">
+            <div class="tier-label">Tier 3 — Broken</div>
+            <div class="tier-range">4 – 1</div>
+            <p>Most powerful die. One bad event away from the game ending.</p>
+          </div>
+        </div>
+
+        <p>
+          This creates a genuine risk/reward loop: players can voluntarily sacrifice 1 Sanity at any time to reroll their die, trading mental health for a second chance. The closer to the edge, the stronger the tools — but also the closer to catastrophic loss. That tension informed every combat and chapter design decision across the game.
+        </p>
+
+        <p class="section-label">My Contributions</p>
+
+        <p>Working in a four-person team, I led three areas of the project:</p>
+        <ul>
+          <li><strong>Narrative Design</strong> — wrote the chapter card story text, the premise, and the voice of the rulebook. The tone needed to land somewhere between campfire ghost story and genuine dread without becoming self-parody.</li>
+          <li><strong>Game Mechanics</strong> — designed the Sanity tiering system and its interaction with character dice, the collective turn-order structure, and the resting mechanic (players can hang back from combat to recover 1 Willpower per round).</li>
+          <li><strong>Game Design & Production</strong> — designed the rulebook layout in Adobe Illustrator, hand-illustrated game components, and fabricated physical cards and dice with the Harvey Mudd Makerspace and Scripps Fab Lab.</li>
+        </ul>
+
+        <p class="section-label">Physical Production</p>
+        <p>
+          Haunting of the Whitcomb Manor was produced as a high-quality physical game. The rulebook was designed and printed as a full booklet — complete with the hand-illustrated manor cover, hand-drawn item and enemy art throughout, and Gothic typography. Chapter cards, character cards, and item cards were all printed and finished by hand using the Harvey Mudd Makerspace and Scripps Fab Lab. Custom character dice and chapter dice were fabricated to match the stat iconography. Playtested across multiple sessions with positive feedback.
+        </p>
+
+        <p class="section-label">Skills & Tools</p>
+        <ul>
+          <li><strong>Adobe Illustrator</strong> — rulebook layout, card templates, iconography (Brawns, Brains, Charm, Slash, Teeth, Shield symbols)</li>
+          <li><strong>Adobe Photoshop</strong> — cover illustration compositing and visual asset production</li>
+          <li><strong>Hand illustration</strong> — all in-rulebook art (manor cover, item sketches, enemy art) drawn by hand</li>
+          <li><strong>3D Printing & Fabrication</strong> — custom dice and game pieces produced at the Harvey Mudd Makerspace and Scripps Fab Lab</li>
+          <li><strong>GM-less RPG systems design</strong> — building a game that generates narrative without a moderator, relying on emergent player decisions and card text</li>
+          <li><strong>Playtesting</strong> — iterating the Sanity tiers and combat difficulty across multiple playtests to balance tension against playability</li>
+        </ul>
+
+        <p style="margin-top: 28px;">
+          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
+            ← Back to all projects
+          </a>
+        </p>
+
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
