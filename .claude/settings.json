@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/samuelbingham07/Desktop/portfolio status)",
+      "Bash(git -C /Users/samuelbingham07/Desktop/portfolio log --oneline -5)",
+      "Bash(git -C /Users/samuelbingham07/Desktop/portfolio add index.html project-clicktionary.html images/artgameThumbnail.svg images/hikiGridsPrototype.png images/hikiInfiniteZoom.png images/hikiThumbnail.svg images/isogeThumbnail.svg images/rpgThumbnail.svg project-artgame.html project-hiki.html project-racinggame.html project-rpg.html videos/hikiGridsDemo.mp4 videos/hikiInfiniteZoomDemo.mp4)",
+      "Bash(git -C /Users/samuelbingham07/Desktop/portfolio commit -m ' *)",
+      "Bash(git -C /Users/samuelbingham07/Desktop/portfolio add index.html project-clicktionary.html)",
+      "Bash(git -C /Users/samuelbingham07/Desktop/portfolio push)",
+      "Bash(git -C /Users/samuelbingham07/Desktop/portfolio add project-hiki.html)",
+      "Bash(git -C /Users/samuelbingham07/Desktop/portfolio add project-5c2c.html)",
+      "Bash(sips --version)"
+    ]
+  }
+}
