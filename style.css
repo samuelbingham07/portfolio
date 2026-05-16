@@ -156,10 +156,6 @@ a {
   grid-column: 1 / -1;
 }
 
-#side-projects .section-title {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.5);
-}
 
 .project-card {
   background-color: var(--card);
