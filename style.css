@@ -308,6 +308,18 @@ a {
   #side-projects {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+
+  #side-projects .project-content {
+    padding: 12px 13px 13px;
+  }
+
+  #side-projects .project-content h3 {
+    font-size: 0.79rem;
+  }
+
+  #side-projects .project-content p {
+    font-size: 0.71rem;
+  }
 }
 
 @media (max-width: 600px) {
