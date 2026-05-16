@@ -310,4 +310,31 @@
     <section id="contact" class="contact">
       <h2>Contact</h2>
       <p>Email: samuelbingham07@gmail.com  shbb2022@mymail.pomona.edu
-        <br />LinkedIn: <a href="https://www.linkedin.com/in/samuel-bingham-660455202/" style="color: #fff8e1;" target="_blank">linkedin.com/in/samuel-bingham-660455202
+        <br />LinkedIn: <a href="https://www.linkedin.com/in/samuel-bingham-660455202/" style="color: #fff8e1;" target="_blank">linkedin.com/in/samuel-bingham-660455202</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.project-card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
