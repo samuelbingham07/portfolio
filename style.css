@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #4c3d30;
 }
 
 @keyframes bg-shift {
