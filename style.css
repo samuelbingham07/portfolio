@@ -290,6 +290,10 @@ a {
     padding: 16px 24px 56px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  #side-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 1200px) {
@@ -299,6 +303,10 @@ a {
 
   .projects-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #side-projects {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
