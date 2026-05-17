@@ -73,7 +73,7 @@ a {
 }
 
 .site-nav a {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
   transition: color 0.2s ease;
 }
@@ -148,7 +148,7 @@ a {
 }
 
 .section-title {
-  font-size: 3.4rem;
+  font-size: 1.7rem;
   margin: 0 0 20px;
 }
 
