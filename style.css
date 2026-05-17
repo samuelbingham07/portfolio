@@ -121,7 +121,7 @@ a {
 .hero-image img {
   width: 100%;
   max-width: 420px;
-  max-height: 280px;
+  max-height: 350px;
   border-radius: var(--radius-lg);
   object-fit: cover;
   background-color: var(--card);
