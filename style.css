@@ -104,7 +104,7 @@ a {
 }
 
 .hero-text p {
-  font-size: 0.98rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: var(--text-muted);
   max-width: 480px;
