@@ -2,7 +2,10 @@
    Scoped under .champ-* classes so it can coexist with style.css
    while the redesign is rolled out page by page. */
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap');
+
 :root {
+  --champ-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --champ-bg: #0b0c10;
   --champ-ink: #f1ede1;
   --champ-ink-dim: #9aa0ad;
@@ -43,7 +46,8 @@
 }
 
 .champ-wordmark {
-  font-family: 'Cinzel', serif;
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
   font-weight: 700;
   font-size: clamp(18px, 2.4vw, 22px);
   letter-spacing: 0.08em;
@@ -171,9 +175,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(120% 140% at 30% 20%, var(--cat-color) 0%, rgba(8,9,12,0.94) 62%);
+  background-image: var(--champ-grain), radial-gradient(120% 140% at 30% 20%, var(--cat-color) 0%, rgba(8,9,12,0.94) 62%);
+  background-blend-mode: overlay, normal;
+  background-size: 140px 140px, 100% 100%;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    inset 0 -6px 14px rgba(0,0,0,0.5);
 }
-.champ-tile-icon svg { display: block; color: var(--cat-color); }
+.champ-tile-icon svg { display: block; color: var(--cat-color); filter: drop-shadow(0 0 6px var(--cat-color)); }
 .champ-tile-standard .champ-tile-icon svg { width: 24px; height: 24px; stroke-width: 1.5; }
 .champ-tile-featured .champ-tile-icon svg { width: 38px; height: 38px; stroke-width: 1.3; }
 
@@ -207,9 +216,9 @@
 
 .champ-tile-plate { padding-top: 8px; text-align: center; }
 .champ-tile-name {
-  font-family: 'Cinzel', serif;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--champ-ink);
   line-height: 1.2;
 }
@@ -279,10 +288,11 @@
 }
 
 .champ-header-name {
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  line-height: 1.05;
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  line-height: 1.02;
   margin: 0 0 10px;
 }
 
@@ -313,9 +323,10 @@
 }
 
 .champ-contact-title {
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: clamp(2rem, 4.5vw, 3rem);
   margin: 0 0 18px;
 }
 
@@ -376,10 +387,10 @@
 /* A paragraph that's just a bolded label acts as a subheading */
 .champ-body p > strong:only-child {
   display: block;
-  font-family: 'Cinzel', serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
   text-transform: uppercase;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
   color: var(--champ-gold);
   margin-top: 8px;
 }
@@ -403,17 +414,29 @@
   height: 64px;
   border-radius: 10px;
   border: 1px solid var(--champ-line);
-  background: radial-gradient(120% 130% at 30% 20%, var(--cat-color) 0%, rgba(8,9,12,0.95) 70%);
+  background-image: var(--champ-grain), radial-gradient(120% 130% at 30% 22%, var(--cat-color) 0%, rgba(8,9,12,0.97) 72%);
+  background-blend-mode: overlay, normal;
+  background-size: 140px 140px, 100% 100%;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.14),
+    inset 0 -5px 10px rgba(0,0,0,0.55),
+    0 0 16px -8px var(--cat-color);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  opacity: 0.55;
-  transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   font: inherit;
   padding: 0;
 }
-.champ-ability-icon svg { width: 26px; height: 26px; stroke: var(--cat-color); stroke-width: 1.5; }
+.champ-ability-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--cat-color);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 5px var(--cat-color)) drop-shadow(0 1px 0 rgba(0,0,0,0.6));
+}
 .champ-ability-icon .champ-ability-key {
   position: absolute;
   right: -6px;
@@ -421,21 +444,34 @@
   width: 20px;
   height: 20px;
   border-radius: 5px;
-  background: var(--champ-bg);
+  background: linear-gradient(160deg, #26241c 0%, var(--champ-bg) 100%);
   border: 1px solid var(--champ-gold-dim);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 2px 4px rgba(0,0,0,0.5);
   color: var(--champ-gold);
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 10px;
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
+  font-size: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.champ-ability-icon:hover { opacity: 0.85; transform: translateY(-2px); }
+.champ-ability-icon:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.14),
+    inset 0 -5px 10px rgba(0,0,0,0.55),
+    0 0 22px -6px var(--cat-color);
+}
 .champ-ability-icon.is-active {
   opacity: 1;
   border-color: var(--champ-gold);
-  box-shadow: 0 0 0 1px var(--champ-gold), 0 10px 24px -8px oklch(70% 0.16 85 / 0.55);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 -5px 10px rgba(0,0,0,0.5),
+    0 0 0 1px var(--champ-gold),
+    0 10px 24px -8px oklch(70% 0.16 85 / 0.55),
+    0 0 26px -6px var(--cat-color);
 }
 
 .champ-ability-panel {
