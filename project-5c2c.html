@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="champion.css" />
 </head>
 <body class="champ-page">
-  <div class="champ-header" style="--champ-header-img:url('images/5C2CThumbnail.png')">
+  <div class="champ-header" style="--champ-header-img:url('images/5C2CThumbnail.png')"><span class="champ-crest"></span>
     <div class="champ-header-nav">
       <a href="index.html#projects">← Back to Roster</a>
     </div>
@@ -137,16 +137,21 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const abilityBar = document.getElementById('ability-bar');
+    const abilityPanel = document.getElementById('ability-panel');
     if (abilityBar) {
       abilityBar.addEventListener('click', (e) => {
         const btn = e.target.closest('.champ-ability-icon');
-        if (!btn) return;
+        if (!btn || btn.classList.contains('is-active')) return;
         abilityBar.querySelectorAll('.champ-ability-icon').forEach(b => b.classList.remove('is-active'));
         btn.classList.add('is-active');
         const target = btn.dataset.target;
-        document.querySelectorAll('.champ-ability-panel-item').forEach(item => {
-          item.classList.toggle('is-active', item.dataset.item === target);
-        });
+        abilityPanel.classList.add('is-swapping');
+        setTimeout(() => {
+          document.querySelectorAll('.champ-ability-panel-item').forEach(item => {
+            item.classList.toggle('is-active', item.dataset.item === target);
+          });
+          abilityPanel.classList.remove('is-swapping');
+        }, 130);
       });
     }
   </script>
