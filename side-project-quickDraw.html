@@ -11,25 +11,33 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-logo">Sam Bingham</div>
-    <nav class="site-nav">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/quickDrawThumbnail.png')">
+    <div class="champ-header-nav">
+      <a href="index.html#projects">← Back to Roster</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(72% 0.16 10)"></span>Games · Game Design</div>
+      <h1 class="champ-header-name">QuickDraw</h1>
+      <p class="champ-header-role">Godot bullet-hell · 3-day game jam build around the theme "Everything Goes Wrong"</p>
+      <div class="champ-tags">
+        <span class="champ-tag">Godot</span>
+        <span class="champ-tag">GDScript</span>
+        <span class="champ-tag">Aseprite</span>
+        <span class="champ-tag">Game Jam</span>
+      </div>
+    </div>
+  </div>
 
   <main>
     <section class="project-details">
-      <article class="project-detail">
-        <h2>QuickDraw</h2>
-
-        <div class="video-wrapper" style="margin-top: 24px;">
+      <article class="project-detail champ-body">
+        <div class="video-wrapper" style="margin-top: 0;">
           <video controls>
             <source src="videos/quickDraw.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -59,26 +67,26 @@
         <p>
           Through this project I've learned and practiced:
         </p>
-        <ul>
-          <li>Godot engine and GDScript for building a complete bullet-hell from scratch</li>
-          <li>Enemy spawn system design for creating wave patterns that escalate without feeling scripted</li>
-          <li>Bullet-hell game design and balancing including tuning difficulty, hitboxes, and debuff timing</li>
-          <li>2D pixel art in Aseprite for characters, enemies, and UI assets under a tight deadline</li>
-          <li>Using game mechanics to directly express a design theme</li>
-          <li>Rapid prototyping and scoping under a 3-day jam constraint, knowing what to cut and what to ship</li>
-          <li>Splitting a codebase and art pipeline with a collaborator under time pressure</li>
-        </ul>
+        <div class="champ-tags">
+          <span class="champ-tag">Godot & GDScript</span>
+          <span class="champ-tag">Enemy Spawn System Design</span>
+          <span class="champ-tag">Bullet-Hell Balancing</span>
+          <span class="champ-tag">2D Pixel Art (Aseprite)</span>
+          <span class="champ-tag">Mechanics-Driven Theming</span>
+          <span class="champ-tag">Rapid Prototyping & Scoping</span>
+          <span class="champ-tag">Collaborative Codebase Splitting</span>
+        </div>
 
         <p style="margin-top: 24px;">
-          <a href="index.html#side-projects" style="color: var(--accent); text-decoration: underline;">
-            ← Back to all projects
+          <a href="index.html#projects">
+            ← Back to Roster
           </a>
         </p>
       </article>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="champ-footer">
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 

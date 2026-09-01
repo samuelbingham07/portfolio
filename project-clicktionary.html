@@ -11,25 +11,33 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-logo">Sam Bingham</div>
-    <nav class="site-nav">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/clicktionaryThumbnail.png')">
+    <div class="champ-header-nav">
+      <a href="index.html#projects">← Back to Roster</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(78% 0.15 40)"></span>Product · Web Extension</div>
+      <h1 class="champ-header-name">Clicktionary</h1>
+      <p class="champ-header-role">Chrome extension for language learners · Live on the Chrome Web Store, in A/B testing</p>
+      <div class="champ-tags">
+        <span class="champ-tag">HTML/CSS</span>
+        <span class="champ-tag">Supabase</span>
+        <span class="champ-tag">Chrome Extension</span>
+        <span class="champ-tag">Product Management</span>
+      </div>
+    </div>
+  </div>
 
   <main>
     <section class="project-details">
-      <article class="project-detail">
-        <h2>Clicktionary</h2>
-
-        <div class="video-wrapper" style="margin-top: 24px;">
+      <article class="project-detail champ-body">
+        <div class="video-wrapper" style="margin-top: 0;">
           <video controls>
             <source src="videos/clicktionaryDemo.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -59,12 +67,30 @@
         </ul>
 
         <p><strong>Technical Highlights</strong></p>
-        <ul>
-          <li>Built on <strong>Manifest V3</strong>, the current Chrome extension standard, with a background service worker handling auth, Supabase sync, and word bank operations.</li>
-          <li><strong>Google OAuth</strong> implemented via <code>chrome.identity.launchWebAuthFlow</code>, with the extension's ID locked to a stable value via an RSA key in the manifest so the OAuth redirect URI never changes.</li>
-          <li><strong>Duplicate detection</strong> on word saves, custom definition fallback if translation fails, and an on/off toggle that persists across sessions.</li>
-          <li>Supports 10 languages (Spanish, French, German, Italian, Portuguese, Japanese, Chinese, Korean, Arabic, and Russian) with correct Unicode range detection to decide whether highlighted text could belong to the selected language before showing a tooltip.</li>
-        </ul>
+        <div class="champ-ability-bar" id="ability-bar" style="--cat-color:oklch(78% 0.15 40)">
+          <button type="button" class="champ-ability-icon is-active" data-target="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.1 1.3 2.5-.4 1.2 2.3 2.3 1.2-.4 2.5L21 12l-1.3 2.1.4 2.5-2.3 1.2-1.2 2.3-2.5-.4L12 21l-2.1-1.3-2.5.4-1.2-2.3-2.3-1.2.4-2.5L3 12l1.3-2.1-.4-2.5 2.3-1.2 1.2-2.3 2.5.4L12 3Z"/><circle cx="12" cy="12" r="3"/></svg><span class="champ-ability-key">P</span></button>
+          <button type="button" class="champ-ability-icon" data-target="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span class="champ-ability-key">Q</span></button>
+          <button type="button" class="champ-ability-icon" data-target="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="6" rx="3"/><circle cx="15" cy="12" r="2" fill="currentColor" stroke="none"/></svg><span class="champ-ability-key">W</span></button>
+          <button type="button" class="champ-ability-icon" data-target="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9Z"/></svg><span class="champ-ability-key">E</span></button>
+        </div>
+        <div class="champ-ability-panel" id="ability-panel">
+          <div class="champ-ability-panel-item is-active" data-item="0">
+            <p class="champ-ability-panel-name">Manifest V3 Architecture</p>
+            <p>Built on Manifest V3, the current Chrome extension standard, with a background service worker handling auth, Supabase sync, and word bank operations.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="1">
+            <p class="champ-ability-panel-name">Google OAuth</p>
+            <p>Implemented via <code>chrome.identity.launchWebAuthFlow</code>, with the extension's ID locked to a stable value via an RSA key in the manifest so the OAuth redirect URI never changes.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="2">
+            <p class="champ-ability-panel-name">Duplicate Detection &amp; Fallbacks</p>
+            <p>Duplicate detection on word saves, custom definition fallback if translation fails, and an on/off toggle that persists across sessions.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="3">
+            <p class="champ-ability-panel-name">10-Language Support</p>
+            <p>Supports 10 languages (Spanish, French, German, Italian, Portuguese, Japanese, Chinese, Korean, Arabic, and Russian) with correct Unicode range detection to decide whether highlighted text could belong to the selected language before showing a tooltip.</p>
+          </div>
+        </div>
 
         <p>
           <a class="primary-button" href="https://chromewebstore.google.com/detail/odkjbifcbclfgecknhppbimkpgmoooff?utm_source=item-share-cb" target="_blank" rel="noopener noreferrer">
@@ -83,34 +109,46 @@
           Clicktionary is currently in its A/B testing phase, live on the Chrome Web Store with real users, with more features on the way.
         </p>
 
-        <p>
-          Through this project I've learned and practiced:
-        </p>
-        <ul>
-          <li>Chrome Extension architecture (Manifest V3) including content scripts, service workers, popup, and cross-context messaging</li>
-          <li>Browser extension auth flows including Google OAuth via <code>chrome.identity</code> and session bridging between extension and hosted website</li>
-          <li>Translation API design including parallel instance racing, timeout handling, fallback chaining, and in-memory caching</li>
-          <li>Supabase including row-level security, REST API, and real-time session management</li>
-          <li>Speculative prefetching as a UX performance technique</li>
-          <li>Offline-first design with <code>chrome.storage.local</code> as a graceful fallback</li>
-          <li>Product scoping for a zero-friction browser tool where every interaction has to feel instant or it defeats the purpose</li>
-        </ul>
+        <p><strong>Through This Project I've Learned and Practiced</strong></p>
+        <div class="champ-tags">
+          <span class="champ-tag">Chrome Extension Architecture</span>
+          <span class="champ-tag">OAuth & Auth Flows</span>
+          <span class="champ-tag">Translation API Design</span>
+          <span class="champ-tag">Supabase</span>
+          <span class="champ-tag">Speculative Prefetching</span>
+          <span class="champ-tag">Offline-First Design</span>
+          <span class="champ-tag">Zero-Friction Product Scoping</span>
+        </div>
 
         <p style="margin-top: 24px;">
-          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
-            ← Back to all projects
+          <a href="index.html#projects">
+            ← Back to Roster
           </a>
         </p>
       </article>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="champ-footer">
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const abilityBar = document.getElementById('ability-bar');
+    if (abilityBar) {
+      abilityBar.addEventListener('click', (e) => {
+        const btn = e.target.closest('.champ-ability-icon');
+        if (!btn) return;
+        abilityBar.querySelectorAll('.champ-ability-icon').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const target = btn.dataset.target;
+        document.querySelectorAll('.champ-ability-panel-item').forEach(item => {
+          item.classList.toggle('is-active', item.dataset.item === target);
+        });
+      });
+    }
   </script>
 </body>
 </html>

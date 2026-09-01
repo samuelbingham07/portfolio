@@ -11,24 +11,26 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-logo">Sam Bingham</div>
-    <nav class="site-nav">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/backpackingThumbnail.png')">
+    <div class="champ-header-nav">
+      <a href="index.html#projects">← Back to Roster</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(76% 0.14 275)"></span>Life · Personal</div>
+      <h1 class="champ-header-name">Hobbies</h1>
+      <p class="champ-header-role">A few things I do outside of work: backpacking, cocktails, thrifting, and chasing a good fit</p>
+    </div>
+  </div>
 
   <main>
     <section class="project-details">
-      <article class="project-detail">
-        <h2>Hobbies</h2>
-
+      <article class="project-detail champ-body">
         <p>
           What I do when I'm not working. Video games and board games are big ones, but harder to document here.
         </p>
@@ -90,8 +92,8 @@
         </p>
 
         <p style="margin-top: 24px;">
-          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
-            ← Back to all projects
+          <a href="index.html#projects">
+            ← Back to Roster
           </a>
         </p>
 
@@ -99,7 +101,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="champ-footer">
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 

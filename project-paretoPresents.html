@@ -11,26 +11,35 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-logo">Sam Bingham</div>
-    <nav class="site-nav">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/paretoPresentsThumbnail.png')">
+    <div class="champ-header-nav">
+      <a href="index.html#projects">← Back to Roster</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(78% 0.15 40)"></span>Product · Web App</div>
+      <h1 class="champ-header-name">Pareto Presents</h1>
+      <p class="champ-header-role">Web app · Pareto-optimal gift exchange matchmaking for groups</p>
+      <div class="champ-tags">
+        <span class="champ-tag">Next.js</span>
+        <span class="champ-tag">TypeScript</span>
+        <span class="champ-tag">Tailwind</span>
+        <span class="champ-tag">Supabase</span>
+        <span class="champ-tag">FastAPI</span>
+        <span class="champ-tag">Figma</span>
+      </div>
+    </div>
+  </div>
 
   <main>
     <section class="project-details">
-      <article class="project-detail">
-        <h2>Pareto Presents</h2>
-
-        <div class="image-wrapper" style="margin-top: 24px;">
+      <article class="project-detail champ-body">
+        <div class="image-wrapper" style="margin-top: 0;">
           <img src="images/paretoPresentLandingPage.png" alt="Pareto Presents cover image">
         </div>
 
@@ -47,12 +56,30 @@
         <p>
           The system is built across three layers that work together event-driven, without the frontend ever having to trigger a calculation manually:
         </p>
-        <ul>
-          <li>A user creates a group and shares an invite code. Members join and submit their preferences through the dashboard survey. All of this is stored in a <strong>Supabase PostgreSQL</strong> database with tables for groups, memberships, preferences (<code>JSONB</code>), and cached simulation results.</li>
-          <li>When anyone joins or updates their preferences, a <strong>Supabase Database Webhook</strong> fires automatically, sending the affected <code>group_id</code> to the Python API: no manual trigger needed.</li>
-          <li>The <strong>FastAPI simulation service</strong> (Dockerized, deployed on Fly.io) receives the webhook, fetches all current preferences for the group, runs the Pareto-optimal matching algorithm, and writes the new results back to the <code>simulation_results</code> table.</li>
-          <li>The <strong>Next.js frontend</strong> simply reads the latest cached results from that table and renders them as interactive charts via <strong>Recharts</strong>. It never needs to know when or how the calculation ran.</li>
-        </ul>
+        <div class="champ-ability-bar" id="ability-bar" style="--cat-color:oklch(78% 0.15 40)">
+          <button type="button" class="champ-ability-icon is-active" data-target="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span class="champ-ability-key">P</span></button>
+          <button type="button" class="champ-ability-icon" data-target="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg><span class="champ-ability-key">Q</span></button>
+          <button type="button" class="champ-ability-icon" data-target="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.1 1.3 2.5-.4 1.2 2.3 2.3 1.2-.4 2.5L21 12l-1.3 2.1.4 2.5-2.3 1.2-1.2 2.3-2.5-.4L12 21l-2.1-1.3-2.5.4-1.2-2.3-2.3-1.2.4-2.5L3 12l1.3-2.1-.4-2.5 2.3-1.2 1.2-2.3 2.5.4L12 3Z"/><circle cx="12" cy="12" r="3"/></svg><span class="champ-ability-key">W</span></button>
+          <button type="button" class="champ-ability-icon" data-target="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="12" width="4" height="8"/><rect x="10" y="6" width="4" height="14"/><rect x="16" y="9" width="4" height="11"/></svg><span class="champ-ability-key">E</span></button>
+        </div>
+        <div class="champ-ability-panel" id="ability-panel">
+          <div class="champ-ability-panel-item is-active" data-item="0">
+            <p class="champ-ability-panel-name">Group Creation &amp; Preferences</p>
+            <p>A user creates a group and shares an invite code. Members join and submit their preferences through the dashboard survey. All of this is stored in a Supabase PostgreSQL database with tables for groups, memberships, preferences (<code>JSONB</code>), and cached simulation results.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="1">
+            <p class="champ-ability-panel-name">Event-Driven Webhook</p>
+            <p>When anyone joins or updates their preferences, a Supabase Database Webhook fires automatically, sending the affected <code>group_id</code> to the Python API: no manual trigger needed.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="2">
+            <p class="champ-ability-panel-name">FastAPI Simulation Service</p>
+            <p>The FastAPI simulation service (Dockerized, deployed on Fly.io) receives the webhook, fetches all current preferences for the group, runs the Pareto-optimal matching algorithm, and writes the new results back to the <code>simulation_results</code> table.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="3">
+            <p class="champ-ability-panel-name">Next.js Frontend</p>
+            <p>The Next.js frontend simply reads the latest cached results from that table and renders them as interactive charts via Recharts. It never needs to know when or how the calculation ran.</p>
+          </div>
+        </div>
 
         <p><strong>My Role: Art, Design, Product, and About Page</strong></p>
         <p>
@@ -63,40 +90,52 @@
           <a class="primary-button" href="https://p-resents-web.vercel.app/" target="_blank" rel="noopener noreferrer">
             Try the simulation
           </a>
-          <a class="primary-button" href="https://github.com/swangtree/p-resents.git" target="_blank" rel="noopener noreferrer">
+          <a class="primary-button" href="https://github.com/swangtree/p-resents.git" target="_blank" rel="noopener noreferrer" style="margin-left: 10px;">
             GitHub Repository
           </a>
         </p>
 
-        <p>
-          Through this project I've learned and practiced:
-        </p>
-        <ul>
-          <li>Product management, including defining scope, user flows, and feature priorities for a full-stack web app</li>
-          <li>Next.js with TypeScript and Tailwind CSS for a production-deployed frontend</li>
-          <li>Event-driven architecture using Supabase Database Webhooks to trigger a separate Python microservice</li>
-          <li>FastAPI and Docker for packaging and deploying a standalone simulation service on Fly.io</li>
-          <li>Supabase: PostgreSQL schema design with JSONB columns, row-level security, and Auth</li>
-          <li>Recharts for interactive data visualization of simulation outputs</li>
-          <li>Branding and visual identity design including logo, color system, and UI in Figma, Procreate, and Aseprite</li>
-          <li>Writing product copy that made Pareto optimality understandable to a non-technical audience</li>
-        </ul>
+        <p><strong>Through This Project I've Learned and Practiced</strong></p>
+        <div class="champ-tags">
+          <span class="champ-tag">Product Management</span>
+          <span class="champ-tag">Next.js / TypeScript / Tailwind</span>
+          <span class="champ-tag">Event-Driven Architecture</span>
+          <span class="champ-tag">FastAPI & Docker</span>
+          <span class="champ-tag">Supabase & PostgreSQL</span>
+          <span class="champ-tag">Recharts</span>
+          <span class="champ-tag">Branding & Visual Identity</span>
+          <span class="champ-tag">Product Copywriting</span>
+        </div>
 
         <p style="margin-top: 24px;">
-          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
-            ← Back to all projects
+          <a href="index.html#projects">
+            ← Back to Roster
           </a>
         </p>
       </article>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="champ-footer">
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const abilityBar = document.getElementById('ability-bar');
+    if (abilityBar) {
+      abilityBar.addEventListener('click', (e) => {
+        const btn = e.target.closest('.champ-ability-icon');
+        if (!btn) return;
+        abilityBar.querySelectorAll('.champ-ability-icon').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const target = btn.dataset.target;
+        document.querySelectorAll('.champ-ability-panel-item').forEach(item => {
+          item.classList.toggle('is-active', item.dataset.item === target);
+        });
+      });
+    }
   </script>
 </body>
 </html>

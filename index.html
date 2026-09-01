@@ -11,342 +11,204 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-logo" style="font-weight: 700; font-size: 30px;">Sam Bingham</div>
-    <nav class="site-nav">
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Product Manager,<br>Designer,<br>Engineer</h1>
-        <p>
-          Thank you for checking out my portfolio! The website is from scratch and shows work
-          I’ve done across tech, ecommerce, and creative projects. I like to
-          blend product management, design, and engineering into experiences
-          that are fun and grow my skillset!
-        </p>
-        <a class="primary-button" href="#projects">See Projects</a>
+<section class="champ-arena" id="projects">
+  <div class="champ-topbar">
+    <div class="champ-wordmark">SAM <span>BINGHAM</span></div>
+    <div class="champ-pills" id="champ-filters">
+      <button class="champ-pill is-active" data-filter="all">All</button>
+      <button class="champ-pill" data-filter="product">Product</button>
+      <button class="champ-pill" data-filter="design">Design</button>
+      <button class="champ-pill" data-filter="engineering">Engineering</button>
+      <button class="champ-pill" data-filter="business">Business</button>
+      <button class="champ-pill" data-filter="games">Games</button>
+      <button class="champ-pill" data-filter="life">Life</button>
+    </div>
+    <a class="champ-contact-link" href="#contact">Contact</a>
+  </div>
+
+  <div class="champ-section-label">Featured</div>
+  <div class="champ-featured-grid">
+
+    <a class="champ-tile champ-tile-featured" data-category="product" style="--cat-color:var(--cat-product)" href="project-epson.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/epsonThumbnail.png?v=2" alt="Epson thumbnail">
+        <span class="champ-corner champ-corner-tl"></span><span class="champ-corner champ-corner-tr"></span><span class="champ-corner champ-corner-bl"></span><span class="champ-corner champ-corner-br"></span>
       </div>
-
-      <div class="hero-image">
-        <img src="images/bikePic.png" alt="Photo of Samuel Bingham" />
-      </div>
-    </section>
-
-<section id="projects" class="projects-grid">
-  <h2 class="section-title">My Work</h2>
-
-  <!-- Epson -->
-  <article class="project-card">
-    <a href="project-epson.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/epsonThumbnail.png?v=2" alt="Epson thumbnail">
-      </div>
-      <div class="project-content">
-        <h3>Epson: Marcomm LATAM Intern</h3>
-        <p><strong>Category:</strong> Product Marketing Management, Marketing Operations</p>
-        <p><strong>Technologies:</strong> Excel, SQL, Salesforce, Adobe</p>
-        <p><strong>Description:</strong> Summer 2026 internship on Epson Latin America's Regional Strategic Marketing team, supporting marketing content, Partner Portal upkeep, and web audits across the SD, ColorWorks, and SIDM product lines, plus a self-directed LATAM Marcomm playbook</p>
+      <div class="champ-tile-plate">
+        <div class="champ-tile-name">Epson</div>
+        <div class="champ-tile-title"><span class="champ-dot"></span>Internship</div>
       </div>
     </a>
-  </article>
 
-  <!-- JPNLA -->
-  <article class="project-card">
-    <a href="project-jpnla.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/jpnlaThumbnail.png" alt="JPNLAvintage thumbnail">
+    <a class="champ-tile champ-tile-featured" data-category="design" style="--cat-color:var(--cat-design)" href="project-hiki.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/hikiThumbnail.png" alt="Project HIKI thumbnail">
+        <span class="champ-corner champ-corner-tl"></span><span class="champ-corner champ-corner-tr"></span><span class="champ-corner champ-corner-bl"></span><span class="champ-corner champ-corner-br"></span>
       </div>
-      <div class="project-content">
-        <h3>JPNLAvintage</h3>
-        <p><strong>Category:</strong> Entrepreneurship, Branding, E-commerce, Marketing</p>
-        <p><strong>Description:</strong> My vintage clothing brand bridging the Japanese and LA vintage markets. Involved end-to-end business operations: branding and visual identity from scratch, Shopify storefront design, product photography, social media and advertising, garment dating and pricing, and sourcing trips in both countries</p>
+      <div class="champ-tile-plate">
+        <div class="champ-tile-name">Project HIKI</div>
+        <div class="champ-tile-title"><span class="champ-dot"></span>Case Study</div>
       </div>
     </a>
-  </article>
 
-  <!-- TFT Case Study -->
-  <article class="project-card">
-    <a href="https://samuelbingham07.github.io/TFTCaseStudy/" class="project-link" target="_blank" rel="noopener noreferrer">
-      <div class="project-thumb">
-        <img src="images/tftCaseStudyThumbnail.png?v=2" alt="TFT Case Study thumbnail">
+    <a class="champ-tile champ-tile-featured" data-category="business" style="--cat-color:var(--cat-business)" href="project-jpnla.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/jpnlaThumbnail.png" alt="JPNLAvintage thumbnail">
+        <span class="champ-corner champ-corner-tl"></span><span class="champ-corner champ-corner-tr"></span><span class="champ-corner champ-corner-bl"></span><span class="champ-corner champ-corner-br"></span>
       </div>
-      <div class="project-content">
-        <h3>TFT: A Case Study</h3>
-        <p><strong>Category:</strong> Product Management, Product Analysis, Game Design</p>
-        <p><strong>Description:</strong> A self-directed product teardown of Teamfight Tactics examining retention mechanics and six growth opportunities, prioritized and argued from the perspective of a Challenger-ranked player</p>
+      <div class="champ-tile-plate">
+        <div class="champ-tile-name">JPNLAvintage</div>
+        <div class="champ-tile-title"><span class="champ-dot"></span>Small Business</div>
       </div>
     </a>
-  </article>
 
-  <!-- HIKI -->
-  <article class="project-card">
-    <a href="project-hiki.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/hikiThumbnail.png" alt="Project HIKI thumbnail">
+    <a class="champ-tile champ-tile-featured" data-category="product" style="--cat-color:var(--cat-product)" href="https://samuelbingham07.github.io/TFTCaseStudy/" target="_blank" rel="noopener noreferrer">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/tftCaseStudyThumbnail.png?v=2" alt="TFT Case Study thumbnail">
+        <span class="champ-corner champ-corner-tl"></span><span class="champ-corner champ-corner-tr"></span><span class="champ-corner champ-corner-bl"></span><span class="champ-corner champ-corner-br"></span>
       </div>
-      <div class="project-content">
-        <h3>Project HIKI</h3>
-        <p><strong>Category:</strong> UX Research, Product Design, Human-Centered Design</p>
-        <p><strong>Methods:</strong> Liberatory Design, User Interviews, Rapid Prototyping, Iterative Testing</p>
-        <p><strong>Description:</strong> Semester-long HCD project reimagining matching for neurodivergent users, resulting in Hiki Grids, a daily grid-based matching feature that replaces the swipe</p>
+      <div class="champ-tile-plate">
+        <div class="champ-tile-name">TFT: A Case Study</div>
+        <div class="champ-tile-title"><span class="champ-dot"></span>Case Study</div>
       </div>
     </a>
-  </article>
 
-    <!-- Clicktionary -->
-  <article class="project-card">
-    <a href="project-clicktionary.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/clicktionaryThumbnail.png" alt="Clicktionary thumbnail">
+    <a class="champ-tile champ-tile-featured" data-category="product" style="--cat-color:var(--cat-product)" href="project-paretoPresents.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/paretoPresentsThumbnail.png" alt="Pareto Presents thumbnail">
+        <span class="champ-corner champ-corner-tl"></span><span class="champ-corner champ-corner-tr"></span><span class="champ-corner champ-corner-bl"></span><span class="champ-corner champ-corner-br"></span>
       </div>
-      <div class="project-content">
-        <h3>Clicktionary</h3>
-        <p><strong>Category:</strong> Web Extension, Product Management</p>
-        <p><strong>Technologies:</strong> HTML/CSS, Supabase, Chrome Extension</p>
-        <p><strong>Description:</strong> A Chrome extension for language learners that lets you highlight any word for an instant translation and save it to your word bank to study later. Live on the Chrome Web Store, currently in A/B testing</p>
+      <div class="champ-tile-plate">
+        <div class="champ-tile-name">Pareto Presents</div>
+        <div class="champ-tile-title"><span class="champ-dot"></span>Web App</div>
       </div>
     </a>
-  </article>
- 
-  <!-- 5C2C -->
-  <article class="project-card">
-    <a href="project-5c2c.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/5C2CThumbnail.png" alt="5C2C thumbnail">
+
+    <a class="champ-tile champ-tile-featured" data-category="product" style="--cat-color:var(--cat-product)" href="project-clicktionary.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/clicktionaryThumbnail.png" alt="Clicktionary thumbnail">
+        <span class="champ-corner champ-corner-tl"></span><span class="champ-corner champ-corner-tr"></span><span class="champ-corner champ-corner-bl"></span><span class="champ-corner champ-corner-br"></span>
       </div>
-      <div class="project-content">
-        <h3>5C2C</h3>
-        <p><strong>Category:</strong> Web Design, Frontend Development</p>
-        <p><strong>Technologies:</strong> React, Node.js, Supabase, Socket.io, Tailwind</p>
-        <p><strong>Description:</strong> New marketplace for the Claremont College Consortium focused on small businesses and student handcrafts and services</p>
+      <div class="champ-tile-plate">
+        <div class="champ-tile-name">Clicktionary</div>
+        <div class="champ-tile-title"><span class="champ-dot"></span>Web Extension</div>
       </div>
     </a>
-  </article>
 
-  <!-- Pareto Presents -->
-  <article class="project-card">
-    <a href="project-paretoPresents.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/paretoPresentsThumbnail.png" alt="Pareto Presents thumbnail">
+  </div>
+
+  <div class="champ-section-label">Full Roster</div>
+  <div class="champ-standard-grid">
+
+    <a class="champ-tile champ-tile-standard" data-category="product" style="--cat-color:var(--cat-product)" href="https://samuelbingham07.github.io/TFTSet17SQLAnalysis/" target="_blank" rel="noopener noreferrer">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/tftSqlAnalysisThumbnail.png?v=2" alt="TFT Set 17 thumbnail">
       </div>
-      <div class="project-content">
-        <h3>Pareto Presents</h3>
-        <p><strong>Category:</strong> Web App, Product Management, Design</p>
-        <p><strong>Technologies:</strong> Next.js, TypeScript, Tailwind, Supabase, FastAPI, Figma</p>
-        <p><strong>Description:</strong> Web app that uses a custom Pareto-optimal algorithm to generate personalized gift exchange rulesets for groups (who gives to who, based on inputs like price range, sentimentality, and effort)</p>
-      </div>
+      <div class="champ-tile-plate"><div class="champ-tile-name">TFT Set 17</div><div class="champ-tile-title"><span class="champ-dot"></span>Data Analysis</div></div>
     </a>
-  </article>
 
-  <!-- Personal Website -->
-  <article class="project-card">
-    <a href="https://samuelbingham07.github.io/personalWebsite/" class="project-link">
-      <div class="project-thumb">
-        <img src="images/personalWebsiteThumbnail.png" alt="Personal website thumbnail">
+    <a class="champ-tile champ-tile-standard" data-category="design" style="--cat-color:var(--cat-design)" href="side-project-theVault.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/theVaultThumbnail.png" alt="TheVault thumbnail">
       </div>
-      <div class="project-content">
-        <h3>Personal Website</h3>
-        <p><strong>Technologies:</strong> HTML, CSS</p>
-        <p><strong>Description:</strong> Hand-coded interactive timeline retracing my childhood and seven years in Japan, built with no frameworks, pure HTML and CSS</p>
-      </div>
+      <div class="champ-tile-plate"><div class="champ-tile-name">TheVault.</div><div class="champ-tile-title"><span class="champ-dot"></span>Designathon</div></div>
     </a>
-  </article>
 
-    <!-- Mumei -->
-  <article class="project-card">
-    <a href="project-mumei.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/mumeiThumbnail.png" alt="Mumei thumbnail">
+    <a class="champ-tile champ-tile-standard" data-category="engineering" style="--cat-color:var(--cat-engineering)" href="project-5c2c.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/5C2CThumbnail.png" alt="5C2C thumbnail">
       </div>
-      <div class="project-content">
-        <h3>Mumei</h3>
-        <p><strong>Category:</strong> Game Development</p>
-        <p><strong>Technologies:</strong> Unity, C#, Level Design, Procreate</p>
-        <p><strong>Description:</strong> Japanese-learning RPG from scratch on 2 person team</p>
-      </div>
+      <div class="champ-tile-plate"><div class="champ-tile-name">5C2C</div><div class="champ-tile-title"><span class="champ-dot"></span>Web Design</div></div>
     </a>
-  </article>
 
-  <!-- TFT SQL Analysis -->
-  <article class="project-card">
-    <a href="https://samuelbingham07.github.io/TFTSet17SQLAnalysis/" class="project-link" target="_blank" rel="noopener noreferrer">
-      <div class="project-thumb">
-        <img src="images/tftSqlAnalysisThumbnail.png?v=2" alt="TFT Set 17 SQL Analysis thumbnail">
+    <a class="champ-tile champ-tile-standard" data-category="engineering" style="--cat-color:var(--cat-engineering)" href="https://samuelbingham07.github.io/personalWebsite/" target="_blank" rel="noopener noreferrer">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/personalWebsiteThumbnail.png" alt="Personal website thumbnail">
       </div>
-      <div class="project-content">
-        <h3>TFT Set 17: By The Numbers</h3>
-        <p><strong>Category:</strong> Data Analysis, SQL</p>
-        <p><strong>Technologies:</strong> Python, SQLite, SQL, Riot API</p>
-        <p><strong>Description:</strong> A SQL-driven analysis of 556 ranked games from my own Set 17 Challenger climb, pulled from Riot's API into a normalized SQLite database and queried like a PM would query product data</p>
-      </div>
+      <div class="champ-tile-plate"><div class="champ-tile-name">Personal Website</div><div class="champ-tile-title"><span class="champ-dot"></span>Website</div></div>
     </a>
-  </article>
 
+    <a class="champ-tile champ-tile-standard" data-category="engineering" style="--cat-color:var(--cat-engineering)" href="side-project-tellASketch.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/tellASketchThumbnail.png" alt="Tell-A-Sketch thumbnail">
+      </div>
+      <div class="champ-tile-plate"><div class="champ-tile-name">Tell-A-Sketch</div><div class="champ-tile-title"><span class="champ-dot"></span>Hackathon</div></div>
+    </a>
+
+    <a class="champ-tile champ-tile-standard" data-category="engineering" style="--cat-color:var(--cat-engineering)" href="side-project-mlArt.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/mlArtThumbnail.png" alt="Machine Learning Art thumbnail">
+      </div>
+      <div class="champ-tile-plate"><div class="champ-tile-name">Machine Learning Art</div><div class="champ-tile-title"><span class="champ-dot"></span>ML Project</div></div>
+    </a>
+
+    <a class="champ-tile champ-tile-standard" data-category="games" style="--cat-color:var(--cat-games)" href="project-mumei.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/mumeiThumbnail.png" alt="Mumei thumbnail">
+      </div>
+      <div class="champ-tile-plate"><div class="champ-tile-name">Mumei</div><div class="champ-tile-title"><span class="champ-dot"></span>Game Design</div></div>
+    </a>
+
+    <a class="champ-tile champ-tile-standard" data-category="games" style="--cat-color:var(--cat-games)" href="side-project-quickDraw.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/quickDrawThumbnail.png" alt="QuickDraw thumbnail">
+      </div>
+      <div class="champ-tile-plate"><div class="champ-tile-name">QuickDraw</div><div class="champ-tile-title"><span class="champ-dot"></span>Game Design</div></div>
+    </a>
+
+    <a class="champ-tile champ-tile-standard" data-category="games" style="--cat-color:var(--cat-games)" href="side-project-narrativeGame.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/narrativeGame3.png" alt="Narrative Game thumbnail">
+      </div>
+      <div class="champ-tile-plate"><div class="champ-tile-name">Narrative Game</div><div class="champ-tile-title"><span class="champ-dot"></span>Game Design</div></div>
+    </a>
+
+    <a class="champ-tile champ-tile-standard" data-category="games" style="--cat-color:var(--cat-games)" href="side-project-danceGame.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/danceGameThumbnail.png" alt="Dance Game thumbnail">
+      </div>
+      <div class="champ-tile-plate"><div class="champ-tile-name">Dance Game</div><div class="champ-tile-title"><span class="champ-dot"></span>Computer Vision</div></div>
+    </a>
+
+    <a class="champ-tile champ-tile-standard" data-category="games" style="--cat-color:var(--cat-games)" href="side-project-racinggame.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/isogePhoto3.png" alt="ISOGE thumbnail">
+      </div>
+      <div class="champ-tile-plate"><div class="champ-tile-name">ISOGE 急げ</div><div class="champ-tile-title"><span class="champ-dot"></span>Analog Game</div></div>
+    </a>
+
+    <a class="champ-tile champ-tile-standard" data-category="games" style="--cat-color:var(--cat-games)" href="side-project-rpg.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/rpgThumbnail.png" alt="Haunting of the Whitcomb Manor thumbnail">
+      </div>
+      <div class="champ-tile-plate"><div class="champ-tile-name">Whitcomb Manor</div><div class="champ-tile-title"><span class="champ-dot"></span>Analog Game</div></div>
+    </a>
+
+    <a class="champ-tile champ-tile-standard" data-category="games" style="--cat-color:var(--cat-games)" href="side-project-artgame.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/artgameThumbnail.png" alt="Terms of Service thumbnail">
+      </div>
+      <div class="champ-tile-plate"><div class="champ-tile-name">Terms of Service</div><div class="champ-tile-title"><span class="champ-dot"></span>Art Game</div></div>
+    </a>
+
+    <a class="champ-tile champ-tile-standard" data-category="life" style="--cat-color:var(--cat-life)" href="projects-hobbies.html">
+      <div class="champ-tile-portrait champ-portrait-photo">
+        <img class="champ-portrait-img" src="images/backpackingThumbnail.png" alt="Hobbies thumbnail">
+      </div>
+      <div class="champ-tile-plate"><div class="champ-tile-name">Hobbies</div><div class="champ-tile-title"><span class="champ-dot"></span>Personal</div></div>
+    </a>
+
+  </div>
 </section>
 
-<section id="side-projects" class="projects-grid">
-  <h2 class="section-title">Other Projects</h2>
-
-    <!-- Tell-A-Sketch -->
-  <article class="project-card">
-    <a href="side-project-tellASketch.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/tellASketchThumbnail.png" alt="Tell-A-Sketch thumbnail">
-      </div>
-      <div class="project-content">
-        <h3>Tell-A-Sketch</h3>
-        <p><strong>Category:</strong> AI, Hackathon, Full-Stack</p>
-        <p><strong>Technologies:</strong> Gemini Live API, Veo, Lyria, Gemini Nano, Node.js, Neon PostgreSQL</p>
-        <p><strong>Description:</strong> Generative creative studio for kids built in 24 hours at a Google Gemini Hackathon where you sketch a character, speak a story, and watch it animate</p>
-      </div>
-    </a>
-  </article>
-
-  <!-- QuickDraw -->
-  <article class="project-card">
-    <a href="side-project-quickDraw.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/quickDrawThumbnail.png" alt="QuickDraw thumbnail">
-      </div>
-      <div class="project-content">
-        <h3>QuickDraw</h3>
-        <p><strong>Category:</strong> Game Development</p>
-        <p><strong>Technologies:</strong> Godot, Aseprite</p>
-        <p><strong>Description:</strong> Bullet-hell game made in 3 days for the 2026 Western Game Jam, following themes of Western and Everything Goes Wrong</p>
-      </div>
-    </a>
-  </article>
-
-  <!-- Narrative Game -->
-  <article class="project-card">
-    <a href="side-project-narrativeGame.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/narrativeGame3.png" alt="Narrative Game thumbnail">
-      </div>
-      <div class="project-content">
-        <h3>Narrative Game</h3>
-        <p><strong>Category:</strong> Game Development, Creative Coding</p>
-        <p><strong>Technologies:</strong> p5.js</p>
-        <p><strong>Description:</strong> Branching storyline narrative game where your choices affect the outcome</p>
-      </div>
-    </a>
-  </article>
-
-  <!-- Dance Game -->
-  <article class="project-card">
-    <a href="side-project-danceGame.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/danceGameThumbnail.png" alt="Dance Game thumbnail">
-      </div>
-      <div class="project-content">
-        <h3>Dance Game</h3>
-        <p><strong>Category:</strong> Creative Coding, Computer Vision</p>
-        <p><strong>Technologies:</strong> p5.js, PoseNet</p>
-        <p><strong>Description:</strong> Webcam body-tracking fitness game inspired by Just Dance</p>
-      </div>
-    </a>
-  </article>
-
-  <!-- TheVault. -->
-  <article class="project-card">
-    <a href="side-project-theVault.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/theVaultThumbnail.png" alt="TheVault thumbnail">
-      </div>
-      <div class="project-content">
-        <h3>TheVault.</h3>
-        <p><strong>Category:</strong> Product Design, Designathon</p>
-        <p><strong>Technologies:</strong> Figma, Lovable</p>
-        <p><strong>Description:</strong> App protecting elders against impersonation scams with a digital phonebook</p>
-      </div>
-    </a>
-  </article>
-
-  <!-- ISOGE Racing Game -->
-  <article class="project-card">
-    <a href="side-project-racinggame.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/isogePhoto3.png" alt="ISOGE Japan metro game thumbnail">
-      </div>
-      <div class="project-content">
-        <h3>ISOGE 急げ</h3>
-        <p><strong>Category:</strong> Game Design, Analog Racing Game, Graphic Design</p>
-        <p><strong>Technologies:</strong> Adobe Illustrator, Photoshop, Large-Format Print, Magnetic Fabrication</p>
-        <p><strong>Description:</strong> Japan metro racing game played on a wall-mounted poster with magnetic trains, inspired by growing up in Tokyo</p>
-      </div>
-    </a>
-  </article>
-
-  <!-- Haunting of the Whitcomb Manor RPG -->
-  <article class="project-card">
-    <a href="side-project-rpg.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/rpgThumbnail.png" alt="Haunting of the Whitcomb Manor thumbnail">
-      </div>
-      <div class="project-content">
-        <h3>Haunting of the Whitcomb Manor</h3>
-        <p><strong>Category:</strong> Game Design, Analog RPG, Narrative Design</p>
-        <p><strong>Technologies:</strong> Adobe Illustrator, Photoshop, 3D Printing, Hand Illustration</p>
-        <p><strong>Description:</strong> GM-less cooperative horror RPG where going insane upgrades your dice, built as an adaptation of Escape the Dark Castle</p>
-      </div>
-    </a>
-  </article>
-
-  <!-- Terms of Service Art Game -->
-  <article class="project-card">
-    <a href="side-project-artgame.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/artgameThumbnail.png" alt="Terms of Service game thumbnail">
-      </div>
-      <div class="project-content">
-        <h3>Terms of Service</h3>
-        <p><strong>Category:</strong> Game Design, Art Game, Analog Fabrication</p>
-        <p><strong>Technologies:</strong> Adobe Illustrator, Photoshop, 3D Printing, Graphic Design</p>
-        <p><strong>Description:</strong> A cooperative dungeon crawler that enacts ToS dark patterns on players, including ads, microtransactions, and rule changes mid-game, all delivered via System Update cards</p>
-      </div>
-    </a>
-  </article>
-
-  <!-- ML Art -->
-  <article class="project-card">
-    <a href="side-project-mlArt.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/mlArtThumbnail.png" alt="ML Art thumbnail">
-      </div>
-      <div class="project-content">
-        <h3>Machine Learning Art</h3>
-        <p><strong>Category:</strong> Machine Learning, Generative Art</p>
-        <p><strong>Technologies:</strong> Stable Diffusion, AnimateDiff, ControlNet, LoRA</p>
-        <p><strong>Description:</strong> AI-generated art and animation using ML tools</p>
-      </div>
-    </a>
-  </article>
-
-  <!-- Hobbies -->
-  <article class="project-card">
-    <a href="projects-hobbies.html" class="project-link">
-      <div class="project-thumb">
-        <img src="images/backpackingThumbnail.png" alt="Backpacking thumbnail">
-      </div>
-      <div class="project-content">
-        <h3>Hobbies</h3>
-        <p>Solo backpacking, video games, basketball, cocktails, and more!</p>
-      </div>
-    </a>
-  </article>
-
-</section>
-
+<main>
     <!-- <section id="about" class="about">
       <h2>About me</h2>
       <p style="text-indent: 2em;">I'm Sam, an undergrad student at Pomona College studying Cognitive Science with concentrations in AI and Human-Centered Design. I'm currently seeking roles in product management and product design, primarily the tech industry (but also in the gaming industry :D). </p>
@@ -354,16 +216,18 @@
       <p style="text-indent: 2em;">Outside of work and school, I love backpacking solo around the world (Instagram: <a href="https://www.instagram.com/samandhisbackpack/" style="color: #fff8e1;" target="_blank">@samandhisbackpack</a>), playing video games (my favorite is Hades I/II) and developing them too (check out my first game, Mumei), and expanding my cocktail repertoire.</p>
     </section> -->
 
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>Email: samuelbingham07@gmail.com  shbb2022@mymail.pomona.edu
-        <br />LinkedIn: <a href="https://www.linkedin.com/in/samuel-bingham-660455202/" style="color: #fff8e1;" target="_blank">linkedin.com/in/samuel-bingham-660455202</a>
+    <section id="contact" class="champ-contact">
+      <div class="champ-contact-label">Get In Touch</div>
+      <h2 class="champ-contact-title">Contact</h2>
+      <p class="champ-contact-body">
+        Email: <a href="mailto:samuelbingham07@gmail.com">samuelbingham07@gmail.com</a> · shbb2022@mymail.pomona.edu
+        <br />LinkedIn: <a href="https://www.linkedin.com/in/samuel-bingham-660455202/" target="_blank">linkedin.com/in/samuel-bingham-660455202</a>
       </p>
     </section>
 
   </main>
 
-  <footer class="site-footer">
+  <footer class="champ-footer">
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 
@@ -373,14 +237,26 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          entry.target.classList.add('is-visible');
           observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.project-card').forEach(card => {
-      observer.observe(card);
+    document.querySelectorAll('.champ-tile').forEach(tile => observer.observe(tile));
+
+    const filterButtons = document.querySelectorAll('#champ-filters .champ-pill');
+    const tiles = document.querySelectorAll('.champ-tile');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const filter = btn.dataset.filter;
+        tiles.forEach(tile => {
+          const show = filter === 'all' || tile.dataset.category === filter;
+          tile.classList.toggle('is-hidden', !show);
+        });
+      });
     });
   </script>
 </body>

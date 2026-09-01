@@ -11,9 +11,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
 
   <style>
     .hiki-accent { color: #FF2D78; }
@@ -144,26 +145,27 @@
     }
   </style>
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-logo" style="font-weight: 700; font-size: 30px;">Sam Bingham</div>
-    <nav class="site-nav">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/hikiThumbnail.png')">
+    <div class="champ-header-nav">
+      <a href="index.html#projects">← Back to Roster</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(75% 0.14 320)"></span>Design · Case Study</div>
+      <h1 class="champ-header-name">Project HIKI</h1>
+      <p class="champ-header-role">Advanced Human-Centered Design: Semester Project · Team: Jamie Paik, Sam Bingham, Lauren Lambrecht</p>
+      <div class="champ-tags">
+        <span class="champ-tag">User Research</span>
+        <span class="champ-tag">Liberatory Design</span>
+        <span class="champ-tag">Rapid Prototyping</span>
+        <span class="champ-tag">Iterative Testing</span>
+      </div>
+    </div>
+  </div>
 
   <main>
     <section class="project-details">
-      <article class="project-detail">
-
-        <p class="section-label">Advanced Human-Centered Design: Semester Project</p>
-        <h2>Project HIKI</h2>
-        <p><strong>Team:</strong> Jamie Paik, Sam Bingham, Lauren Lambrecht &nbsp;|&nbsp; <strong>Methods:</strong> User Research, Liberatory Design, Rapid Prototyping, Iterative Testing</p>
-
-        <div class="image-wrapper" style="margin-top: 24px;">
-          <img src="images/hikiThumbnail.png" alt="Hiki Grids project thumbnail">
-        </div>
+      <article class="project-detail champ-body">
 
         <p>
           Project HIKI is a semester-long Human-Centered Design project that rethinks how neurodivergent people find authentic connection online. Working within a liberatory design framework, our team researched, prototyped, and tested our way to <strong>Hiki Grids</strong>: a daily grid-based matching feature that replaces the swipe entirely.
@@ -329,8 +331,8 @@
         </p>
 
         <p style="margin-top: 28px;">
-          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
-            ← Back to all projects
+          <a href="index.html#projects">
+            ← Back to Roster
           </a>
         </p>
 
@@ -338,7 +340,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="champ-footer">
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 

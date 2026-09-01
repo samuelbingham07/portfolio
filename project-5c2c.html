@@ -11,25 +11,34 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-logo">Sam Bingham</div>
-    <nav class="site-nav">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/5C2CThumbnail.png')">
+    <div class="champ-header-nav">
+      <a href="index.html#projects">← Back to Roster</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(75% 0.13 230)"></span>Engineering · Web Design</div>
+      <h1 class="champ-header-name">5C2C</h1>
+      <p class="champ-header-role">Web app · Campus marketplace connecting Claremont Colleges students with paid services</p>
+      <div class="champ-tags">
+        <span class="champ-tag">React.js</span>
+        <span class="champ-tag">Tailwind CSS</span>
+        <span class="champ-tag">Node.js / Express</span>
+        <span class="champ-tag">Supabase</span>
+        <span class="champ-tag">Socket.io</span>
+      </div>
+    </div>
+  </div>
 
   <main>
     <section class="project-details">
-      <article class="project-detail">
-        <h2>5C2C</h2>
-
-        <div class="image-wrapper" style="margin-top: 24px;">
+      <article class="project-detail champ-body">
+        <div class="image-wrapper" style="margin-top: 0;">
           <img src="images/5c2cCover.png" alt="5C2C cover image">
         </div>
 
@@ -41,15 +50,38 @@
         <p>
           Students can create a shop, upload photos of their work, set prices, and manage availability. Buyers browse a card-based feed, filter by category, book appointments, and message sellers directly. Features include:
         </p>
-        <ul>
-          <li>Browse and search services with category filters (nails, design, rides, etc.)</li>
-          <li>Seller profile pages with portfolio photos, pricing, and average ratings</li>
-          <li>"Create Listing" flow with image upload to Supabase Storage</li>
-          <li>Booking system where you pick a service, select a time, and confirm details</li>
-          <li>Reviews and ratings displayed on listings and profiles</li>
-          <li>Real-time messaging via Socket.io with unread message indicators</li>
-          <li>.edu email verification so the marketplace stays within the 5C community</li>
-        </ul>
+        <div class="champ-ability-bar" id="ability-bar" style="--cat-color:oklch(75% 0.13 230)">
+          <button type="button" class="champ-ability-icon is-active" data-target="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="M20 20l-5.5-5.5"/></svg><span class="champ-ability-key">P</span></button>
+          <button type="button" class="champ-ability-icon" data-target="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg><span class="champ-ability-key">Q</span></button>
+          <button type="button" class="champ-ability-icon" data-target="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M8 11l2.5 2.5L15 9"/><path d="M17 8l4-2v12l-4-2"/></svg><span class="champ-ability-key">W</span></button>
+          <button type="button" class="champ-ability-icon" data-target="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18"/><path d="M8 3v4"/><path d="M16 3v4"/><path d="M12 13v5"/><path d="M9.5 15.5L12 13l2.5 2.5"/></svg><span class="champ-ability-key">E</span></button>
+          <button type="button" class="champ-ability-icon" data-target="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4V5Z"/><circle cx="9" cy="10.5" r="0.9" fill="currentColor" stroke="none"/><circle cx="12.5" cy="10.5" r="0.9" fill="currentColor" stroke="none"/><circle cx="16" cy="10.5" r="0.9" fill="currentColor" stroke="none"/></svg><span class="champ-ability-key">R</span></button>
+        </div>
+        <div class="champ-ability-panel" id="ability-panel">
+          <div class="champ-ability-panel-item is-active" data-item="0">
+            <p class="champ-ability-panel-name">Browse & Search</p>
+            <p>Browse and search services with category filters (nails, design, rides, etc.)</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="1">
+            <p class="champ-ability-panel-name">Seller Profiles</p>
+            <p>Seller profile pages with portfolio photos, pricing, and average ratings</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="2">
+            <p class="champ-ability-panel-name">Create Listing</p>
+            <p>"Create Listing" flow with image upload to Supabase Storage</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="3">
+            <p class="champ-ability-panel-name">Booking System</p>
+            <p>Booking system where you pick a service, select a time, and confirm details</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="4">
+            <p class="champ-ability-panel-name">Real-Time Messaging</p>
+            <p>Real-time messaging via Socket.io with unread message indicators</p>
+          </div>
+        </div>
+        <p>
+          Also included: reviews and ratings displayed on listings and profiles, and .edu email verification so the marketplace stays within the 5C community.
+        </p>
 
         <p><strong>My Role</strong></p>
         <p>
@@ -70,15 +102,15 @@
         </p>
 
         <p>Through this project I learned and practiced:</p>
-        <ul>
-          <li>React.js and state management across a multi-page application</li>
-          <li>Tailwind CSS for responsive UI design</li>
-          <li>Connecting a React frontend to a Node.js/Express REST API</li>
-          <li>Supabase Storage for user-uploaded images</li>
-          <li>Real-time chat UI with Socket.io</li>
-          <li>Marketplace UI patterns: listing cards, filters, booking flows, profile pages</li>
-          <li>Working on a shared codebase with a bigger team, which was a fun change of pace</li>
-        </ul>
+        <div class="champ-tags">
+          <span class="champ-tag">React.js State Management</span>
+          <span class="champ-tag">Tailwind CSS</span>
+          <span class="champ-tag">React + Express REST API</span>
+          <span class="champ-tag">Supabase Storage</span>
+          <span class="champ-tag">Socket.io Chat UI</span>
+          <span class="champ-tag">Marketplace UI Patterns</span>
+          <span class="champ-tag">Team Codebase Collaboration</span>
+        </div>
 
         <p>
           <a class="primary-button" href="https://www.5c2c.app/#/login" target="_blank" rel="noopener noreferrer">
@@ -90,20 +122,34 @@
         </p>
 
         <p style="margin-top: 24px;">
-          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
-            ← Back to all projects
+          <a href="index.html#projects">
+            ← Back to Roster
           </a>
         </p>
       </article>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="champ-footer">
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const abilityBar = document.getElementById('ability-bar');
+    if (abilityBar) {
+      abilityBar.addEventListener('click', (e) => {
+        const btn = e.target.closest('.champ-ability-icon');
+        if (!btn) return;
+        abilityBar.querySelectorAll('.champ-ability-icon').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const target = btn.dataset.target;
+        document.querySelectorAll('.champ-ability-panel-item').forEach(item => {
+          item.classList.toggle('is-active', item.dataset.item === target);
+        });
+      });
+    }
   </script>
 </body>
 </html>

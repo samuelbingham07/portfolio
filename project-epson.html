@@ -11,86 +11,145 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-logo">Sam Bingham</div>
-    <nav class="site-nav">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/epson-hq-photo.jpg')">
+    <div class="champ-header-nav">
+      <a href="index.html#projects">← Back to Roster</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(78% 0.15 40)"></span>Product · Internship</div>
+      <h1 class="champ-header-name">Epson: Marcomm LATAM Intern</h1>
+      <p class="champ-header-role">Commercial Marketing Intern, Regional Strategic Marketing · June–August 2026 (8 weeks) · Hybrid, Epson Headquarters, Los Alamitos, CA</p>
+      <div class="champ-tags">
+        <span class="champ-tag">Product Marketing</span>
+        <span class="champ-tag">Marketing Operations</span>
+        <span class="champ-tag">Excel</span>
+        <span class="champ-tag">SQL</span>
+        <span class="champ-tag">Salesforce</span>
+        <span class="champ-tag">Adobe</span>
+      </div>
+    </div>
+  </div>
 
   <main>
     <section class="project-details">
-      <article class="project-detail">
-        <h2>Epson: Marcomm LATAM Intern</h2>
-
-        <p>
-          <strong>Commercial Marketing Intern, Regional Strategic Marketing</strong><br>
-          June–August 2026 (8 weeks) · Hybrid, Epson Headquarters, Los Alamitos, CA
-        </p>
-
-        <div class="image-wrapper" style="margin-top: 24px;">
-          <img src="images/epson-hq-photo.jpg" alt="Samuel Bingham in front of the Epson America headquarters in Los Alamitos, CA">
-        </div>
-
-        <p style="margin-top: 24px;">
+      <article class="project-detail champ-body">
+        <p style="margin-top: 0;">
           I interned on Epson Latin America's Regional Strategic Marketing team, supporting marketing operations across three product lines: System Devices (SD), SIDM (Serial Impact Dot Matrix printers), and ColorWorks (on-demand color label printers) for Latin America and the United States. The role sat at the intersection of Product Management, Marcom, and Web, keeping the marketing content and tools that support sales aligned and current.
         </p>
 
         <p><strong>What I Worked On</strong></p>
-        <ul>
-          <li><strong>Partner Portal content management:</strong> Supported the update and maintenance of Epson's Partner Portal so marketing assets, product documentation, sales tools, and promotional materials stayed accurate and current, and improved how commercial resources were organized for channel partners across the region.</li>
-          <li><strong>Marketing content review and standardization:</strong> Reviewed and updated datasheets, brochures, customer success stories, infographics, and sales presentations across the SD, ColorWorks, and SIDM lines, helping keep messaging, branding, and product information consistent.</li>
-          <li><strong>Regional website content audits:</strong> Ran comprehensive audits of the SD, ColorWorks, and SIDM websites to verify brochures, videos, product specs, images, and syndicated content were accurate and complete, flagging outdated materials and gaps to Product Management, Marcom, and Web.</li>
-          <li><strong>Cross-functional marketing coordination:</strong> Worked closely with Product Managers, Marcom, Web, and regional stakeholders to support content updates and digital marketing initiatives, and coordinated follow-up so fixes actually shipped on time.</li>
-          <li><strong>Regional product launch support:</strong> Supported marketing execution for product launches and webinars, including preparation of commercial materials, localization, content organization, and operational coordination for regional events.</li>
-        </ul>
+        <div class="champ-ability-bar" id="ability-bar" style="--cat-color:oklch(78% 0.15 40)">
+          <button type="button" class="champ-ability-icon is-active" data-target="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M9 9v11"/></svg><span class="champ-ability-key">P</span></button>
+          <button type="button" class="champ-ability-icon" data-target="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11"/><path d="M9 12h11"/><path d="M9 18h11"/><path d="M4 6l1.5 1.5L8 5"/><path d="M4 12l1.5 1.5L8 11"/><path d="M4 18l1.5 1.5L8 17"/></svg><span class="champ-ability-key">Q</span></button>
+          <button type="button" class="champ-ability-icon" data-target="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="M21 21l-5.5-5.5"/></svg><span class="champ-ability-key">W</span></button>
+          <button type="button" class="champ-ability-icon" data-target="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.3"/><circle cx="18" cy="6" r="2.3"/><circle cx="12" cy="18" r="2.3"/><path d="M8 7.5L10.5 16"/><path d="M16 7.5L13.5 16"/><path d="M8.3 6h7.4"/></svg><span class="champ-ability-key">E</span></button>
+          <button type="button" class="champ-ability-icon" data-target="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 6 5 10 0 2-1 4-2 5l-3 3-3-3c-1-1-2-3-2-5 0-4 2-8 5-10Z"/><circle cx="12" cy="10" r="1.6" fill="currentColor" stroke="none"/><path d="M9 17l-2 4 4-1"/><path d="M15 17l2 4-4-1"/></svg><span class="champ-ability-key">R</span></button>
+        </div>
+        <div class="champ-ability-panel" id="ability-panel">
+          <div class="champ-ability-panel-item is-active" data-item="0">
+            <p class="champ-ability-panel-name">Partner Portal Content Management</p>
+            <p>Supported the update and maintenance of Epson's Partner Portal so marketing assets, product documentation, sales tools, and promotional materials stayed accurate and current, and improved how commercial resources were organized for channel partners across the region.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="1">
+            <p class="champ-ability-panel-name">Marketing Content Review &amp; Standardization</p>
+            <p>Reviewed and updated datasheets, brochures, customer success stories, infographics, and sales presentations across the SD, ColorWorks, and SIDM lines, helping keep messaging, branding, and product information consistent.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="2">
+            <p class="champ-ability-panel-name">Regional Website Content Audits</p>
+            <p>Ran comprehensive audits of the SD, ColorWorks, and SIDM websites to verify brochures, videos, product specs, images, and syndicated content were accurate and complete, flagging outdated materials and gaps to Product Management, Marcom, and Web.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="3">
+            <p class="champ-ability-panel-name">Cross-Functional Marketing Coordination</p>
+            <p>Worked closely with Product Managers, Marcom, Web, and regional stakeholders to support content updates and digital marketing initiatives, and coordinated follow-up so fixes actually shipped on time.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="4">
+            <p class="champ-ability-panel-name">Regional Product Launch Support</p>
+            <p>Supported marketing execution for product launches and webinars, including preparation of commercial materials, localization, content organization, and operational coordination for regional events.</p>
+          </div>
+        </div>
 
         <p><strong>Beyond the Internship: Building a LATAM Marcomm Playbook</strong></p>
         <p>
           Running the same content audits and localization reviews week after week surfaced the same handful of problems over and over: inconsistent terminology across languages, files that didn't follow a predictable naming pattern, and no shared checklist for what "ready to publish" actually meant. On my own initiative, I put together a LATAM Marcomm Playbook: a framework proposing standards for the parts of the content pipeline that kept causing rework. The goal wasn't to document what Epson already does, it was to propose a system that closes the gaps I was seeing firsthand.
         </p>
-        <ul>
-          <li><strong>Terminology and style standards:</strong> A trilingual (EN / ES-LATAM / PT-BR) glossary with a "do not use" column for known mistranslations, one canonical term per concept, and per-market voice notes so tone stays consistent without flattening it.</li>
-          <li><strong>File and asset naming convention:</strong> A standard filename schema (product line, code, asset type, language, version, date) plus version rules and a draft-vs-final convention so nothing shipped gets overwritten.</li>
-          <li><strong>Localization workflow:</strong> A pre-translation checklist, a standard handoff template, and a QA checklist run on every proof, catching the errors (missing footnotes, mismatched specs, dropped models) that had shipped before.</li>
-          <li><strong>Launch playbook:</strong> A launch brief template and standard asset checklist mapped to a timeline working backward from launch day, from EN source lock at T-8 weeks through partner comms and Partner Portal go-live on launch day.</li>
-          <li><strong>Partner Portal standards:</strong> A content taxonomy for tagging and searching assets, an update cadence for quarterly and ad hoc audits, and retirement rules for discontinued or superseded materials.</li>
-          <li><strong>Tooling and automation opportunities:</strong> A scoped-out list of multipliers on top of the core playbook, including shared glossary tooling, LLM-assisted first-pass QA, templated asset generation, and Partner Portal automation.</li>
+        <ul class="champ-cards">
+          <li class="champ-card">
+            <p class="champ-card-name">Terminology &amp; Style Standards</p>
+            <p>A trilingual (EN / ES-LATAM / PT-BR) glossary with a "do not use" column for known mistranslations, one canonical term per concept, and per-market voice notes so tone stays consistent without flattening it.</p>
+          </li>
+          <li class="champ-card">
+            <p class="champ-card-name">File &amp; Asset Naming Convention</p>
+            <p>A standard filename schema (product line, code, asset type, language, version, date) plus version rules and a draft-vs-final convention so nothing shipped gets overwritten.</p>
+          </li>
+          <li class="champ-card">
+            <p class="champ-card-name">Localization Workflow</p>
+            <p>A pre-translation checklist, a standard handoff template, and a QA checklist run on every proof, catching the errors (missing footnotes, mismatched specs, dropped models) that had shipped before.</p>
+          </li>
+          <li class="champ-card">
+            <p class="champ-card-name">Launch Playbook</p>
+            <p>A launch brief template and standard asset checklist mapped to a timeline working backward from launch day, from EN source lock at T-8 weeks through partner comms and Partner Portal go-live on launch day.</p>
+          </li>
+          <li class="champ-card">
+            <p class="champ-card-name">Partner Portal Standards</p>
+            <p>A content taxonomy for tagging and searching assets, an update cadence for quarterly and ad hoc audits, and retirement rules for discontinued or superseded materials.</p>
+          </li>
+          <li class="champ-card">
+            <p class="champ-card-name">Tooling &amp; Automation Opportunities</p>
+            <p>A scoped-out list of multipliers on top of the core playbook, including shared glossary tooling, LLM-assisted first-pass QA, templated asset generation, and Partner Portal automation.</p>
+          </li>
         </ul>
 
         <p><strong>Skills & Tools</strong></p>
-        <ul>
-          <li>Marketing operations, digital asset management, and content lifecycle management across multiple product lines and a regional (LATAM) market</li>
-          <li>Website content auditing and sales enablement</li>
-          <li>Excel for tracking content audits and marketing data</li>
-          <li>SQL for pulling and querying product and sales data</li>
-          <li>Salesforce for marketing and sales coordination</li>
-          <li>Adobe, PowerPoint, and SharePoint for reviewing, editing, and organizing marketing assets</li>
-          <li>Cross-functional coordination across Product Management, Marcom, and Web teams</li>
-        </ul>
+        <div class="champ-tags">
+          <span class="champ-tag">Marketing Operations</span>
+          <span class="champ-tag">Digital Asset Management</span>
+          <span class="champ-tag">Content Lifecycle Management</span>
+          <span class="champ-tag">Website Content Auditing</span>
+          <span class="champ-tag">Sales Enablement</span>
+          <span class="champ-tag">Excel</span>
+          <span class="champ-tag">SQL</span>
+          <span class="champ-tag">Salesforce</span>
+          <span class="champ-tag">Adobe</span>
+          <span class="champ-tag">PowerPoint</span>
+          <span class="champ-tag">SharePoint</span>
+          <span class="champ-tag">Cross-Functional Coordination</span>
+        </div>
 
         <p style="margin-top: 24px;">
-          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
-            ← Back to all projects
+          <a href="index.html#projects">
+            ← Back to Roster
           </a>
         </p>
       </article>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="champ-footer">
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const abilityBar = document.getElementById('ability-bar');
+    if (abilityBar) {
+      abilityBar.addEventListener('click', (e) => {
+        const btn = e.target.closest('.champ-ability-icon');
+        if (!btn) return;
+        abilityBar.querySelectorAll('.champ-ability-icon').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const target = btn.dataset.target;
+        document.querySelectorAll('.champ-ability-panel-item').forEach(item => {
+          item.classList.toggle('is-active', item.dataset.item === target);
+        });
+      });
+    }
   </script>
 </body>
 </html>

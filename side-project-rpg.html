@@ -11,24 +11,27 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-logo" style="font-weight: 700; font-size: 30px;">Sam Bingham</div>
-    <nav class="site-nav">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/rpgThumbnail.png')">
+    <div class="champ-header-nav">
+      <a href="index.html#projects">← Back to Roster</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(72% 0.16 10)"></span>Games · Analog Game</div>
+      <h1 class="champ-header-name">Haunting of the Whitcomb Manor</h1>
+      <p class="champ-header-role">A GM-less cooperative horror RPG for four players, adapted from Escape the Dark Castle</p>
+    </div>
+  </div>
 
   <main>
     <section class="project-details">
-      <article class="project-detail">
+      <article class="project-detail champ-body">
 
-        <h2>Haunting of the Whitcomb Manor</h2>
         <p><strong>Team:</strong> Ari, Dante, Elisa, Sam &nbsp;|&nbsp; GM-less cooperative horror RPG &nbsp;|&nbsp; <strong>Players:</strong> 4</p>
 
         <div class="image-wrapper" style="margin-top: 24px;">
@@ -63,19 +66,19 @@
         </ul>
 
         <p><strong>Photos</strong></p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 16px 0 28px;">
-          <div class="image-wrapper" style="margin: 0;"><img src="images/rpgPhoto1.jpg" alt="Haunting of the Whitcomb Manor photo 1"></div>
-          <div class="image-wrapper" style="margin: 0;"><img src="images/rpgPhoto2.jpg" alt="Haunting of the Whitcomb Manor photo 2"></div>
-          <div class="image-wrapper" style="margin: 0;"><img src="images/rpgPhoto3.png" alt="Haunting of the Whitcomb Manor photo 3"></div>
-          <div class="image-wrapper" style="margin: 0;"><img src="images/rpgPhoto4.jpg" alt="Haunting of the Whitcomb Manor photo 4"></div>
-          <div class="image-wrapper" style="margin: 0;"><img src="images/rpgPhoto5.jpg" alt="Haunting of the Whitcomb Manor photo 5"></div>
-          <div class="image-wrapper" style="margin: 0;"><img src="images/rpgPhoto6.jpg" alt="Haunting of the Whitcomb Manor photo 6"></div>
-          <div class="image-wrapper" style="margin: 0;"><img src="images/rpgPhoto7.jpg" alt="Haunting of the Whitcomb Manor photo 7"></div>
+        <div class="champ-gallery">
+          <div class="champ-gallery-item"><img src="images/rpgPhoto1.jpg" alt="Haunting of the Whitcomb Manor photo 1"></div>
+          <div class="champ-gallery-item"><img src="images/rpgPhoto2.jpg" alt="Haunting of the Whitcomb Manor photo 2"></div>
+          <div class="champ-gallery-item"><img src="images/rpgPhoto3.png" alt="Haunting of the Whitcomb Manor photo 3"></div>
+          <div class="champ-gallery-item"><img src="images/rpgPhoto4.jpg" alt="Haunting of the Whitcomb Manor photo 4"></div>
+          <div class="champ-gallery-item"><img src="images/rpgPhoto5.jpg" alt="Haunting of the Whitcomb Manor photo 5"></div>
+          <div class="champ-gallery-item"><img src="images/rpgPhoto6.jpg" alt="Haunting of the Whitcomb Manor photo 6"></div>
+          <div class="champ-gallery-item"><img src="images/rpgPhoto7.jpg" alt="Haunting of the Whitcomb Manor photo 7"></div>
         </div>
 
         <p style="margin-top: 28px;">
-          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
-            ← Back to all projects
+          <a href="index.html#projects">
+            ← Back to Roster
           </a>
         </p>
 
@@ -83,7 +86,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="champ-footer">
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 

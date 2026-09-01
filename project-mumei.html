@@ -11,26 +11,34 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-logo">Sam Bingham</div>
-    <nav class="site-nav">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/mumeiThumbnail.png')">
+    <div class="champ-header-nav">
+      <a href="index.html#projects">← Back to Roster</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(72% 0.16 10)"></span>Games · Game Design</div>
+      <h1 class="champ-header-name">Mumei</h1>
+      <p class="champ-header-role">Unity RPG · Top-down pixel art game that teaches Japanese through language-driven gameplay</p>
+      <div class="champ-tags">
+        <span class="champ-tag">Unity</span>
+        <span class="champ-tag">C#</span>
+        <span class="champ-tag">Aseprite</span>
+        <span class="champ-tag">Procreate</span>
+        <span class="champ-tag">Blender</span>
+      </div>
+    </div>
+  </div>
 
   <main>
     <section class="project-details">
-      <article class="project-detail">
-        <h2>Mumei</h2>
-
-        <div class="video-wrapper" style="margin-top: 24px;">
+      <article class="project-detail champ-body">
+        <div class="video-wrapper" style="margin-top: 0;">
           <video autoplay loop muted playsinline>
             <source src="videos/mumeiAnimation.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -81,26 +89,26 @@
         <p>
           Through this project I've learned and practiced:
         </p>
-        <ul>
-          <li>Unity engine and C# for building a full game system from scratch including player movement, NPC interaction, puzzle logic, and inventory</li>
-          <li>Dialogue engine design including syncing voiced audio to text, word-level replay, and branching conversation states</li>
-          <li>Game design principles including pacing, non-linear exploration, difficulty curves, and branching narrative paths</li>
-          <li>Pixel art in Aseprite for character sprites, tilesets, environmental art, and animation</li>
-          <li>2D/3D art in Procreate and Blender for concept art and assets</li>
-          <li>Designing language learning systems that feel like gameplay rather than lessons</li>
-          <li>Long-term personal project management, including scoping, prioritizing, and iterating with a two-person team over an extended build</li>
-        </ul>
+        <div class="champ-tags">
+          <span class="champ-tag">Unity & C#</span>
+          <span class="champ-tag">Dialogue Engine Design</span>
+          <span class="champ-tag">Game Design Principles</span>
+          <span class="champ-tag">Pixel Art (Aseprite)</span>
+          <span class="champ-tag">2D/3D Art (Procreate & Blender)</span>
+          <span class="champ-tag">Language Learning System Design</span>
+          <span class="champ-tag">Long-Term Project Management</span>
+        </div>
 
         <p style="margin-top: 24px;">
-          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
-            ← Back to all projects
+          <a href="index.html#projects">
+            ← Back to Roster
           </a>
         </p>
       </article>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="champ-footer">
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 

@@ -11,26 +11,33 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-logo">Sam Bingham</div>
-    <nav class="site-nav">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/jpnlaThumbnail.png')">
+    <div class="champ-header-nav">
+      <a href="index.html#projects">← Back to Roster</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(75% 0.13 150)"></span>Business · Small Business</div>
+      <h1 class="champ-header-name">JPNLAvintage</h1>
+      <p class="champ-header-role">Vintage clothing brand & online small business · Founder, sourcing, and operations · Ongoing</p>
+      <div class="champ-tags">
+        <span class="champ-tag">Entrepreneurship</span>
+        <span class="champ-tag">Branding</span>
+        <span class="champ-tag">E-Commerce</span>
+        <span class="champ-tag">Marketing</span>
+      </div>
+    </div>
+  </div>
 
   <main>
     <section class="project-details">
-      <article class="project-detail">
-        <h2>JPNLAvintage</h2>
-
-        <p>Check out the website showcase and behind the scenes!</p>
+      <article class="project-detail champ-body">
+        <p style="margin-top: 0;">Check out the website showcase and behind the scenes!</p>
 
         <div class="video-wrapper" style="margin-top: 24px;">
           <video autoplay loop muted playsinline>
@@ -59,12 +66,30 @@
         <p>
           The shop runs on Shopify with a custom domain. With 250+ items listed and more ready to go, running it at this scale means every part of the operation has to be intentional:
         </p>
-        <ul>
-          <li><strong>Dating pieces:</strong> I've developed my own formula for estimating a garment's age: reading tags, stitching patterns, fabric composition labels, and country-of-origin markings to pin down an era. Getting the age right is what separates accurate pricing from guessing.</li>
-          <li><strong>Photography:</strong> I run a proper photography setup for every listing: consistent lighting, styling, and shot angles so the catalog looks cohesive at scale.</li>
-          <li><strong>Pricing and market research:</strong> Each piece is priced against comparable sold listings across the vintage market. I track what's selling, what's sitting, and what categories are trending to inform what I source next.</li>
-          <li><strong>Social media:</strong> I handle all content strategy and posting, building the brand identity alongside the catalog.</li>
-        </ul>
+        <div class="champ-ability-bar" id="ability-bar" style="--cat-color:oklch(75% 0.13 150)">
+          <button type="button" class="champ-ability-icon is-active" data-target="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11V3h8l10 10-8 8Z"/><circle cx="7" cy="7" r="1.4" fill="currentColor" stroke="none"/></svg><span class="champ-ability-key">P</span></button>
+          <button type="button" class="champ-ability-icon" data-target="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.5"/></svg><span class="champ-ability-key">Q</span></button>
+          <button type="button" class="champ-ability-icon" data-target="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16l6-6 4 4 7-8"/><path d="M15 6h6v6"/></svg><span class="champ-ability-key">W</span></button>
+          <button type="button" class="champ-ability-icon" data-target="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4h3l5 4V6l-5 4H3Z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M19 6.5a8 8 0 0 1 0 11"/></svg><span class="champ-ability-key">E</span></button>
+        </div>
+        <div class="champ-ability-panel" id="ability-panel">
+          <div class="champ-ability-panel-item is-active" data-item="0">
+            <p class="champ-ability-panel-name">Dating Pieces</p>
+            <p>I've developed my own formula for estimating a garment's age: reading tags, stitching patterns, fabric composition labels, and country-of-origin markings to pin down an era. Getting the age right is what separates accurate pricing from guessing.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="1">
+            <p class="champ-ability-panel-name">Photography</p>
+            <p>I run a proper photography setup for every listing: consistent lighting, styling, and shot angles so the catalog looks cohesive at scale.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="2">
+            <p class="champ-ability-panel-name">Pricing &amp; Market Research</p>
+            <p>Each piece is priced against comparable sold listings across the vintage market. I track what's selling, what's sitting, and what categories are trending to inform what I source next.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="3">
+            <p class="champ-ability-panel-name">Social Media</p>
+            <p>I handle all content strategy and posting, building the brand identity alongside the catalog.</p>
+          </div>
+        </div>
 
         <p>
           <a class="primary-button" href="https://jpnlavintage.com" target="_blank" rel="noopener noreferrer">
@@ -73,34 +98,46 @@
         </p>
         <p><em>(When I'm in school I can't run it full time, so the shop may be in a slower period!)</em></p>
 
-        <p>
-          Through this project I've learned and practiced:
-        </p>
-        <ul>
-          <li>Entrepreneurship and end-to-end small business operations including sourcing, inventory, pricing, fulfillment, and customer support</li>
-          <li>Ecommerce strategy and marketplace dynamics, including what moves, what doesn't, and how to position a brand in a crowded niche</li>
-          <li>Vintage garment authentication, developing a repeatable process for dating pieces by tag, construction, and material</li>
-          <li>Product photography, building a consistent, professional-looking catalog shoot setup</li>
-          <li>Social media marketing and competitor analysis</li>
-          <li>Shopify store management, UI/UX, and branding for an ecommerce storefront</li>
-          <li>Cross-cultural market knowledge, understanding what resonates in the Japanese vintage market vs. the US market</li>
-        </ul>
+        <p><strong>Through This Project I've Learned and Practiced</strong></p>
+        <div class="champ-tags">
+          <span class="champ-tag">Entrepreneurship & Business Ops</span>
+          <span class="champ-tag">Ecommerce Strategy</span>
+          <span class="champ-tag">Vintage Garment Authentication</span>
+          <span class="champ-tag">Product Photography</span>
+          <span class="champ-tag">Social Media Marketing</span>
+          <span class="champ-tag">Shopify & Storefront UI/UX</span>
+          <span class="champ-tag">Cross-Cultural Market Knowledge</span>
+        </div>
 
         <p style="margin-top: 24px;">
-          <a href="index.html#projects" style="color: var(--accent); text-decoration: underline;">
-            ← Back to all projects
+          <a href="index.html#projects">
+            ← Back to Roster
           </a>
         </p>
       </article>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="champ-footer">
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const abilityBar = document.getElementById('ability-bar');
+    if (abilityBar) {
+      abilityBar.addEventListener('click', (e) => {
+        const btn = e.target.closest('.champ-ability-icon');
+        if (!btn) return;
+        abilityBar.querySelectorAll('.champ-ability-icon').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const target = btn.dataset.target;
+        document.querySelectorAll('.champ-ability-panel-item').forEach(item => {
+          item.classList.toggle('is-active', item.dataset.item === target);
+        });
+      });
+    }
   </script>
 </body>
 </html>

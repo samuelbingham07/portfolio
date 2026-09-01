@@ -11,25 +11,32 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-logo">Sam Bingham</div>
-    <nav class="site-nav">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/danceGameThumbnail.png')">
+    <div class="champ-header-nav">
+      <a href="index.html#projects">← Back to Roster</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(72% 0.16 10)"></span>Games · Computer Vision</div>
+      <h1 class="champ-header-name">Dance Game</h1>
+      <p class="champ-header-role">Class group project · p5.js browser game using webcam pose tracking to score dance moves</p>
+      <div class="champ-tags">
+        <span class="champ-tag">p5.js</span>
+        <span class="champ-tag">PoseNet</span>
+        <span class="champ-tag">Computer Vision</span>
+      </div>
+    </div>
+  </div>
 
   <main>
     <section class="project-details">
-      <article class="project-detail">
-        <h2>Dance Game</h2>
-
-        <div class="video-wrapper" style="margin-top: 24px;">
+      <article class="project-detail champ-body">
+        <div class="video-wrapper" style="margin-top: 0;">
           <video controls>
             <source src="videos/danceGame.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -56,32 +63,66 @@
           </a>
         </p>
 
-        <p>
-          Through this project I've learned and practiced:
-        </p>
-        <ul>
-          <li>PoseNet for real-time human pose estimation via webcam</li>
-          <li>p5.js for interactive, browser-based creative coding</li>
-          <li>Translating visual movement into programmatic geometric conditions</li>
-          <li>Manual scoring system design, including defining, tuning, and balancing pose detection thresholds</li>
-          <li>Collaborating on a creative coding project with a group under a class deadline</li>
-        </ul>
+        <p><strong>Through This Project I've Learned and Practiced</strong></p>
+        <div class="champ-ability-bar" id="ability-bar" style="--cat-color:oklch(72% 0.16 10)">
+          <button type="button" class="champ-ability-icon is-active" data-target="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><path d="M12 6v7"/><path d="M8 10l4 3 4-3"/><path d="M12 13l-3 7"/><path d="M12 13l3 7"/></svg><span class="champ-ability-key">P</span></button>
+          <button type="button" class="champ-ability-icon" data-target="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4 3 12l5 8"/><path d="M16 4l5 8-5 8"/></svg><span class="champ-ability-key">Q</span></button>
+          <button type="button" class="champ-ability-icon" data-target="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M4 20 16 6"/><path d="M8 20a8 8 0 0 1 3-6.2"/></svg><span class="champ-ability-key">W</span></button>
+          <button type="button" class="champ-ability-icon" data-target="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></svg><span class="champ-ability-key">E</span></button>
+          <button type="button" class="champ-ability-icon" data-target="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="8" r="2.5"/><path d="M14.5 14.2c.8-.4 1.6-.6 2.5-.6 3 0 5.5 2.3 6 5.4"/></svg><span class="champ-ability-key">R</span></button>
+        </div>
+        <div class="champ-ability-panel" id="ability-panel">
+          <div class="champ-ability-panel-item is-active" data-item="0">
+            <p class="champ-ability-panel-name">PoseNet Tracking</p>
+            <p>PoseNet for real-time human pose estimation via webcam.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="1">
+            <p class="champ-ability-panel-name">p5.js</p>
+            <p>p5.js for interactive, browser-based creative coding.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="2">
+            <p class="champ-ability-panel-name">Movement → Geometry</p>
+            <p>Translating visual movement into programmatic geometric conditions.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="3">
+            <p class="champ-ability-panel-name">Manual Scoring System</p>
+            <p>Manual scoring system design, including defining, tuning, and balancing pose detection thresholds.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="4">
+            <p class="champ-ability-panel-name">Team Collaboration</p>
+            <p>Collaborating on a creative coding project with a group under a class deadline.</p>
+          </div>
+        </div>
 
         <p style="margin-top: 24px;">
-          <a href="index.html#side-projects" style="color: var(--accent); text-decoration: underline;">
-            ← Back to all projects
+          <a href="index.html#projects">
+            ← Back to Roster
           </a>
         </p>
       </article>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="champ-footer">
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const abilityBar = document.getElementById('ability-bar');
+    if (abilityBar) {
+      abilityBar.addEventListener('click', (e) => {
+        const btn = e.target.closest('.champ-ability-icon');
+        if (!btn) return;
+        abilityBar.querySelectorAll('.champ-ability-icon').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const target = btn.dataset.target;
+        document.querySelectorAll('.champ-ability-panel-item').forEach(item => {
+          item.classList.toggle('is-active', item.dataset.item === target);
+        });
+      });
+    }
   </script>
 </body>
 </html>

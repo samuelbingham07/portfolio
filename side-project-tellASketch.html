@@ -11,25 +11,34 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="site-logo">Sam Bingham</div>
-    <nav class="site-nav">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/tellASketchThumbnail.png')">
+    <div class="champ-header-nav">
+      <a href="index.html#projects">← Back to Roster</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(75% 0.13 230)"></span>Engineering · Hackathon</div>
+      <h1 class="champ-header-name">Tell-A-Sketch</h1>
+      <p class="champ-header-role">Hackathon build · Generative creative studio that turns a child's sketch and voice into an animated, narrated episode</p>
+      <div class="champ-tags">
+        <span class="champ-tag">Gemini Live API</span>
+        <span class="champ-tag">Gemini Nano</span>
+        <span class="champ-tag">Veo</span>
+        <span class="champ-tag">Lyria</span>
+        <span class="champ-tag">Neon PostgreSQL</span>
+      </div>
+    </div>
+  </div>
 
   <main>
     <section class="project-details">
-      <article class="project-detail">
-        <h2>Tell-A-Sketch</h2>
-
-        <div class="video-wrapper" style="margin-top: 24px;">
+      <article class="project-detail champ-body">
+        <div class="video-wrapper" style="margin-top: 0;">
           <video controls>
             <source src="videos/tellASketchDemo.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -53,13 +62,35 @@
         <p>
           The app opens with Simon the Star, a narrator character who guides the child through a "World Building" phase. The child picks a setting (Deep Ocean, Space, Dino Island) and then moves to a drawing canvas where they sketch their hero. A "Character Interview" overlay follows, where Simon asks the character's name, what they love to do, and one randomized personality question pulled from a question bank. With that input collected, the pipeline fires:
         </p>
-        <ul>
-          <li>The <strong>Gemini Live API</strong> conducts a real-time voice session: Simon asks "what happens next?" and the child narrates the episode.</li>
-          <li><strong>Gemini Nano (Nano Banana)</strong> takes the child's doodle and transforms it into a consistently styled character frame, preserving all the original shapes, colors, and "messiness" of the drawing.</li>
-          <li><strong>Veo</strong> animates those styled frames into 8-second cinematic clips, stitched together with slow-paced edits, long scene holds, and calm transitions, intentionally paced slower than the kind of content kids usually watch.</li>
-          <li><strong>Lyria</strong> generates a unique, mood-matched instrumental score per episode based on the child's story direction.</li>
-          <li>A <strong>Neon PostgreSQL</strong> database maintains a "show bible": characters, episode history, and world state: so that Episode 4 still remembers Blobby the Dragon's wonky ear from Episode 1.</li>
-        </ul>
+        <div class="champ-ability-bar" id="ability-bar" style="--cat-color:oklch(75% 0.13 230)">
+          <button type="button" class="champ-ability-icon is-active" data-target="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M8 21h8"/></svg><span class="champ-ability-key">P</span></button>
+          <button type="button" class="champ-ability-icon" data-target="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l7-7"/><path d="M14 10l3-3"/><path d="M17 3l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2Z"/><path d="M9 15l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2Z"/></svg><span class="champ-ability-key">Q</span></button>
+          <button type="button" class="champ-ability-icon" data-target="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 9l4-2v10l-4-2Z"/></svg><span class="champ-ability-key">W</span></button>
+          <button type="button" class="champ-ability-icon" data-target="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg><span class="champ-ability-key">E</span></button>
+          <button type="button" class="champ-ability-icon" data-target="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2Z"/><path d="M6 17h13"/></svg><span class="champ-ability-key">R</span></button>
+        </div>
+        <div class="champ-ability-panel" id="ability-panel">
+          <div class="champ-ability-panel-item is-active" data-item="0">
+            <p class="champ-ability-panel-name">Gemini Live API</p>
+            <p>The Gemini Live API conducts a real-time voice session: Simon asks "what happens next?" and the child narrates the episode.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="1">
+            <p class="champ-ability-panel-name">Gemini Nano (Nano Banana)</p>
+            <p>Gemini Nano (Nano Banana) takes the child's doodle and transforms it into a consistently styled character frame, preserving all the original shapes, colors, and "messiness" of the drawing.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="2">
+            <p class="champ-ability-panel-name">Veo</p>
+            <p>Veo animates those styled frames into 8-second cinematic clips, stitched together with slow-paced edits, long scene holds, and calm transitions, intentionally paced slower than the kind of content kids usually watch.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="3">
+            <p class="champ-ability-panel-name">Lyria</p>
+            <p>Lyria generates a unique, mood-matched instrumental score per episode based on the child's story direction.</p>
+          </div>
+          <div class="champ-ability-panel-item" data-item="4">
+            <p class="champ-ability-panel-name">Neon PostgreSQL</p>
+            <p>A Neon PostgreSQL database maintains a "show bible": characters, episode history, and world state: so that Episode 4 still remembers Blobby the Dragon's wonky ear from Episode 1.</p>
+          </div>
+        </div>
 
         <p><strong>My Role: Backend & Pipeline Glue</strong></p>
         <p>
@@ -81,30 +112,44 @@
         <p>
           Through this project I've learned and practiced:
         </p>
-        <ul>
-          <li>Designing and shipping a multi-model AI pipeline under extreme time constraints</li>
-          <li>PostgreSQL schema design for persistent, relational "story state" across user sessions</li>
-          <li>REST API development as a shared contract for parallel frontend and model workstreams</li>
-          <li>Prompt engineering for Veo and Lyria, specifically tuning for slow-paced, child-appropriate output</li>
-          <li>Integrating the Gemini Live API (WebSocket) into a real-time voice-driven narrative loop</li>
-          <li>Hackathon-level scoping, knowing when to cut features, when to fake outputs, and when to freeze</li>
-        </ul>
+        <div class="champ-tags">
+          <span class="champ-tag">Multi-Model AI Pipelines</span>
+          <span class="champ-tag">PostgreSQL Schema Design</span>
+          <span class="champ-tag">REST API Development</span>
+          <span class="champ-tag">Veo & Lyria Prompt Engineering</span>
+          <span class="champ-tag">Gemini Live API (WebSocket)</span>
+          <span class="champ-tag">Hackathon Scoping</span>
+        </div>
 
         <p style="margin-top: 24px;">
-          <a href="index.html#side-projects" style="color: var(--accent); text-decoration: underline;">
-            ← Back to all projects
+          <a href="index.html#projects">
+            ← Back to Roster
           </a>
         </p>
       </article>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="champ-footer">
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const abilityBar = document.getElementById('ability-bar');
+    if (abilityBar) {
+      abilityBar.addEventListener('click', (e) => {
+        const btn = e.target.closest('.champ-ability-icon');
+        if (!btn) return;
+        abilityBar.querySelectorAll('.champ-ability-icon').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const target = btn.dataset.target;
+        document.querySelectorAll('.champ-ability-panel-item').forEach(item => {
+          item.classList.toggle('is-active', item.dataset.item === target);
+        });
+      });
+    }
   </script>
 </body>
 </html>
