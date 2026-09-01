@@ -61,31 +61,31 @@
         <p>
           The app opens with Simon the Star, a narrator character who guides the child through a "World Building" phase. The child picks a setting (Deep Ocean, Space, Dino Island) and then moves to a drawing canvas where they sketch their hero. A "Character Interview" overlay follows, where Simon asks the character's name, what they love to do, and one randomized personality question pulled from a question bank. With that input collected, the pipeline fires:
         </p>
-        <div class="champ-ability-bar" id="ability-bar" style="--cat-color:oklch(75% 0.13 230)">
-          <button type="button" class="champ-ability-icon is-active" data-target="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M8 21h8"/></svg><span class="champ-ability-key">P</span></button>
-          <button type="button" class="champ-ability-icon" data-target="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l7-7"/><path d="M14 10l3-3"/><path d="M17 3l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2Z"/><path d="M9 15l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2Z"/></svg><span class="champ-ability-key">Q</span></button>
-          <button type="button" class="champ-ability-icon" data-target="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 9l4-2v10l-4-2Z"/></svg><span class="champ-ability-key">W</span></button>
-          <button type="button" class="champ-ability-icon" data-target="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg><span class="champ-ability-key">E</span></button>
-          <button type="button" class="champ-ability-icon" data-target="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2Z"/><path d="M6 17h13"/></svg><span class="champ-ability-key">R</span></button>
+        <div class="champ-ability-bar" id="ability-bar" role="tablist" style="--cat-color:oklch(75% 0.13 230)">
+          <button type="button" class="champ-ability-icon is-active" data-target="0" role="tab" id="ability-tab-0" aria-controls="ability-panel-item-0" aria-selected="true" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M8 21h8"/></svg><span class="champ-ability-key">P</span></button>
+          <button type="button" class="champ-ability-icon" data-target="1" role="tab" id="ability-tab-1" aria-controls="ability-panel-item-1" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l7-7"/><path d="M14 10l3-3"/><path d="M17 3l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2Z"/><path d="M9 15l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2Z"/></svg><span class="champ-ability-key">Q</span></button>
+          <button type="button" class="champ-ability-icon" data-target="2" role="tab" id="ability-tab-2" aria-controls="ability-panel-item-2" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 9l4-2v10l-4-2Z"/></svg><span class="champ-ability-key">W</span></button>
+          <button type="button" class="champ-ability-icon" data-target="3" role="tab" id="ability-tab-3" aria-controls="ability-panel-item-3" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg><span class="champ-ability-key">E</span></button>
+          <button type="button" class="champ-ability-icon" data-target="4" role="tab" id="ability-tab-4" aria-controls="ability-panel-item-4" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2Z"/><path d="M6 17h13"/></svg><span class="champ-ability-key">R</span></button>
         </div>
         <div class="champ-ability-panel" id="ability-panel">
-          <div class="champ-ability-panel-item is-active" data-item="0">
+          <div class="champ-ability-panel-item is-active" data-item="0" role="tabpanel" id="ability-panel-item-0" aria-labelledby="ability-tab-0" tabindex="0">
             <p class="champ-ability-panel-name">Gemini Live API</p>
             <p>The Gemini Live API conducts a real-time voice session: Simon asks "what happens next?" and the child narrates the episode.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="1">
+          <div class="champ-ability-panel-item" data-item="1" role="tabpanel" id="ability-panel-item-1" aria-labelledby="ability-tab-1" tabindex="0">
             <p class="champ-ability-panel-name">Gemini Nano (Nano Banana)</p>
             <p>Gemini Nano (Nano Banana) takes the child's doodle and transforms it into a consistently styled character frame, preserving all the original shapes, colors, and "messiness" of the drawing.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="2">
+          <div class="champ-ability-panel-item" data-item="2" role="tabpanel" id="ability-panel-item-2" aria-labelledby="ability-tab-2" tabindex="0">
             <p class="champ-ability-panel-name">Veo</p>
             <p>Veo animates those styled frames into 8-second cinematic clips, stitched together with slow-paced edits, long scene holds, and calm transitions, intentionally paced slower than the kind of content kids usually watch.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="3">
+          <div class="champ-ability-panel-item" data-item="3" role="tabpanel" id="ability-panel-item-3" aria-labelledby="ability-tab-3" tabindex="0">
             <p class="champ-ability-panel-name">Lyria</p>
             <p>Lyria generates a unique, mood-matched instrumental score per episode based on the child's story direction.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="4">
+          <div class="champ-ability-panel-item" data-item="4" role="tabpanel" id="ability-panel-item-4" aria-labelledby="ability-tab-4" tabindex="0">
             <p class="champ-ability-panel-name">Neon PostgreSQL</p>
             <p>A Neon PostgreSQL database maintains a "show bible": characters, episode history, and world state: so that Episode 4 still remembers Blobby the Dragon's wonky ear from Episode 1.</p>
           </div>
@@ -136,26 +136,6 @@
   <script src="champion.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const abilityBar = document.getElementById('ability-bar');
-    const abilityPanel = document.getElementById('ability-panel');
-    if (abilityBar) {
-      abilityBar.addEventListener('click', (e) => {
-        const btn = e.target.closest('.champ-ability-icon');
-        if (!btn || btn.classList.contains('is-active')) return;
-        abilityBar.querySelectorAll('.champ-ability-icon').forEach(b => b.classList.remove('is-active'));
-        btn.classList.add('is-active');
-        if (window.ChampAudio) ChampAudio.blip();
-        const target = btn.dataset.target;
-        abilityPanel.classList.add('is-swapping');
-        setTimeout(() => {
-          document.querySelectorAll('.champ-ability-panel-item').forEach(item => {
-            item.classList.toggle('is-active', item.dataset.item === target);
-          });
-          abilityPanel.classList.remove('is-swapping');
-        }, 130);
-      });
-    }
   </script>
 </body>
 </html>

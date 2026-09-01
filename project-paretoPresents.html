@@ -55,26 +55,26 @@
         <p>
           The system is built across three layers that work together event-driven, without the frontend ever having to trigger a calculation manually:
         </p>
-        <div class="champ-ability-bar" id="ability-bar" style="--cat-color:oklch(78% 0.15 40)">
-          <button type="button" class="champ-ability-icon is-active" data-target="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span class="champ-ability-key">P</span></button>
-          <button type="button" class="champ-ability-icon" data-target="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg><span class="champ-ability-key">Q</span></button>
-          <button type="button" class="champ-ability-icon" data-target="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.1 1.3 2.5-.4 1.2 2.3 2.3 1.2-.4 2.5L21 12l-1.3 2.1.4 2.5-2.3 1.2-1.2 2.3-2.5-.4L12 21l-2.1-1.3-2.5.4-1.2-2.3-2.3-1.2.4-2.5L3 12l1.3-2.1-.4-2.5 2.3-1.2 1.2-2.3 2.5.4L12 3Z"/><circle cx="12" cy="12" r="3"/></svg><span class="champ-ability-key">W</span></button>
-          <button type="button" class="champ-ability-icon" data-target="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="12" width="4" height="8"/><rect x="10" y="6" width="4" height="14"/><rect x="16" y="9" width="4" height="11"/></svg><span class="champ-ability-key">E</span></button>
+        <div class="champ-ability-bar" id="ability-bar" role="tablist" style="--cat-color:oklch(78% 0.15 40)">
+          <button type="button" class="champ-ability-icon is-active" data-target="0" role="tab" id="ability-tab-0" aria-controls="ability-panel-item-0" aria-selected="true" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span class="champ-ability-key">P</span></button>
+          <button type="button" class="champ-ability-icon" data-target="1" role="tab" id="ability-tab-1" aria-controls="ability-panel-item-1" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg><span class="champ-ability-key">Q</span></button>
+          <button type="button" class="champ-ability-icon" data-target="2" role="tab" id="ability-tab-2" aria-controls="ability-panel-item-2" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.1 1.3 2.5-.4 1.2 2.3 2.3 1.2-.4 2.5L21 12l-1.3 2.1.4 2.5-2.3 1.2-1.2 2.3-2.5-.4L12 21l-2.1-1.3-2.5.4-1.2-2.3-2.3-1.2.4-2.5L3 12l1.3-2.1-.4-2.5 2.3-1.2 1.2-2.3 2.5.4L12 3Z"/><circle cx="12" cy="12" r="3"/></svg><span class="champ-ability-key">W</span></button>
+          <button type="button" class="champ-ability-icon" data-target="3" role="tab" id="ability-tab-3" aria-controls="ability-panel-item-3" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="12" width="4" height="8"/><rect x="10" y="6" width="4" height="14"/><rect x="16" y="9" width="4" height="11"/></svg><span class="champ-ability-key">E</span></button>
         </div>
         <div class="champ-ability-panel" id="ability-panel">
-          <div class="champ-ability-panel-item is-active" data-item="0">
+          <div class="champ-ability-panel-item is-active" data-item="0" role="tabpanel" id="ability-panel-item-0" aria-labelledby="ability-tab-0" tabindex="0">
             <p class="champ-ability-panel-name">Group Creation &amp; Preferences</p>
             <p>A user creates a group and shares an invite code. Members join and submit their preferences through the dashboard survey. All of this is stored in a Supabase PostgreSQL database with tables for groups, memberships, preferences (<code>JSONB</code>), and cached simulation results.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="1">
+          <div class="champ-ability-panel-item" data-item="1" role="tabpanel" id="ability-panel-item-1" aria-labelledby="ability-tab-1" tabindex="0">
             <p class="champ-ability-panel-name">Event-Driven Webhook</p>
             <p>When anyone joins or updates their preferences, a Supabase Database Webhook fires automatically, sending the affected <code>group_id</code> to the Python API: no manual trigger needed.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="2">
+          <div class="champ-ability-panel-item" data-item="2" role="tabpanel" id="ability-panel-item-2" aria-labelledby="ability-tab-2" tabindex="0">
             <p class="champ-ability-panel-name">FastAPI Simulation Service</p>
             <p>The FastAPI simulation service (Dockerized, deployed on Fly.io) receives the webhook, fetches all current preferences for the group, runs the Pareto-optimal matching algorithm, and writes the new results back to the <code>simulation_results</code> table.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="3">
+          <div class="champ-ability-panel-item" data-item="3" role="tabpanel" id="ability-panel-item-3" aria-labelledby="ability-tab-3" tabindex="0">
             <p class="champ-ability-panel-name">Next.js Frontend</p>
             <p>The Next.js frontend simply reads the latest cached results from that table and renders them as interactive charts via Recharts. It never needs to know when or how the calculation ran.</p>
           </div>
@@ -122,26 +122,6 @@
   <script src="champion.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const abilityBar = document.getElementById('ability-bar');
-    const abilityPanel = document.getElementById('ability-panel');
-    if (abilityBar) {
-      abilityBar.addEventListener('click', (e) => {
-        const btn = e.target.closest('.champ-ability-icon');
-        if (!btn || btn.classList.contains('is-active')) return;
-        abilityBar.querySelectorAll('.champ-ability-icon').forEach(b => b.classList.remove('is-active'));
-        btn.classList.add('is-active');
-        if (window.ChampAudio) ChampAudio.blip();
-        const target = btn.dataset.target;
-        abilityPanel.classList.add('is-swapping');
-        setTimeout(() => {
-          document.querySelectorAll('.champ-ability-panel-item').forEach(item => {
-            item.classList.toggle('is-active', item.dataset.item === target);
-          });
-          abilityPanel.classList.remove('is-swapping');
-        }, 130);
-      });
-    }
   </script>
 </body>
 </html>

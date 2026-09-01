@@ -69,31 +69,31 @@
         </p>
 
         <p><strong>Through This Project I Learned and Practiced</strong></p>
-        <div class="champ-ability-bar" id="ability-bar" style="--cat-color:oklch(75% 0.14 320)">
-          <button type="button" class="champ-ability-icon is-active" data-target="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><path d="M21 21l-5.2-5.2"/><path d="M10 13c-2-1.3-3-2.4-3-3.8A2.2 2.2 0 0 1 10 7.3 2.2 2.2 0 0 1 13 9.2c0 1.4-1 2.5-3 3.8Z"/></svg><span class="champ-ability-key">P</span></button>
-          <button type="button" class="champ-ability-icon" data-target="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z"/><path d="M9 13l2 2 4-4"/></svg><span class="champ-ability-key">Q</span></button>
-          <button type="button" class="champ-ability-icon" data-target="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="7" r="1.4" fill="currentColor" stroke="none"/><path d="M7 10.5c1.6.9 3.3 1.3 5 1.3s3.4-.4 5-1.3"/><path d="M12 11.8v3.2"/><path d="M9 20l3-5 3 5"/></svg><span class="champ-ability-key">W</span></button>
-          <button type="button" class="champ-ability-icon" data-target="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 13V8"/><path d="M9 2h6"/><path d="M12 2v2"/></svg><span class="champ-ability-key">E</span></button>
-          <button type="button" class="champ-ability-icon" data-target="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8"/><path d="M12 16v4"/><path d="M7 9l3 2-3 2"/></svg><span class="champ-ability-key">R</span></button>
+        <div class="champ-ability-bar" id="ability-bar" role="tablist" style="--cat-color:oklch(75% 0.14 320)">
+          <button type="button" class="champ-ability-icon is-active" data-target="0" role="tab" id="ability-tab-0" aria-controls="ability-panel-item-0" aria-selected="true" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><path d="M21 21l-5.2-5.2"/><path d="M10 13c-2-1.3-3-2.4-3-3.8A2.2 2.2 0 0 1 10 7.3 2.2 2.2 0 0 1 13 9.2c0 1.4-1 2.5-3 3.8Z"/></svg><span class="champ-ability-key">P</span></button>
+          <button type="button" class="champ-ability-icon" data-target="1" role="tab" id="ability-tab-1" aria-controls="ability-panel-item-1" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z"/><path d="M9 13l2 2 4-4"/></svg><span class="champ-ability-key">Q</span></button>
+          <button type="button" class="champ-ability-icon" data-target="2" role="tab" id="ability-tab-2" aria-controls="ability-panel-item-2" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="7" r="1.4" fill="currentColor" stroke="none"/><path d="M7 10.5c1.6.9 3.3 1.3 5 1.3s3.4-.4 5-1.3"/><path d="M12 11.8v3.2"/><path d="M9 20l3-5 3 5"/></svg><span class="champ-ability-key">W</span></button>
+          <button type="button" class="champ-ability-icon" data-target="3" role="tab" id="ability-tab-3" aria-controls="ability-panel-item-3" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 13V8"/><path d="M9 2h6"/><path d="M12 2v2"/></svg><span class="champ-ability-key">E</span></button>
+          <button type="button" class="champ-ability-icon" data-target="4" role="tab" id="ability-tab-4" aria-controls="ability-panel-item-4" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8"/><path d="M12 16v4"/><path d="M7 9l3 2-3 2"/></svg><span class="champ-ability-key">R</span></button>
         </div>
         <div class="champ-ability-panel" id="ability-panel">
-          <div class="champ-ability-panel-item is-active" data-item="0">
+          <div class="champ-ability-panel-item is-active" data-item="0" role="tabpanel" id="ability-panel-item-0" aria-labelledby="ability-tab-0" tabindex="0">
             <p class="champ-ability-panel-name">Human-Centered Design</p>
             <p>Human-Centered Design, including user research through surveys and interviews, iterative prototyping, and feedback-driven design.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="1">
+          <div class="champ-ability-panel-item" data-item="1" role="tabpanel" id="ability-panel-item-1" aria-labelledby="ability-tab-1" tabindex="0">
             <p class="champ-ability-panel-name">User Testing</p>
             <p>User testing by running structured tests to validate design decisions and catch usability issues.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="2">
+          <div class="champ-ability-panel-item" data-item="2" role="tabpanel" id="ability-panel-item-2" aria-labelledby="ability-tab-2" tabindex="0">
             <p class="champ-ability-panel-name">Accessible Design</p>
             <p>Designing for accessibility and non-technical audiences.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="3">
+          <div class="champ-ability-panel-item" data-item="3" role="tabpanel" id="ability-panel-item-3" aria-labelledby="ability-tab-3" tabindex="0">
             <p class="champ-ability-panel-name">Rapid Prototyping</p>
             <p>Rapid prototyping under designathon time constraints.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="4">
+          <div class="champ-ability-panel-item" data-item="4" role="tabpanel" id="ability-panel-item-4" aria-labelledby="ability-tab-4" tabindex="0">
             <p class="champ-ability-panel-name">Presenting to Judges</p>
             <p>Presenting a product and research rationale to a panel of judges.</p>
           </div>
@@ -115,26 +115,6 @@
   <script src="champion.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const abilityBar = document.getElementById('ability-bar');
-    const abilityPanel = document.getElementById('ability-panel');
-    if (abilityBar) {
-      abilityBar.addEventListener('click', (e) => {
-        const btn = e.target.closest('.champ-ability-icon');
-        if (!btn || btn.classList.contains('is-active')) return;
-        abilityBar.querySelectorAll('.champ-ability-icon').forEach(b => b.classList.remove('is-active'));
-        btn.classList.add('is-active');
-        if (window.ChampAudio) ChampAudio.blip();
-        const target = btn.dataset.target;
-        abilityPanel.classList.add('is-swapping');
-        setTimeout(() => {
-          document.querySelectorAll('.champ-ability-panel-item').forEach(item => {
-            item.classList.toggle('is-active', item.dataset.item === target);
-          });
-          abilityPanel.classList.remove('is-swapping');
-        }, 130);
-      });
-    }
   </script>
 </body>
 </html>

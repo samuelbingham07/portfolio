@@ -43,31 +43,31 @@
         </p>
 
         <p><strong>What I Worked On</strong></p>
-        <div class="champ-ability-bar" id="ability-bar" style="--cat-color:oklch(78% 0.15 40)">
-          <button type="button" class="champ-ability-icon is-active" data-target="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M9 9v11"/></svg><span class="champ-ability-key">P</span></button>
-          <button type="button" class="champ-ability-icon" data-target="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11"/><path d="M9 12h11"/><path d="M9 18h11"/><path d="M4 6l1.5 1.5L8 5"/><path d="M4 12l1.5 1.5L8 11"/><path d="M4 18l1.5 1.5L8 17"/></svg><span class="champ-ability-key">Q</span></button>
-          <button type="button" class="champ-ability-icon" data-target="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="M21 21l-5.5-5.5"/></svg><span class="champ-ability-key">W</span></button>
-          <button type="button" class="champ-ability-icon" data-target="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.3"/><circle cx="18" cy="6" r="2.3"/><circle cx="12" cy="18" r="2.3"/><path d="M8 7.5L10.5 16"/><path d="M16 7.5L13.5 16"/><path d="M8.3 6h7.4"/></svg><span class="champ-ability-key">E</span></button>
-          <button type="button" class="champ-ability-icon" data-target="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 6 5 10 0 2-1 4-2 5l-3 3-3-3c-1-1-2-3-2-5 0-4 2-8 5-10Z"/><circle cx="12" cy="10" r="1.6" fill="currentColor" stroke="none"/><path d="M9 17l-2 4 4-1"/><path d="M15 17l2 4-4-1"/></svg><span class="champ-ability-key">R</span></button>
+        <div class="champ-ability-bar" id="ability-bar" role="tablist" style="--cat-color:oklch(78% 0.15 40)">
+          <button type="button" class="champ-ability-icon is-active" data-target="0" role="tab" id="ability-tab-0" aria-controls="ability-panel-item-0" aria-selected="true" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M9 9v11"/></svg><span class="champ-ability-key">P</span></button>
+          <button type="button" class="champ-ability-icon" data-target="1" role="tab" id="ability-tab-1" aria-controls="ability-panel-item-1" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11"/><path d="M9 12h11"/><path d="M9 18h11"/><path d="M4 6l1.5 1.5L8 5"/><path d="M4 12l1.5 1.5L8 11"/><path d="M4 18l1.5 1.5L8 17"/></svg><span class="champ-ability-key">Q</span></button>
+          <button type="button" class="champ-ability-icon" data-target="2" role="tab" id="ability-tab-2" aria-controls="ability-panel-item-2" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="M21 21l-5.5-5.5"/></svg><span class="champ-ability-key">W</span></button>
+          <button type="button" class="champ-ability-icon" data-target="3" role="tab" id="ability-tab-3" aria-controls="ability-panel-item-3" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.3"/><circle cx="18" cy="6" r="2.3"/><circle cx="12" cy="18" r="2.3"/><path d="M8 7.5L10.5 16"/><path d="M16 7.5L13.5 16"/><path d="M8.3 6h7.4"/></svg><span class="champ-ability-key">E</span></button>
+          <button type="button" class="champ-ability-icon" data-target="4" role="tab" id="ability-tab-4" aria-controls="ability-panel-item-4" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 6 5 10 0 2-1 4-2 5l-3 3-3-3c-1-1-2-3-2-5 0-4 2-8 5-10Z"/><circle cx="12" cy="10" r="1.6" fill="currentColor" stroke="none"/><path d="M9 17l-2 4 4-1"/><path d="M15 17l2 4-4-1"/></svg><span class="champ-ability-key">R</span></button>
         </div>
         <div class="champ-ability-panel" id="ability-panel">
-          <div class="champ-ability-panel-item is-active" data-item="0">
+          <div class="champ-ability-panel-item is-active" data-item="0" role="tabpanel" id="ability-panel-item-0" aria-labelledby="ability-tab-0" tabindex="0">
             <p class="champ-ability-panel-name">Partner Portal Content Management</p>
             <p>Supported the update and maintenance of Epson's Partner Portal so marketing assets, product documentation, sales tools, and promotional materials stayed accurate and current, and improved how commercial resources were organized for channel partners across the region.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="1">
+          <div class="champ-ability-panel-item" data-item="1" role="tabpanel" id="ability-panel-item-1" aria-labelledby="ability-tab-1" tabindex="0">
             <p class="champ-ability-panel-name">Marketing Content Review &amp; Standardization</p>
             <p>Reviewed and updated datasheets, brochures, customer success stories, infographics, and sales presentations across the SD, ColorWorks, and SIDM lines, helping keep messaging, branding, and product information consistent.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="2">
+          <div class="champ-ability-panel-item" data-item="2" role="tabpanel" id="ability-panel-item-2" aria-labelledby="ability-tab-2" tabindex="0">
             <p class="champ-ability-panel-name">Regional Website Content Audits</p>
             <p>Ran comprehensive audits of the SD, ColorWorks, and SIDM websites to verify brochures, videos, product specs, images, and syndicated content were accurate and complete, flagging outdated materials and gaps to Product Management, Marcom, and Web.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="3">
+          <div class="champ-ability-panel-item" data-item="3" role="tabpanel" id="ability-panel-item-3" aria-labelledby="ability-tab-3" tabindex="0">
             <p class="champ-ability-panel-name">Cross-Functional Marketing Coordination</p>
             <p>Worked closely with Product Managers, Marcom, Web, and regional stakeholders to support content updates and digital marketing initiatives, and coordinated follow-up so fixes actually shipped on time.</p>
           </div>
-          <div class="champ-ability-panel-item" data-item="4">
+          <div class="champ-ability-panel-item" data-item="4" role="tabpanel" id="ability-panel-item-4" aria-labelledby="ability-tab-4" tabindex="0">
             <p class="champ-ability-panel-name">Regional Product Launch Support</p>
             <p>Supported marketing execution for product launches and webinars, including preparation of commercial materials, localization, content organization, and operational coordination for regional events.</p>
           </div>
@@ -136,26 +136,6 @@
   <script src="champion.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const abilityBar = document.getElementById('ability-bar');
-    const abilityPanel = document.getElementById('ability-panel');
-    if (abilityBar) {
-      abilityBar.addEventListener('click', (e) => {
-        const btn = e.target.closest('.champ-ability-icon');
-        if (!btn || btn.classList.contains('is-active')) return;
-        abilityBar.querySelectorAll('.champ-ability-icon').forEach(b => b.classList.remove('is-active'));
-        btn.classList.add('is-active');
-        if (window.ChampAudio) ChampAudio.blip();
-        const target = btn.dataset.target;
-        abilityPanel.classList.add('is-swapping');
-        setTimeout(() => {
-          document.querySelectorAll('.champ-ability-panel-item').forEach(item => {
-            item.classList.toggle('is-active', item.dataset.item === target);
-          });
-          abilityPanel.classList.remove('is-swapping');
-        }, 130);
-      });
-    }
   </script>
 </body>
 </html>

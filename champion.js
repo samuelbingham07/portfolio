@@ -118,11 +118,61 @@
 
   window.ChampAudio = ChampAudio;
 
+  // Ability bar: ARIA tabs pattern (tablist/tab/tabpanel), click + arrow-key
+  // navigation, and the fade-swap transition. Centralized here so every
+  // detail page gets identical, correct behavior from one place.
+  function initAbilityBar() {
+    var bar = document.getElementById('ability-bar');
+    var panel = document.getElementById('ability-panel');
+    if (!bar || !panel) return;
+
+    function selectTab(btn) {
+      if (!btn || btn.getAttribute('aria-selected') === 'true') return;
+      var buttons = bar.querySelectorAll('.champ-ability-icon');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('is-active');
+        buttons[i].setAttribute('aria-selected', 'false');
+        buttons[i].setAttribute('tabindex', '-1');
+      }
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-selected', 'true');
+      btn.setAttribute('tabindex', '0');
+      ChampAudio.blip();
+      var target = btn.dataset.target;
+      panel.classList.add('is-swapping');
+      setTimeout(function () {
+        var items = document.querySelectorAll('.champ-ability-panel-item');
+        for (var j = 0; j < items.length; j++) {
+          items[j].classList.toggle('is-active', items[j].dataset.item === target);
+        }
+        panel.classList.remove('is-swapping');
+      }, 130);
+    }
+
+    bar.addEventListener('click', function (e) {
+      selectTab(e.target.closest('.champ-ability-icon'));
+    });
+
+    bar.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      var buttons = Array.prototype.slice.call(bar.querySelectorAll('.champ-ability-icon'));
+      var idx = buttons.indexOf(document.activeElement);
+      if (idx === -1) return;
+      e.preventDefault();
+      var next = e.key === 'ArrowRight'
+        ? (idx + 1) % buttons.length
+        : (idx - 1 + buttons.length) % buttons.length;
+      buttons[next].focus();
+      selectTab(buttons[next]);
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     setOn(isOn());
     var buttons = document.querySelectorAll('[data-champ-sound-toggle]');
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener('click', function () { ChampAudio.toggle(); });
     }
+    initAbilityBar();
   });
 })();
