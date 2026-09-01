@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="champion.css" />
 </head>
 <body class="champ-page">
-  <div class="champ-header" style="--champ-header-img:url('images/theVaultThumbnail.png')"><span class="champ-crest"></span>
+  <div class="champ-header" style="--champ-header-img:url('images/theVaultThumbnail.png'); view-transition-name: vt-thevault"><span class="champ-crest"></span>
     <div class="champ-header-nav">
       <a href="index.html#projects">← Back to Roster</a>
     </div>
@@ -112,6 +112,7 @@
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 
+  <script src="champion.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -123,6 +124,7 @@
         if (!btn || btn.classList.contains('is-active')) return;
         abilityBar.querySelectorAll('.champ-ability-icon').forEach(b => b.classList.remove('is-active'));
         btn.classList.add('is-active');
+        if (window.ChampAudio) ChampAudio.blip();
         const target = btn.dataset.target;
         abilityPanel.classList.add('is-swapping');
         setTimeout(() => {

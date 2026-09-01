@@ -21,6 +21,8 @@
 }
 
 .champ-arena {
+  position: relative;
+  overflow: hidden;
   background:
     radial-gradient(120% 60% at 50% -10%, oklch(24% 0.05 250) 0%, transparent 60%),
     repeating-linear-gradient(115deg, oklch(22% 0.02 260 / 0.5) 0px, oklch(22% 0.02 260 / 0.5) 1px, transparent 1px, transparent 64px),
@@ -28,6 +30,7 @@
   color: var(--champ-ink);
   padding: 28px clamp(16px, 4vw, 40px) 64px;
 }
+.champ-arena > * { position: relative; z-index: 1; }
 
 .champ-arena a { color: var(--champ-gold); }
 .champ-arena a:hover { color: var(--champ-ink); }
@@ -92,6 +95,23 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+
+.champ-sound-toggle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--champ-ink-dim);
+  background: transparent;
+  border: 1px solid var(--champ-line);
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.champ-sound-toggle:hover { color: var(--champ-ink); border-color: var(--champ-gold-dim); }
+.champ-sound-toggle[aria-pressed="true"] { color: var(--champ-gold); border-color: var(--champ-gold-dim); }
 
 /* Section labels */
 .champ-section-label {
@@ -235,7 +255,7 @@
 /* Crest: a single diamond ornament straddling the top edge, mastery-marker style */
 .champ-crest {
   position: absolute;
-  top: -7px;
+  top: 6px;
   left: 50%;
   width: 13px;
   height: 13px;
@@ -395,7 +415,20 @@
 }
 
 .champ-page { background: var(--champ-bg) !important; }
-.champ-page .project-details { background: transparent; }
+.champ-page .project-details { background: transparent; max-width: 1300px; }
+
+/* Layout asymmetry: prose reads at a narrow, comfortable measure while
+   media bleeds wide across the full card, instead of everything being
+   boxed to one column width. */
+.champ-body > p,
+.champ-body > ul:not([class]),
+.champ-body > .champ-ability-panel {
+  max-width: 760px;
+}
+.champ-body .image-wrapper,
+.champ-body .video-wrapper {
+  max-width: 100%;
+}
 
 /* ===== Champion detail body (dark reskin of .project-detail) ===== */
 .champ-body {
@@ -671,4 +704,77 @@
   .champ-header::before {
     animation: none !important;
   }
+}
+
+/* Shared-element morph: pairs each roster tile with its detail page's
+   header so the tile visually expands into the header on navigation,
+   instead of a generic crossfade. Only same-origin in-repo pages
+   participate; external tiles are left unnamed (safe no-op). */
+a[href="project-epson.html"] .champ-tile-portrait { view-transition-name: vt-epson; }
+a[href="project-hiki.html"] .champ-tile-portrait { view-transition-name: vt-hiki; }
+a[href="project-jpnla.html"] .champ-tile-portrait { view-transition-name: vt-jpnla; }
+a[href="project-clicktionary.html"] .champ-tile-portrait { view-transition-name: vt-clicktionary; }
+a[href="project-paretoPresents.html"] .champ-tile-portrait { view-transition-name: vt-paretopresents; }
+a[href="project-5c2c.html"] .champ-tile-portrait { view-transition-name: vt-5c2c; }
+a[href="project-mumei.html"] .champ-tile-portrait { view-transition-name: vt-mumei; }
+a[href="side-project-tellASketch.html"] .champ-tile-portrait { view-transition-name: vt-tellasketch; }
+a[href="side-project-quickDraw.html"] .champ-tile-portrait { view-transition-name: vt-quickdraw; }
+a[href="side-project-narrativeGame.html"] .champ-tile-portrait { view-transition-name: vt-narrativegame; }
+a[href="side-project-danceGame.html"] .champ-tile-portrait { view-transition-name: vt-dancegame; }
+a[href="side-project-theVault.html"] .champ-tile-portrait { view-transition-name: vt-thevault; }
+a[href="side-project-racinggame.html"] .champ-tile-portrait { view-transition-name: vt-isoge; }
+a[href="side-project-rpg.html"] .champ-tile-portrait { view-transition-name: vt-rpg; }
+a[href="side-project-artgame.html"] .champ-tile-portrait { view-transition-name: vt-artgame; }
+a[href="side-project-mlArt.html"] .champ-tile-portrait { view-transition-name: vt-mlart; }
+a[href="projects-hobbies.html"] .champ-tile-portrait { view-transition-name: vt-hobbies; }
+
+/* Ambient embers: pure CSS, no markup needed */
+.champ-arena::before,
+.champ-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  opacity: 0;
+}
+.champ-arena::before {
+  box-shadow:
+    120px 480px 0 0 var(--champ-gold-dim),
+    260px 640px 0 0 var(--champ-gold-dim),
+    410px 310px 0 0 var(--champ-gold-dim),
+    560px 700px 0 0 var(--champ-gold-dim),
+    700px 440px 0 0 var(--champ-gold-dim),
+    860px 600px 0 0 var(--champ-gold-dim),
+    1000px 370px 0 0 var(--champ-gold-dim),
+    1150px 550px 0 0 var(--champ-gold-dim),
+    1280px 420px 0 0 var(--champ-gold-dim),
+    60px 320px 0 0 var(--champ-gold-dim);
+  animation: champ-ember-rise 22s linear infinite;
+}
+.champ-header::after {
+  box-shadow:
+    100px 280px 0 0 var(--champ-gold-dim),
+    240px 180px 0 0 var(--champ-gold-dim),
+    380px 320px 0 0 var(--champ-gold-dim),
+    520px 140px 0 0 var(--champ-gold-dim),
+    660px 260px 0 0 var(--champ-gold-dim),
+    800px 190px 0 0 var(--champ-gold-dim),
+    940px 300px 0 0 var(--champ-gold-dim);
+  animation: champ-ember-rise 16s linear infinite;
+}
+@keyframes champ-ember-rise {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 0.5; }
+  85% { opacity: 0.35; }
+  100% { transform: translateY(-70vh); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .champ-arena::before, .champ-header::after { animation: none !important; opacity: 0 !important; }
+}
+@media (max-width: 640px) {
+  .champ-arena::before, .champ-header::after { display: none; }
 }

@@ -29,6 +29,7 @@
       <button class="champ-pill" data-filter="games">Games</button>
       <button class="champ-pill" data-filter="life">Life</button>
     </div>
+    <button type="button" class="champ-sound-toggle" data-champ-sound-toggle aria-pressed="false">♪ Sound Off</button>
     <a class="champ-contact-link" href="#contact">Contact</a>
   </div>
 
@@ -230,6 +231,7 @@
     <p>© <span id="year"></span> Samuel Bingham</p>
   </footer>
 
+  <script src="champion.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -258,6 +260,21 @@
           const show = filter === 'all' || tile.dataset.category === filter;
           tile.classList.toggle('is-hidden', !show);
         });
+      });
+    });
+
+    tiles.forEach(tile => {
+      tile.addEventListener('mouseenter', () => {
+        if (window.ChampAudio) ChampAudio.hover();
+      });
+      tile.addEventListener('click', (e) => {
+        if (!window.ChampAudio || !ChampAudio.isOn()) return;
+        ChampAudio.select();
+        if (tile.target !== '_blank') {
+          e.preventDefault();
+          const href = tile.getAttribute('href');
+          setTimeout(() => { window.location.href = href; }, 130);
+        }
       });
     });
   </script>
