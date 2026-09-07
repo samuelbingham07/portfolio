@@ -29,7 +29,6 @@
       <button class="champ-pill" data-filter="games">Games</button>
       <button class="champ-pill" data-filter="life">Life</button>
     </div>
-    <button type="button" class="champ-sound-toggle" data-champ-sound-toggle aria-pressed="false">♪ Sound Off</button>
     <a class="champ-contact-link" href="#contact">Contact</a>
   </div>
 
@@ -240,6 +239,21 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // First-visit intro: the roster flips up into place instead of a plain
+    // fade. Once per browser session (not every page load), non-blocking —
+    // it's just an entrance transition on the tiles themselves, so the page
+    // is scrollable and every tile is clickable throughout.
+    let introPlaying = false;
+    try {
+      if (!sessionStorage.getItem('champ-intro-seen')) {
+        introPlaying = true;
+        sessionStorage.setItem('champ-intro-seen', 'true');
+      }
+    } catch (e) {}
+    if (introPlaying) {
+      document.querySelector('.champ-arena').classList.add('champ-intro-playing');
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -250,7 +264,7 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.champ-tile').forEach((tile, i) => {
-      tile.style.transitionDelay = Math.min(i * 35, 500) + 'ms';
+      tile.style.transitionDelay = Math.min(i * (introPlaying ? 22 : 35), introPlaying ? 340 : 500) + 'ms';
       observer.observe(tile);
     });
 
@@ -265,21 +279,6 @@
           const show = filter === 'all' || tile.dataset.category === filter;
           tile.classList.toggle('is-hidden', !show);
         });
-      });
-    });
-
-    tiles.forEach(tile => {
-      tile.addEventListener('mouseenter', () => {
-        if (window.ChampAudio) ChampAudio.hover();
-      });
-      tile.addEventListener('click', (e) => {
-        if (!window.ChampAudio || !ChampAudio.isOn()) return;
-        ChampAudio.select();
-        if (tile.target !== '_blank') {
-          e.preventDefault();
-          const href = tile.getAttribute('href');
-          setTimeout(() => { window.location.href = href; }, 130);
-        }
       });
     });
   </script>

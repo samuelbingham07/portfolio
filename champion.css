@@ -101,23 +101,6 @@ html { background-color: #0b0c10; }
   text-transform: uppercase;
 }
 
-.champ-sound-toggle {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--champ-ink-dim);
-  background: transparent;
-  border: 1px solid var(--champ-line);
-  border-radius: 999px;
-  padding: 6px 12px;
-  cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-.champ-sound-toggle:hover { color: var(--champ-ink); border-color: var(--champ-gold-dim); }
-.champ-sound-toggle[aria-pressed="true"] { color: var(--champ-gold); border-color: var(--champ-gold-dim); }
-
 /* Match history: a strip of recently-viewed champions, real session data */
 .champ-history {
   max-width: 1400px;
@@ -216,6 +199,28 @@ html { background-color: #0b0c10; }
 .champ-tile.is-visible { opacity: 1; translate: 0 0; }
 .champ-tile:hover { transform: translateY(-4px); }
 .champ-tile.is-hidden { display: none; }
+
+/* First-visit intro: tiles flip up into place (hinged at the bottom)
+   instead of the plain fade. Purely a per-tile CSS transition — nothing
+   here blocks scrolling or clicks on any part of the page. */
+.champ-intro-playing .champ-featured-grid,
+.champ-intro-playing .champ-standard-grid {
+  perspective: 1100px;
+}
+.champ-intro-playing .champ-tile {
+  transform-origin: 50% 100%;
+  transform: rotateX(-62deg);
+  transition: transform 0.4s ease-out, opacity 0.4s ease, translate 0.4s ease;
+}
+.champ-intro-playing .champ-tile.is-visible {
+  transform: rotateX(0deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .champ-intro-playing .champ-tile {
+    transform: none;
+    transition: opacity 0.3s ease;
+  }
+}
 
 .champ-tile-portrait {
   position: relative;
