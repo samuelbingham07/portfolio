@@ -118,6 +118,47 @@ html { background-color: #0b0c10; }
 .champ-sound-toggle:hover { color: var(--champ-ink); border-color: var(--champ-gold-dim); }
 .champ-sound-toggle[aria-pressed="true"] { color: var(--champ-gold); border-color: var(--champ-gold-dim); }
 
+/* Match history: a strip of recently-viewed champions, real session data */
+.champ-history {
+  max-width: 1400px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.champ-history-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--champ-ink-dim);
+  flex: none;
+}
+.champ-history-items {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.champ-history-item {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--champ-line);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.champ-history-item:hover {
+  border-color: var(--champ-gold);
+  transform: translateY(-2px);
+}
+.champ-history-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Section labels */
 .champ-section-label {
   max-width: 1400px;
@@ -257,17 +298,26 @@ html { background-color: #0b0c10; }
 .champ-corner-br { bottom: 6px; right: 6px; border-left: none; border-top: none; }
 .champ-corner-br::after { bottom: -2px; right: -2px; }
 
-/* Crest: a single diamond ornament straddling the top edge, mastery-marker style */
+/* Crest: an SB monogram badge straddling the top edge, mastery-marker style */
 .champ-crest {
   position: absolute;
   top: 6px;
   left: 50%;
-  width: 13px;
-  height: 13px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
   background: linear-gradient(135deg, var(--champ-gold) 0%, var(--champ-gold-dim) 100%);
-  transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%);
   box-shadow: 0 0 10px -1px var(--champ-gold), inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -1px 2px rgba(0,0,0,0.4);
   z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: #1a1305;
+  line-height: 1;
 }
 
 .champ-tile-plate { padding-top: 8px; text-align: center; }
@@ -673,23 +723,32 @@ html { background-color: #0b0c10; }
   50% { box-shadow: 0 0 16px 1px var(--champ-gold), inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -1px 2px rgba(0,0,0,0.4); }
 }
 
-/* Header backdrop: slow drift instead of a static flat image */
-.champ-header::before {
-  content: '';
+/* Header backdrop: slow drift (ken-burns) plus a pointer-follow parallax
+   shift, layered on one real element (JS can't target ::before styles,
+   so this needs to be a real node rather than a pseudo-element). */
+@property --kb-scale {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 1;
+}
+.champ-header-bg {
   position: absolute;
-  inset: -12px;
+  inset: -16px;
   z-index: 0;
   background-image:
     linear-gradient(180deg, rgba(5,6,10,0.35) 0%, rgba(5,6,10,0.94) 88%),
     var(--champ-header-img);
   background-size: cover;
   background-position: center;
+  transform: scale(var(--kb-scale, 1)) translate3d(var(--px, 0px), var(--py, 0px), 0);
+  transition: transform 0.2s ease-out;
+  will-change: transform;
   animation: champ-kenburns 24s ease-in-out infinite alternate;
 }
 .champ-header-nav, .champ-header-body { position: relative; z-index: 1; }
 @keyframes champ-kenburns {
-  from { transform: scale(1); }
-  to { transform: scale(1.07); }
+  from { --kb-scale: 1; }
+  to { --kb-scale: 1.07; }
 }
 
 /* Ability panel: fade/slide instead of an instant swap */
@@ -706,8 +765,9 @@ html { background-color: #0b0c10; }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
   .champ-tile-featured .champ-tile-portrait,
   .champ-crest,
-  .champ-header::before {
+  .champ-header-bg {
     animation: none !important;
+    transition: none !important;
   }
 }
 
