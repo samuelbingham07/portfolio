@@ -4,6 +4,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap');
 
+/* Every page that loads this stylesheet is fully redesigned, so it's
+   safe to override the legacy warm html background globally here
+   rather than depending on a body class matching content height. */
+html { background-color: #0b0c10; }
+
 :root {
   --champ-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --champ-bg: #0b0c10;
