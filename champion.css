@@ -303,26 +303,18 @@ html { background-color: #0b0c10; }
 .champ-corner-br { bottom: 6px; right: 6px; border-left: none; border-top: none; }
 .champ-corner-br::after { bottom: -2px; right: -2px; }
 
-/* Crest: an SB monogram badge straddling the top edge, mastery-marker style */
+/* Crest: a single diamond ornament straddling the top edge, mastery-marker style */
 .champ-crest {
   position: absolute;
   top: 6px;
   left: 50%;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
+  width: 13px;
+  height: 13px;
   background: linear-gradient(135deg, var(--champ-gold) 0%, var(--champ-gold-dim) 100%);
-  transform: translateX(-50%);
+  transform: translateX(-50%) rotate(45deg);
   box-shadow: 0 0 10px -1px var(--champ-gold), inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -1px 2px rgba(0,0,0,0.4);
   z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.02em;
-  color: #1a1305;
-  line-height: 1;
+  font-size: 0;
 }
 
 .champ-tile-plate { padding-top: 8px; text-align: center; }
