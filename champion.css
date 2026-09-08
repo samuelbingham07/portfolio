@@ -2,7 +2,14 @@
    Scoped under .champ-* classes so it can coexist with style.css
    while the redesign is rolled out page by page. */
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap');
+/* Font loading lives in each page's own <link> tag (see index.html etc.),
+   not an @import here — @import inside a stylesheet can delay when the
+   rest of THIS stylesheet is considered loaded, which was causing the
+   JS class-additions and the CSS rules to land in the same frame on a
+   real network (no issue on fast localhost, very visible on production
+   with real latency): the flip transition had no distinct "before"
+   frame to animate from, so it silently snapped straight to the end
+   state instead of visibly rotating. */
 
 /* Every page that loads this stylesheet is fully redesigned, so it's
    safe to override the legacy warm html background globally here
