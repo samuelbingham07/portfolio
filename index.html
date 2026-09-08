@@ -328,7 +328,13 @@
     const introHeadStart = introPlaying ? 500 : 0;
     document.querySelectorAll('.champ-tile').forEach((tile, i) => {
       const stagger = Math.min(i * (introPlaying ? 22 : 35), introPlaying ? 340 : 500);
-      tile.style.transitionDelay = (introHeadStart + stagger) + 'ms';
+      const delay = (introHeadStart + stagger) + 'ms';
+      tile.style.transitionDelay = delay;
+      // The flip transition lives on the inner wrapper (a separate element
+      // with its own `transition`), so the delay has to be set there too —
+      // otherwise it fires immediately while the tile is still opacity: 0.
+      const flipInner = tile.querySelector('.champ-tile-flip-inner');
+      if (flipInner) flipInner.style.transitionDelay = delay;
       observer.observe(tile);
     });
 
