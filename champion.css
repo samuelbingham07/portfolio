@@ -200,25 +200,60 @@ html { background-color: #0b0c10; }
 .champ-tile:hover { transform: translateY(-4px); }
 .champ-tile.is-hidden { display: none; }
 
-/* First-visit intro: tiles flip up into place (hinged at the bottom)
-   instead of the plain fade. Purely a per-tile CSS transition — nothing
-   here blocks scrolling or clicks on any part of the page. */
+/* Card-flip structure: always present in the DOM, a real two-sided
+   flip (front content / a generic gold-crest back) via 3D rotateY.
+   backface-visibility does the work of hiding whichever face isn't
+   pointed at the viewer, so in the resting (non-intro) state the back
+   is simply never visible — no extra display toggling needed. */
+.champ-tile-flip-inner {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+.champ-tile-flip-front {
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.champ-tile-flip-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid var(--champ-line);
+  background: radial-gradient(120% 140% at 50% 30%, var(--cat-color) 0%, rgba(8,9,12,0.96) 70%);
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.champ-tile-flip-back::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, var(--champ-gold) 0%, var(--champ-gold-dim) 100%);
+  transform: rotate(45deg);
+  box-shadow: 0 0 8px -1px var(--champ-gold), inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+/* First-visit intro: the flip actually happens. Purely a per-tile CSS
+   transition — nothing here blocks scrolling or clicks anywhere. */
 .champ-intro-playing .champ-featured-grid,
 .champ-intro-playing .champ-standard-grid {
   perspective: 1100px;
 }
-.champ-intro-playing .champ-tile {
-  transform-origin: 50% 100%;
-  transform: rotateX(-62deg);
-  transition: transform 0.4s ease-out, opacity 0.4s ease, translate 0.4s ease;
+.champ-intro-playing .champ-tile-flip-inner {
+  transition: transform 0.5s cubic-bezier(0.3, 0.4, 0.25, 1);
+  transform: rotateY(180deg);
 }
-.champ-intro-playing .champ-tile.is-visible {
-  transform: rotateX(0deg);
+.champ-intro-playing .champ-tile.is-visible .champ-tile-flip-inner {
+  transform: rotateY(0deg);
 }
 @media (prefers-reduced-motion: reduce) {
-  .champ-intro-playing .champ-tile {
+  .champ-intro-playing .champ-tile-flip-inner {
     transform: none;
-    transition: opacity 0.3s ease;
+    transition: none;
   }
 }
 
