@@ -334,10 +334,15 @@
     }, { threshold: 0.1 });
 
     // Give images a moment to actually load before the intro flip starts,
-    // otherwise the tiles flip up while still blank.
-    const introHeadStart = introPlaying ? 500 : 0;
+    // and hold long enough that the viewer actually registers a roster of
+    // card backs before anything moves: otherwise there's no "reveal,"
+    // just a quick shuffle. The sweep itself is slowed down too, so it
+    // reads as a deliberate left-to-right, row-by-row wave (tiles are
+    // already in that order in the DOM/grid) rather than everything
+    // flipping at once.
+    const introHeadStart = introPlaying ? 850 : 0;
     document.querySelectorAll('.champ-tile').forEach((tile, i) => {
-      const stagger = Math.min(i * (introPlaying ? 22 : 35), introPlaying ? 340 : 500);
+      const stagger = Math.min(i * (introPlaying ? 45 : 35), introPlaying ? 900 : 500);
       const delay = (introHeadStart + stagger) + 'ms';
       tile.style.transitionDelay = delay;
       // The flip transition lives on the inner wrapper (a separate element
