@@ -318,7 +318,16 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
+          // Force the browser to actually commit a paint of the current
+          // (pre-flip) state before flipping the class that triggers the
+          // transition — otherwise, under real network timing, the class
+          // changes can land in the same frame and the transition just
+          // snaps to its end state with no visible animation.
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              entry.target.classList.add('is-visible');
+            });
+          });
           observer.unobserve(entry.target);
         }
       });
