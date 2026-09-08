@@ -202,6 +202,11 @@ html { background-color: #0b0c10; }
   opacity: 0;
   translate: 0 16px;
   transition: transform 0.25s ease, opacity 0.5s ease, translate 0.5s ease;
+  /* Without this, the perspective set on the grid ancestor gets
+     flattened before it reaches .champ-tile-flip-inner (a grandchild),
+     so the flip transitions correctly in the style system but renders
+     with no visible depth — confirmed via an isolated proof of concept. */
+  transform-style: preserve-3d;
 }
 .champ-tile.is-visible { opacity: 1; translate: 0 0; }
 .champ-tile:hover { transform: translateY(-4px); }
