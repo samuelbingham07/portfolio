@@ -263,8 +263,12 @@
       });
     }, { threshold: 0.1 });
 
+    // Give images a moment to actually load before the intro flip starts,
+    // otherwise the tiles flip up while still blank.
+    const introHeadStart = introPlaying ? 500 : 0;
     document.querySelectorAll('.champ-tile').forEach((tile, i) => {
-      tile.style.transitionDelay = Math.min(i * (introPlaying ? 22 : 35), introPlaying ? 340 : 500) + 'ms';
+      const stagger = Math.min(i * (introPlaying ? 22 : 35), introPlaying ? 340 : 500);
+      tile.style.transitionDelay = (introHeadStart + stagger) + 'ms';
       observer.observe(tile);
     });
 
