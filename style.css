@@ -51,20 +51,26 @@ a {
   display: inline-block;
   padding: 12px 24px;
   border-radius: 999px;
-  background-color: var(--accent);
-  color: #5a4737;
-  font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
+  background-color: var(--champ-gold, #d9b954);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.1s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 0 20px -8px var(--champ-gold, #d9b954), inset 0 1px 0 rgba(255,255,255,0.3);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+/* .champ-body forces a { color: gold !important } for inline text links;
+   this out-specifies that so the button's own dark-on-gold text holds. */
+.champ-body a.primary-button, a.primary-button,
+.champ-body a.primary-button:hover, a.primary-button:hover {
+  color: #1a1305 !important;
 }
 
 .primary-button:hover {
-  transform: translateY(-1px);
-  background-color: var(--accent-dark);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  background-color: var(--champ-ink, #f1ede1);
+  box-shadow: 0 0 26px -4px var(--champ-gold, #d9b954), inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
 .project-details {
