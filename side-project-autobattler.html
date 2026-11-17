@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Autobattler – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png?v=2">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
+</head>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/autobattlerVictory.jpg'); view-transition-name: vt-autobattler">
+    <div class="champ-header-bg"></div><span class="champ-crest"></span>
+    <div class="champ-header-nav">
+      <a href="games.html">← Back to Games</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(72% 0.16 10)"></span>Games · Roblox</div>
+      <h1 class="champ-header-name">Autobattler</h1>
+      <p class="champ-header-role">Solo project · Published Roblox autobattler built in Luau · Shop, traits, star-ups, and a bot that plays test runs for balance tuning</p>
+      <div class="champ-tags">
+        <span class="champ-tag">Roblox</span>
+        <span class="champ-tag">Luau</span>
+        <span class="champ-tag">Rojo</span>
+        <span class="champ-tag">Game Systems</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail champ-body">
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/autobattlerShop.jpg" alt="Autobattler shop, bench, and in-game how-to-play guide">
+        </div>
+
+        <p style="margin-top: 24px;"><a class="primary-button" href="https://www.roblox.com/share?code=9f43baca93b6ab4b85ab78f06a758006&amp;type=ExperienceDetails" target="_blank" rel="noopener noreferrer">Play on Roblox</a></p>
+
+        <p style="margin-top: 24px;">
+          Autobattler is a Roblox game in the style of Teamfight Tactics. You buy units from a shop, arrange them on a board, and watch them fight waves of enemy teams on their own. I designed and built it solo in Luau, using Rojo so the code lives in Git and syncs into Roblox Studio, and it's published on Roblox.
+        </p>
+
+        <p><strong>How a Run Works</strong></p>
+        <p>
+          Each round you spend gold in the shop, reroll for better odds, and drag units between the shop, your team, and the bench. Three copies of a unit combine into the next star level, up to three stars, and each star makes it 1.8 times stronger. Fights play out as a live 3D replay in the arena. A run lasts 12 enemy rounds or until your health hits zero.
+        </p>
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/autobattlerCombat.jpg" alt="Autobattler combat replay with health and mana bars">
+        </div>
+
+        <p style="margin-top: 24px;"><strong>Systems</strong></p>
+        <ul>
+          <li>11 units from 1-cost Squires to a 5-cost Dragon, each with an ability that fires when its mana bar fills</li>
+          <li>Four traits (Guardian, Mystic, Noble, Ranger) that switch on when two different units share one, with stronger tiers at higher counts</li>
+          <li>Player levels that add board slots and improve shop odds</li>
+          <li>Interest on saved gold (1 per 10 gold, up to 5) plus win and loss streak bonuses</li>
+          <li>A global top-10 leaderboard and saved personal bests</li>
+        </ul>
+
+        <p><strong>Balancing With a Bot</strong></p>
+        <p>
+          To tune the 12 enemy rounds, I wrote a simulation where a bot plays full runs through the same game logic the server uses and prints the win rate for each round. It let me find rounds that were too hard or too easy without playing every run by hand.
+        </p>
+
+        <p><strong>Under the Hood</strong></p>
+        <p>
+          The server owns all game state. The client sends requests and draws whatever the server sends back, so players can't edit their gold or units. Each player gets their own session and arena, so several people can play on one server without sharing a board.
+        </p>
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/autobattlerVictory.jpg" alt="Autobattler victory screen after all 12 rounds with traits and leaderboard">
+        </div>
+        <p><strong>Through This Project I've Learned and Practiced</strong></p>
+        <div class="champ-tags">
+          <span class="champ-tag">Roblox Studio</span>
+          <span class="champ-tag">Luau</span>
+          <span class="champ-tag">Rojo</span>
+          <span class="champ-tag">Game Economy Design</span>
+          <span class="champ-tag">Balance Simulation</span>
+          <span class="champ-tag">Server-Authoritative Multiplayer</span>
+        </div>
+
+        <p style="margin-top: 24px;"><a href="games.html">← Back to Games</a></p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="champ-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script src="champion.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

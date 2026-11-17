@@ -98,6 +98,7 @@
     'vt-artgame': { href: 'side-project-artgame.html', name: 'Terms of Service', img: 'images/artgameThumbnail.png' },
     'vt-mlart': { href: 'side-project-mlArt.html', name: 'Machine Learning Art', img: 'images/mlArtThumbnail.png' },
     'vt-games': { href: 'games.html', name: 'Game Design', img: 'images/gamesThumbnail.jpg' },
+    'vt-autobattler': { href: 'side-project-autobattler.html', name: 'Autobattler', img: 'images/autobattlerThumbnail.jpg' },
     'vt-hobbies': { href: 'projects-hobbies.html', name: 'Hobbies', img: 'images/backpackingThumbnail.png' }
   };
 
