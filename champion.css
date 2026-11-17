@@ -922,3 +922,64 @@ a[href="projects-hobbies.html"] .champ-tile-portrait { view-transition-name: vt-
 @media (max-width: 640px) {
   .champ-arena::before, .champ-header::after { display: none; }
 }
+
+/* ===== Player profile (About) ===== */
+.champ-profile {
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  padding: 24px;
+  background: oklch(17% 0.01 260 / 0.7);
+  border: 1px solid var(--champ-line);
+  border-radius: 12px;
+}
+.champ-profile-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--champ-gold-dim);
+}
+.champ-profile-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--champ-gold-dim);
+  margin-bottom: 6px;
+}
+.champ-profile-name {
+  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  line-height: 1;
+  margin: 0 0 12px;
+  color: var(--champ-ink);
+}
+.champ-profile-body p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--champ-ink);
+  max-width: 72ch;
+  margin: 0 0 10px;
+}
+.champ-profile-body .champ-profile-meta {
+  color: var(--champ-ink-dim);
+  font-size: 0.88rem;
+  margin: 4px 0 0;
+}
+@media (max-width: 640px) {
+  .champ-profile { grid-template-columns: 1fr; gap: 16px; padding: 18px; }
+  .champ-profile-photo { width: 112px; height: 112px; }
+}
+
+/* Games hub: roster grid on a detail page */
+.champ-games-hub { padding-top: 40px; }
+.champ-games-hub .champ-tile { opacity: 1; translate: 0 0; }
+a[href="games.html"] .champ-tile-portrait { view-transition-name: vt-games; }

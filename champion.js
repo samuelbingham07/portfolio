@@ -97,6 +97,7 @@
     'vt-rpg': { href: 'side-project-rpg.html', name: 'Whitcomb Manor', img: 'images/rpgThumbnail.png' },
     'vt-artgame': { href: 'side-project-artgame.html', name: 'Terms of Service', img: 'images/artgameThumbnail.png' },
     'vt-mlart': { href: 'side-project-mlArt.html', name: 'Machine Learning Art', img: 'images/mlArtThumbnail.png' },
+    'vt-games': { href: 'games.html', name: 'Game Design', img: 'images/gamesThumbnail.jpg' },
     'vt-hobbies': { href: 'projects-hobbies.html', name: 'Hobbies', img: 'images/backpackingThumbnail.png' }
   };
 
