@@ -926,57 +926,65 @@ a[href="projects-hobbies.html"] .champ-tile-portrait { view-transition-name: vt-
 /* ===== Player profile (About) ===== */
 .champ-profile {
   max-width: 1400px;
-  margin: 0 auto 40px;
+  margin: 0 auto 28px;
   display: grid;
-  grid-template-columns: 160px minmax(0, 1fr);
-  gap: 28px;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 20px;
   align-items: start;
-  padding: 24px;
+  padding: 16px 20px;
   background: oklch(17% 0.01 260 / 0.7);
   border: 1px solid var(--champ-line);
   border-radius: 12px;
 }
 .champ-profile-photo {
-  width: 160px;
-  height: 160px;
+  width: 104px;
+  height: 104px;
   object-fit: cover;
   border-radius: 10px;
   border: 1px solid var(--champ-gold-dim);
 }
+.champ-profile-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
 .champ-profile-label {
   font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--champ-gold-dim);
-  margin-bottom: 6px;
 }
 .champ-profile-name {
   font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
   font-weight: 400;
   letter-spacing: 0.02em;
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-size: 1.6rem;
   line-height: 1;
-  margin: 0 0 12px;
+  margin: 0;
   color: var(--champ-ink);
 }
 .champ-profile-body p {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.98rem;
-  line-height: 1.65;
+  font-size: 0.88rem;
+  line-height: 1.5;
   color: var(--champ-ink);
-  max-width: 72ch;
-  margin: 0 0 10px;
+  max-width: 110ch;
+  margin: 0 0 5px;
 }
 .champ-profile-body .champ-profile-meta {
   color: var(--champ-ink-dim);
-  font-size: 0.88rem;
-  margin: 4px 0 0;
+  font-size: 0.8rem;
+  margin: 2px 0 0;
 }
 @media (max-width: 640px) {
-  .champ-profile { grid-template-columns: 1fr; gap: 16px; padding: 18px; }
-  .champ-profile-photo { width: 112px; height: 112px; }
+  .champ-profile { display: block; padding: 14px; margin-bottom: 22px; }
+  .champ-profile-photo { float: left; width: 64px; height: 64px; margin: 2px 12px 6px 0; }
+  .champ-profile-body p { font-size: 0.84rem; line-height: 1.45; }
+  .champ-profile-body .champ-profile-meta { display: none; }
 }
 
 /* Games hub: roster grid on a detail page */
@@ -984,3 +992,5 @@ a[href="projects-hobbies.html"] .champ-tile-portrait { view-transition-name: vt-
 .champ-games-hub .champ-tile { opacity: 1; translate: 0 0; }
 a[href="games.html"] .champ-tile-portrait { view-transition-name: vt-games; }
 a[href="side-project-autobattler.html"] .champ-tile-portrait { view-transition-name: vt-autobattler; }
+
+.champ-history[hidden] { display: none; }
