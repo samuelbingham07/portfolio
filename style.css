@@ -116,3 +116,15 @@ a {
   background-color: #fff;
   object-fit: contain;
 }
+
+/* Button rows: wrap cleanly with even spacing instead of overlapping
+   when several buttons share one paragraph. */
+p:has(> .primary-button) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+}
+p:has(> .primary-button) > .primary-button {
+  margin-left: 0 !important;
+}

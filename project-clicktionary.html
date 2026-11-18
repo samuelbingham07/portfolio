@@ -25,7 +25,7 @@
     <div class="champ-header-body">
       <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(78% 0.15 40)"></span>Product · Web Extension</div>
       <h1 class="champ-header-name">Clicktionary</h1>
-      <p class="champ-header-role">Chrome extension for language learners · Live on the Chrome Web Store</p>
+      <p class="champ-header-role">Chrome extension for language learners · 4-person Product Space team · I was the only engineer · Live on the Chrome Web Store</p>
       <div class="champ-tags">
         <span class="champ-tag">HTML/CSS</span>
         <span class="champ-tag">Supabase</span>
@@ -39,32 +39,50 @@
     <section class="project-details">
       <article class="project-detail champ-body">
         <div class="video-wrapper" style="margin-top: 0;">
-          <video controls>
-            <source src="videos/clicktionaryDemo.mp4" type="video/mp4">
+          <video controls preload="metadata">
+            <source src="videos/clicktionaryDemo.mp4#t=0.1" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
 
         <p>
-          Clicktionary is a Chrome extension that lets you highlight any word on any webpage, instantly get a translation in 10 languages, save it to your personal word bank, and practice later with flashcards and multiple choice. It lives entirely in the browser with no new tab, no copy-pasting, and no losing your place in the article you were reading. <strong>Now live on the Chrome Web Store.</strong>
+          Clicktionary is a Chrome extension for language learners, where you highlight a word on any webpage and a translation pops up right next to it, in any of 10 languages. You can save the word to your word bank and practice it later with flashcards and multiple choice, and it's live on the Chrome Web Store now!
+        </p>
+
+        <p><strong>The Team</strong></p>
+        <p>
+          We built Clicktionary as a four-person team in Product Space: Nicole, Sophia, Roslyn, and me, and we made the product decisions together, like which features mattered and how it should look. I was the only engineer, so I built the whole extension and its practice site.
         </p>
 
         <p><strong>The Problem</strong></p>
         <p>
-          Learning a language by reading real content (news, books, blogs) is one of the most effective methods, but it comes with constant friction. Every time you hit an unfamiliar word, you have to switch tabs, open a translator, copy the word in, read the definition, then find your way back. You lose your reading flow, and because there's no structured follow-up, you forget the word within hours. Clicktionary removes that friction entirely. The translation comes to you, inline, in under two seconds, and the words you care about go straight into a study queue.
+          We started from our own experience as college students learning Spanish. Reading real content is one of the best ways to learn a language, but every unfamiliar word means switching tabs, pasting it into a translator, and finding your place again, and you've usually forgotten the word by the next day.
+        </p>
+
+        <p><strong>Research</strong></p>
+        <p>
+          The American Council on the Teaching of Foreign Languages says the key to reaching an advanced level is using the language as much as possible, and time is one of the biggest things holding adult learners back, and college students don't have much of it. Our own user research added three things: learners got more out of dictionaries than translators, it took about three lookups before a word stuck, and gamified apps weren't an efficient way to learn.
+        </p>
+        <p>
+          We also looked at what people were already using, and each option had a gap. SpanishDict gives the most complete information, with multiple definitions, example sentences, and conjugations, but it breaks your reading flow and only covers Spanish. Google Translate is fast but gives you less about each word, so it sticks less. Quizlet is the best for retention because you practice, but setting up your own sets is tedious. Nobody combined a quick lookup on the page with practice afterward, so that became our product!
+        </p>
+
+        <p><strong>From Pitch to Launch</strong></p>
+        <p>
+          Our pitch had four steps: click a word, translate it, see a definition with the option to save it, and practice. In the pitch, practice meant sending your saved words to Quizlet, but in the version that shipped I built our own practice site instead, with flashcards, multiple choice, and a mastery score for each word.
         </p>
 
         <p><strong>How It Works</strong></p>
         <p>
-          The extension injects a content script into every webpage. When you highlight text, a tooltip appears with the translation fetched from Lingva Translate, a free open-source Google Translate-quality API, with MyMemory as a fallback. From the tooltip you can add the word to your word bank with one click, or type your own definition if the automatic lookup misses. The full pipeline:
+          When you highlight text, a small tooltip shows the translation from Lingva Translate, an open-source front end for Google Translate, with MyMemory as a backup. From there you can save the word in one click, or type your own definition if the lookup gets it wrong.
         </p>
         <ul>
-          <li>Multiple <strong>Lingva Translate</strong> instances are queried in parallel via <code>Promise.any()</code> with a 2-second timeout, so whichever instance responds first wins and translations feel instant even when one server is slow.</li>
-          <li>On every page load, the extension silently <strong>prefetches the 10 hardest words</strong> on the page (longest unique words, which are statistically rarer vocabulary) so that if you highlight one of them, the result is already cached.</li>
-          <li>An <strong>in-memory translation cache</strong> means repeat lookups on the same word are instant, with no extra network calls.</li>
-          <li>Words you save go to a <strong>Supabase</strong> database (when signed in) with row-level security, or fall back to <code>chrome.storage.local</code> so the extension works fully offline.</li>
-          <li>A companion <strong>GitHub Pages site</strong> hosts the full word bank and practice interface: flashcards, multiple choice, and a 0–5 mastery strength tracker synced to Supabase.</li>
-          <li>A <strong>bridge content script</strong> (<code>bridge.js</code>) is injected into the GitHub Pages site to pass the stored Supabase session over, so you stay logged in across extension and website without re-authenticating.</li>
+          <li>The extension asks several Lingva servers at once and uses whichever answers first, with a 2-second timeout, so one slow server doesn't hold up the tooltip.</li>
+          <li>When a page loads, it translates the 10 longest words on the page ahead of time. Longer words tend to be rarer, so they're the ones you're most likely to highlight, and they show up instantly when you do.</li>
+          <li>Words you've already looked up are cached, so looking them up again doesn't need the network.</li>
+          <li>If you're signed in, saved words sync to Supabase. If you're not, they stay in the browser, so the extension works without an account or a connection.</li>
+          <li>A companion site on GitHub Pages holds your full word bank and the practice tools: flashcards, multiple choice, and a mastery score from 0 to 5 for each word.</li>
+          <li>A small script passes your login from the extension to the practice site, so you only sign in once.</li>
         </ul>
 
         <p><strong>Technical Highlights</strong></p>
@@ -77,19 +95,19 @@
         <div class="champ-ability-panel" id="ability-panel">
           <div class="champ-ability-panel-item is-active" data-item="0" role="tabpanel" id="ability-panel-item-0" aria-labelledby="ability-tab-0" tabindex="0">
             <p class="champ-ability-panel-name">Manifest V3 Architecture</p>
-            <p>Built on Manifest V3, the current Chrome extension standard, with a background service worker handling auth, Supabase sync, and word bank operations.</p>
+            <p>Built on Manifest V3, the current Chrome extension standard. A background service worker handles sign-in, syncing, and the word bank.</p>
           </div>
           <div class="champ-ability-panel-item" data-item="1" role="tabpanel" id="ability-panel-item-1" aria-labelledby="ability-tab-1" tabindex="0">
             <p class="champ-ability-panel-name">Google OAuth</p>
-            <p>Implemented via <code>chrome.identity.launchWebAuthFlow</code>, with the extension's ID locked to a stable value via an RSA key in the manifest so the OAuth redirect URI never changes.</p>
+            <p>Sign-in uses <code>chrome.identity.launchWebAuthFlow</code>. I pinned the extension's ID with an RSA key in the manifest so the OAuth redirect URL stays the same.</p>
           </div>
           <div class="champ-ability-panel-item" data-item="2" role="tabpanel" id="ability-panel-item-2" aria-labelledby="ability-tab-2" tabindex="0">
             <p class="champ-ability-panel-name">Duplicate Detection &amp; Fallbacks</p>
-            <p>Duplicate detection on word saves, custom definition fallback if translation fails, and an on/off toggle that persists across sessions.</p>
+            <p>The extension skips words you've already saved, lets you write your own definition if a translation fails, and remembers whether you turned it off.</p>
           </div>
           <div class="champ-ability-panel-item" data-item="3" role="tabpanel" id="ability-panel-item-3" aria-labelledby="ability-tab-3" tabindex="0">
             <p class="champ-ability-panel-name">10-Language Support</p>
-            <p>Supports 10 languages (Spanish, French, German, Italian, Portuguese, Japanese, Chinese, Korean, Arabic, and Russian) with correct Unicode range detection to decide whether highlighted text could belong to the selected language before showing a tooltip.</p>
+            <p>Supports Spanish, French, German, Italian, Portuguese, Japanese, Chinese, Korean, Arabic, and Russian. Before showing a tooltip, it checks the characters you highlighted to see if they could belong to the language you're learning.</p>
           </div>
         </div>
 
@@ -107,7 +125,7 @@
 
         <p><strong>Current Status</strong></p>
         <p>
-          Clicktionary is live on the Chrome Web Store with a small group of early users, with more features on the way.
+          Clicktionary is live on the Chrome Web Store with a small group of early users, and I'm still adding features.
         </p>
 
         <p><strong>Through This Project I've Learned and Practiced</strong></p>

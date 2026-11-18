@@ -119,7 +119,9 @@
 
     .principle-card .icon {
       font-size: 1.4rem;
-      margin-bottom: 8px;
+      line-height: 1;
+      height: 1.4rem;
+      margin-bottom: 10px;
     }
 
     .principle-card .name {
@@ -135,13 +137,14 @@
       color: rgba(255,255,255,0.7) !important;
     }
 
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+    .champ-body p.section-label {
+      font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: #FF2D78;
-      margin: 28px 0 8px;
+      color: var(--champ-gold) !important;
+      margin: 36px 0 10px;
     }
   </style>
 </head>
@@ -169,7 +172,7 @@
       <article class="project-detail champ-body">
 
         <p>
-          Project HIKI is a semester-long Human-Centered Design project that rethinks how neurodivergent people find authentic connection online. Working within a liberatory design framework, our team researched, prototyped, and tested our way to <strong>Hiki Grids</strong>: a daily grid-based matching feature that replaces the swipe entirely.
+          Project HIKI was our semester project for Advanced Human-Centered Design. We looked at how neurodivergent people meet friends and partners online, and after rounds of research, prototyping, and testing, we ended up with Hiki Grids, a daily matching feature built to replace swiping.
         </p>
 
         <div class="image-wrapper" style="margin-top: 16px;">
@@ -178,7 +181,7 @@
 
         <p class="section-label">The Problem Space</p>
         <p>
-          When we interviewed neurodivergent users about dating and friendship apps, one thing kept coming up: the profile-building process felt dehumanizing. Users described themselves as "commodifying myself," "curating myself," and "rendering myself purchasable for other people." Infinitely scrolling through faces and curated bios created overstimulation and a sense that real personality was flattened into a product listing.
+          We interviewed neurodivergent users about dating and friendship apps, and setting up a profile came up again and again. People said it felt like "commodifying myself," "curating myself," and "rendering myself purchasable for other people." Scrolling through endless faces and polished bios was overwhelming, and it left little room for anyone's actual personality.
         </p>
 
         <div class="quote-pull">
@@ -186,96 +189,96 @@
         </div>
 
         <p>
-          At the same time, neurodivergent users told us they form the best connections through shared interests and repeated, low-stakes exposure, more like how friendships happen in real life than like a marketplace transaction. The apps weren't just aesthetically off; their core mechanics were structurally wrong for these users.
+          The same people told us their best connections came from shared interests and from seeing someone over and over in low-pressure settings, which is how friendships usually form in real life. The way these apps match people worked against that.
         </p>
 
         <p class="section-label">Who We Designed For</p>
 
         <div class="pov-box">
-          <p><strong>Jamie</strong> is 20 years old, diagnosed with ADHD, and identifies as gay. He has used multiple dating apps but hates setting up a profile because it feels like he is trying to commodify himself, rendering himself purchasable for others. Jamie needs his self-presentation and interactions online to feel <em>authentic</em>. He wants dating online to feel less like a marketplace and more reflective of how people make new connections in real life, where spontaneity and curiosity begin a relationship.</p>
+          <p><strong>Jamie</strong> is 20, has ADHD, and identifies as gay. He's used several dating apps and hates setting up a profile, because it feels like he's commodifying himself and making himself purchasable for others. He needs the way he presents himself and talks to people online to feel <em>authentic</em>. He wants online dating to feel less like a marketplace and more like meeting people in real life, where a relationship starts with spontaneity and curiosity.</p>
         </div>
 
         <p>
-          Working within a liberatory design framework pushed us to stay accountable to Jamie as a real person rather than a user archetype. Neutralizing diagnostic language and reframing the problem around friendship rather than disability were not small tweaks: they changed the premise of the design.
+          We worked within a liberatory design framework, which kept us accountable to Jamie as a real person and led us to drop diagnostic language and frame the problem around friendship instead of disability.
         </p>
 
         <p class="section-label">Research & Insights</p>
 
-        <p>We used a Say/Think/Do/Feel framework to synthesize our interviews into patterns:</p>
+        <p>We sorted our interview notes into Say, Think, Do, and Feel, and a few patterns stood out.</p>
 
         <ul>
-          <li>"I don't like setting up the profile": the onboarding itself is the problem</li>
-          <li>"I'm not just queer, it's one part of me": labels flatten identity</li>
-          <li>"It always feels like a very permanent decision that I send a like or heart": the swipe carries too much weight</li>
-          <li>Users avoid apps entirely out of fear of harassment or overstimulation</li>
-          <li>The easiest friendships form young, before neurodivergent traits become social barriers: which means adult apps have to work harder to recreate that low-stakes environment</li>
+          <li>"I don't like setting up the profile." Onboarding itself was a problem.</li>
+          <li>"I'm not just queer, it's one part of me." Labels flatten who someone is.</li>
+          <li>"It always feels like a very permanent decision that I send a like or heart." Every swipe carries too much weight.</li>
+          <li>Some people avoid the apps entirely because they're afraid of harassment or overstimulation.</li>
+          <li>Friendships come easiest when you're young, before neurodivergent traits turn into social barriers, so an app for adults has to work harder to recreate that low-pressure setting.</li>
         </ul>
 
         <p class="section-label">Ideation</p>
 
         <p>
-          We ran a full HMW (How Might We) ideation session across four categories: eliminating profile setup, making matching more spontaneous, making the experience feel safer, and connecting people through interests rather than appearances. From over 50 ideas across the boards, two directions rose to the top:
+          We ran a How Might We session around four questions: how to get rid of profile setup, make matching more spontaneous, make the experience feel safer, and connect people through interests instead of looks, and out of more than 50 ideas we picked two to prototype. Infinite Zoom came from infinite zoom art, and Hiki Grids borrowed the 2-by-2 grid, a design tool from our HCD class.
         </p>
 
         <div class="process-steps">
           <div class="process-step">
             <div class="step-num">Idea 01</div>
-            <p><strong>Infinite Zoom</strong><br>An aesthetic overhaul of matching: profiles nested inside each other like infinite zoom art, revealing more detail the deeper you go.</p>
+            <p><strong>Infinite Zoom</strong><br>Profiles nested inside each other like infinite zoom art, so you see more about someone the further you zoom in.</p>
             <a href="https://samuelbingham07.github.io/infiniteZoomArtPrototype/" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 12px; font-size: 0.82rem; font-weight: 700; color: #FF2D78; text-decoration: underline;">Try prototype →</a>
           </div>
           <div class="process-step">
             <div class="step-num">Idea 02</div>
-            <p><strong>Hiki Grids</strong><br>A 2-by-2 grid where users place themselves based on a daily prompt: a fundamental deconstruction of the swipe.</p>
+            <p><strong>Hiki Grids</strong><br>A 2-by-2 grid where you place yourself based on a daily prompt and see where everyone else landed.</p>
             <a href="https://samuelbingham07.github.io/2by2Prototype/" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 12px; font-size: 0.82rem; font-weight: 700; color: #FF2D78; text-decoration: underline;">Try prototype →</a>
           </div>
         </div>
 
         <div class="image-wrapper">
-          <img src="images/hikiInfiniteZoom.png" alt="Infinite Zoom prototype screenshot">
+          <img src="images/hikiGridsPrototype.png" alt="Infinite Zoom prototype showing profiles as stars connected across a night sky">
         </div>
         <div class="video-wrapper">
-          <video controls>
-            <source src="videos/hikiInfiniteZoomDemo.mp4" type="video/mp4">
+          <video controls preload="metadata">
+            <source src="videos/hikiInfiniteZoomDemo.mp4#t=0.1" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
 
         <p class="section-label">Testing & Iteration</p>
 
-        <p>We built low-fidelity prototypes of both concepts and tested them with four users: Jamie, April, Cary, and Sheila. Three key insights shaped our final direction:</p>
+        <p>I built prototypes of both ideas, and we tested them with four users: Jamie, April, Cary, and Sheila, and three findings decided our direction.</p>
 
         <div class="insight-grid">
           <div class="insight-card">
             <div class="label">Insight 01</div>
             <div class="title">Replacing the Swipe</div>
-            <p>"The Infinite Zoom feels like an aesthetic revolution of matching while Hiki Grids seems more of a fundamental deconstruction of the swipe." Users wanted the latter: not a reskin, but a different premise entirely. It felt like "seeing the back door of the algorithm."</p>
+            <p>"The Infinite Zoom feels like an aesthetic revolution of matching while Hiki Grids seems more of a fundamental deconstruction of the swipe." Testers leaned toward Hiki Grids, and one said it felt like "getting to see the back door of the algorithm."</p>
           </div>
           <div class="insight-card">
             <div class="label">Insight 02</div>
             <div class="title">Friendship vs Romance</div>
-            <p>Users seeking friendship versus romance had meaningfully different needs: some wanted similar people, others wanted opposites. The grid gave users agency in that choice in a way the swipe never could.</p>
+            <p>People looking for friends and people looking for dates wanted different things. Some wanted someone similar, others were curious about opposites, and the grid let them choose.</p>
           </div>
           <div class="insight-card">
             <div class="label">Insight 03</div>
             <div class="title">Beauty of Novelty</div>
-            <p>"The swipe mechanism is old and repetitive." Daily prompts felt fun and fresh. Tracing someone's answers day by day felt closer to actually getting to know a person: like a continued conversation in the real world.</p>
+            <p>"The swipe mechanism is old and repetitive." Testers liked getting a new prompt every day, and following someone's answers over time felt closer to getting to know them in person.</p>
           </div>
         </div>
 
         <p class="section-label">Final Design: Hiki Grids</p>
 
         <p>
-          Hiki Grids replaces the matching tab entirely. Each day, users are presented with a new prompt and a 2x2 grid. They place themselves on the grid based on their answer. The app then shows a plane of other users and where they placed themselves: so instead of swiping through faces one by one, you see a spatial map of how people answered the same question. Users who intrigue you unlock their icon profile (no photos, no label-heavy bios) so you can reach out.
+          Hiki Grids replaces the matching tab, and each day you get a new prompt and a 2x2 grid to place yourself on based on your answer. Then you see where everyone else placed themselves on the same grid, so there's no stack of faces to swipe through. If someone's answer catches your interest, you can open their icon profile, which has no photos and no label-heavy bio, and reach out.
         </p>
 
-        <p>Everyone is pre-filtered by age, location, sexual orientation, and intention (friendship vs romance). These settings can be changed at any time from the Grids screen.</p>
+        <p>Everyone you see is already filtered by age, location, sexual orientation, and whether they want friendship or romance. You can change those settings from the Grids screen anytime.</p>
 
         <div class="image-wrapper">
-          <img src="images/hikiGridsPrototype.png" alt="Hiki Grids prototype screenshot">
+          <img src="images/hikiInfiniteZoom.png" alt="Hiki Grids first-time setup screen with friendship or romance and neurodivergence preferences">
         </div>
         <div class="video-wrapper">
-          <video controls>
-            <source src="videos/hikiGridsDemo.mp4" type="video/mp4">
+          <video controls preload="metadata">
+            <source src="videos/hikiGridsDemo.mp4#t=0.1" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
@@ -296,39 +299,41 @@
           <div class="principle-card">
             <div class="icon">⊞</div>
             <div class="name">2×2 "+" Axis</div>
-            <p>Anti-Commodification: you see a plane of people and their answer relative to yours, not a one-by-one queue.</p>
+            <p>You see a whole plane of people and how their answers compare to yours, with no one-by-one queue.</p>
           </div>
           <div class="principle-card">
             <div class="icon">◑</div>
             <div class="name">Daily Prompts</div>
-            <p>Encourages Curiosity: you learn about a person bit by bit each day, like having a continued conversation in the real world.</p>
+            <p>You learn a little more about someone each day, like an ongoing conversation.</p>
           </div>
           <div class="principle-card">
             <div class="icon">◎</div>
             <div class="name">Icon Profiles</div>
-            <p>Diminishes Labels: no photos or distinct identity labels from the start. You match based on curiosity about their answers.</p>
+            <p>No photos or identity labels up front, so you match because you're curious about someone's answers.</p>
           </div>
           <div class="principle-card">
             <div class="icon">⚙</div>
             <div class="name">Settings</div>
-            <p>Intentions Are Valued: age, location, sexuality, neurodivergent preferences, and friendship vs romance are respected from day one.</p>
+            <p>Age, location, sexuality, neurodivergent preferences, and friendship or romance are set from day one.</p>
           </div>
         </div>
 
         <p class="section-label">Lingering Questions</p>
-        <p>Our final testing round surfaced three open threads worth pursuing:</p>
+        <p>Our last round of testing left us with three open questions.</p>
         <ul>
-          <li><strong>Age + intention matters.</strong> Older users want more intentionality in their search: Hiki Grids may be most resonant with younger populations.</li>
-          <li><strong>Curiosity beyond the grid.</strong> Users wanted to know <em>why</em> someone placed themselves where they did: a short optional explanation field could deepen the connection.</li>
-          <li><strong>"Living, breathing app."</strong> Keeping the grids visible after matching, like a living timeline of how your connection developed, could make the app feel more like a relationship than a marketplace.</li>
+          <li>Older testers wanted to be more intentional about who they met, so Hiki Grids may fit younger users best.</li>
+          <li>One tester said, "Having prompts daily is good, but I would learn much more about a person by hearing WHY they placed themselves there." A short, optional explanation next to each answer could help.</li>
+          <li>Another said learning a bit about someone each day "would feel like a nudge, as if you meet someone often and get to know them slowly." Keeping the grids going after two people match could carry that into the relationship.</li>
         </ul>
+
+        <p class="section-label">My Role</p>
+        <p>
+          I was one of three team members and the only engineer, so I built the Hiki Grids prototype and our other digital prototypes, including Infinite Zoom.
+        </p>
 
         <p class="section-label">What I Took Away</p>
         <p>
-          This project changed how I think about design accountability. Working within a liberatory design framework meant I had a real person, Jamie, to be accountable to, which sharpened every decision rather than limiting scope. I used to think designing for a specific community meant narrowing the design. Now I think it sharpens every decision because you have someone real to answer to.
-        </p>
-        <p>
-          I also grew in my ability to hold aesthetics and ethics at the same time: not as separate concerns, but as the same concern. And perhaps most importantly: accessibility is not a layer you add at the end. It is a structural decision that shapes the matching logic from the ground up.
+          I used to think designing for one specific community would narrow the design. Having Jamie to answer to did the opposite and made each decision easier to make. I also learned that accessibility has to be part of the core design, and for Hiki Grids it shaped how matching works.
         </p>
 
         <p style="margin-top: 28px;">

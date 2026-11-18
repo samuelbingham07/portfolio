@@ -17,10 +17,10 @@
   <link rel="stylesheet" href="champion.css" />
 </head>
 <body class="champ-page">
-  <div class="champ-header" style="--champ-header-img:url('images/autobattlerVictory.jpg'); view-transition-name: vt-autobattler">
+  <div class="champ-header" style="--champ-header-img:url('images/autobattlerHeader.jpg'); view-transition-name: vt-autobattler">
     <div class="champ-header-bg"></div><span class="champ-crest"></span>
     <div class="champ-header-nav">
-      <a href="games.html">← Back to Games</a>
+      <a href="index.html#projects">← Back to Roster</a>
     </div>
     <div class="champ-header-body">
       <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(72% 0.16 10)"></span>Games · Roblox</div>
@@ -39,44 +39,54 @@
     <section class="project-details">
       <article class="project-detail champ-body">
         <div class="image-wrapper" style="margin-top: 24px;">
-          <img src="images/autobattlerShop.jpg" alt="Autobattler shop, bench, and in-game how-to-play guide">
+          <img src="images/autobattlerVictory.jpg" alt="Autobattler victory screen after all 12 rounds, with a full board of units, active traits, and the leaderboard">
         </div>
 
         <p style="margin-top: 24px;"><a class="primary-button" href="https://www.roblox.com/share?code=9f43baca93b6ab4b85ab78f06a758006&amp;type=ExperienceDetails" target="_blank" rel="noopener noreferrer">Play on Roblox</a></p>
 
         <p style="margin-top: 24px;">
-          Autobattler is a Roblox game in the style of Teamfight Tactics. You buy units from a shop, arrange them on a board, and watch them fight waves of enemy teams on their own. I designed and built it solo in Luau, using Rojo so the code lives in Git and syncs into Roblox Studio, and it's published on Roblox.
+          Autobattler is a Roblox game in the style of Teamfight Tactics. You buy units from a shop, place them on a board, and watch them fight 12 rounds of enemy teams on their own. I designed and built it solo in Luau, and it's published on Roblox, so you can play it right now!
         </p>
 
-        <p><strong>How a Run Works</strong></p>
+        <p><strong>Why I Built It</strong></p>
         <p>
-          Each round you spend gold in the shop, reroll for better odds, and drag units between the shop, your team, and the bench. Three copies of a unit combine into the next star level, up to three stars, and each star makes it 1.8 times stronger. Fights play out as a live 3D replay in the arena. A run lasts 12 enemy rounds or until your health hits zero.
+          TFT is my favorite game, so I already knew how it should feel, but Roblox Studio was completely new to me. Building a game I understood inside a tool I didn't seemed like the best way to learn Studio and find its limits, including its AI building features!
+        </p>
+        <p>
+          I also wanted to see what it's like to be a creator on Roblox. Roblox is a two-sided platform, with players on one side and creators on the other, and I think you need to understand both to design for everyone on it.
+        </p>
+
+        <p><strong>How It Came Together</strong></p>
+        <p>
+          I built it in four rounds, and the first version had just the core loop: a shop, a board and bench, combining three copies of a unit into a stronger one, and eight enemy rounds. Next I added player levels, traits, and abilities that fire when a unit's mana bar fills. The third round was about making fights feel good, with floating damage numbers, attack and death sounds, and small character models for each unit. The last round added an economy with interest and streak bonuses, more units, a global leaderboard, and a full UI redesign.
+        </p>
+
+        <p><strong>Designing for a First-Time Player</strong></p>
+        <p>
+          Nobody else playtested it, so I played a lot of runs myself and kept noticing things I only understood because I've played so much TFT. A new player wouldn't have that background, so filling those gaps became the redesign. The game now opens with a how-to-play screen, and hovering over any unit shows what it does. A side panel lists the next enemy team, your active traits, and the leaderboard. Units drag between the shop, your team, and the bench, and dropping one on the shop sells it.
         </p>
         <div class="image-wrapper" style="margin-top: 24px;">
-          <img src="images/autobattlerCombat.jpg" alt="Autobattler combat replay with health and mana bars">
+          <img src="images/autobattlerShop.jpg" alt="The how-to-play screen over the shop, bench, and team slots at the start of a run">
         </div>
 
-        <p style="margin-top: 24px;"><strong>Systems</strong></p>
-        <ul>
-          <li>11 units from 1-cost Squires to a 5-cost Dragon, each with an ability that fires when its mana bar fills</li>
-          <li>Four traits (Guardian, Mystic, Noble, Ranger) that switch on when two different units share one, with stronger tiers at higher counts</li>
-          <li>Player levels that add board slots and improve shop odds</li>
-          <li>Interest on saved gold (1 per 10 gold, up to 5) plus win and loss streak bonuses</li>
-          <li>A global top-10 leaderboard and saved personal bests</li>
-        </ul>
-
-        <p><strong>Balancing With a Bot</strong></p>
+        <p style="margin-top: 24px;"><strong>The Shop Card</strong></p>
         <p>
-          To tune the 12 enemy rounds, I wrote a simulation where a bot plays full runs through the same game logic the server uses and prints the win rate for each round. It let me find rounds that were too hard or too easy without playing every run by hand.
+          Each shop card shows a unit's name, star level, health, damage per second, traits, ability, and cost, which is the minimum you need to know what a unit will actually do before you buy it. I could have gone further with abilities and traits, but I kept them simple on purpose.
+        </p>
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/autobattlerCombat.jpg" alt="A fight in progress with health and mana bars over each unit and the Guardian and Mystic traits active">
+        </div>
+
+        <p style="margin-top: 24px;"><strong>Balancing With a Bot</strong></p>
+        <p>
+          To tune the 12 enemy rounds, I wrote a simulation where a bot plays full runs through the same game logic the server uses and prints the win rate for each round. I used it to find rounds that were too hard or too easy without playing every run by hand.
         </p>
 
         <p><strong>Under the Hood</strong></p>
         <p>
-          The server owns all game state. The client sends requests and draws whatever the server sends back, so players can't edit their gold or units. Each player gets their own session and arena, so several people can play on one server without sharing a board.
+          The server owns all of the game state, so players can't edit their gold or units from their side. Each player gets their own session and arena, which means several people can play on one server without sharing a board.
         </p>
-        <div class="image-wrapper" style="margin-top: 24px;">
-          <img src="images/autobattlerVictory.jpg" alt="Autobattler victory screen after all 12 rounds with traits and leaderboard">
-        </div>
+
         <p><strong>Through This Project I've Learned and Practiced</strong></p>
         <div class="champ-tags">
           <span class="champ-tag">Roblox Studio</span>
@@ -87,7 +97,7 @@
           <span class="champ-tag">Server-Authoritative Multiplayer</span>
         </div>
 
-        <p style="margin-top: 24px;"><a href="games.html">← Back to Games</a></p>
+        <p style="margin-top: 24px;"><a href="index.html#projects">← Back to Roster</a></p>
       </article>
     </section>
   </main>

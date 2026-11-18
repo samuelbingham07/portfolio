@@ -577,16 +577,22 @@ html { background-color: #0b0c10; }
   display: block;
   font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
   text-transform: uppercase;
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   letter-spacing: 0.05em;
   color: var(--champ-gold);
-  margin-top: 8px;
+  margin-top: 28px;
 }
 
 .champ-body .image-wrapper img,
 .champ-body .video-wrapper video {
   border-color: var(--champ-gold-dim);
   background-color: #05060a;
+  /* Keep tall screenshots and videos within one screen on desktop */
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 80vh;
+  margin: 0 auto;
 }
 
 /* Interactive ability bar (P/Q/W/E/R style) */
@@ -994,3 +1000,14 @@ a[href="games.html"] .champ-tile-portrait { view-transition-name: vt-games; }
 a[href="side-project-autobattler.html"] .champ-tile-portrait { view-transition-name: vt-autobattler; }
 
 .champ-history[hidden] { display: none; }
+.champ-games-hub .champ-standard-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.champ-games-hub .champ-section-label,
+.champ-games-hub > p { max-width: 960px; }
+@media (max-width: 640px) {
+  .champ-games-hub .champ-standard-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
