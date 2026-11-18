@@ -44,12 +44,12 @@
         </div>
 
         <p>
-          5C2C is a campus marketplace for the Claremont College Consortium where students can post services, get discovered, and get paid. Nail art, graphic design, music production, hair styling, henna, rides, all in one place instead of scattered across Instagram DMs and group chats. Currently live and in use on campus.
+          5C2C is a campus marketplace we built for the Claremont College Consortium, where students can post services, get discovered, and get paid. Nail art, graphic design, music production, hair styling, henna, rides, all in one place instead of scattered across Instagram DMs and group chats. It's live and in use on campus now!
         </p>
 
         <p><strong>What It Does</strong></p>
         <p>
-          Students can create a shop, upload photos of their work, set prices, and manage availability. Buyers browse a card-based feed, filter by category, book appointments, and message sellers directly. Features include:
+          Students can create a shop, upload photos of their work, set prices, and manage availability. Buyers browse a card-based feed, filter by category, book appointments, and message sellers directly.
         </p>
         <div class="champ-ability-bar" id="ability-bar" role="tablist" style="--cat-color:oklch(75% 0.13 230)">
           <button type="button" class="champ-ability-icon is-active" data-target="0" role="tab" id="ability-tab-0" aria-controls="ability-panel-item-0" aria-selected="true" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="M20 20l-5.5-5.5"/></svg><span class="champ-ability-key">P</span></button>
@@ -61,36 +61,41 @@
         <div class="champ-ability-panel" id="ability-panel">
           <div class="champ-ability-panel-item is-active" data-item="0" role="tabpanel" id="ability-panel-item-0" aria-labelledby="ability-tab-0" tabindex="0">
             <p class="champ-ability-panel-name">Browse & Search</p>
-            <p>Browse and search services with category filters (nails, design, rides, etc.)</p>
+            <p>Search for a service or filter by category, like nails, design, or rides.</p>
           </div>
           <div class="champ-ability-panel-item" data-item="1" role="tabpanel" id="ability-panel-item-1" aria-labelledby="ability-tab-1" tabindex="0">
             <p class="champ-ability-panel-name">Seller Profiles</p>
-            <p>Seller profile pages with portfolio photos, pricing, and average ratings</p>
+            <p>Each seller has a page with photos of their work, their prices, and their average rating.</p>
           </div>
           <div class="champ-ability-panel-item" data-item="2" role="tabpanel" id="ability-panel-item-2" aria-labelledby="ability-tab-2" tabindex="0">
             <p class="champ-ability-panel-name">Create Listing</p>
-            <p>"Create Listing" flow with image upload to Supabase Storage</p>
+            <p>Sellers post a service with photos, which upload straight to Supabase Storage.</p>
           </div>
           <div class="champ-ability-panel-item" data-item="3" role="tabpanel" id="ability-panel-item-3" aria-labelledby="ability-tab-3" tabindex="0">
             <p class="champ-ability-panel-name">Booking System</p>
-            <p>Booking system where you pick a service, select a time, and confirm details</p>
+            <p>Buyers pick a service, choose a time, and confirm the details.</p>
           </div>
           <div class="champ-ability-panel-item" data-item="4" role="tabpanel" id="ability-panel-item-4" aria-labelledby="ability-tab-4" tabindex="0">
             <p class="champ-ability-panel-name">Real-Time Messaging</p>
-            <p>Real-time messaging via Socket.io with unread message indicators</p>
+            <p>Buyers and sellers chat in real time through Socket.io, with markers for unread messages.</p>
           </div>
         </div>
         <p>
-          Also included: reviews and ratings displayed on listings and profiles, and .edu email verification so the marketplace stays within the 5C community.
+          Listings and profiles also show reviews and ratings, and signing up takes a .edu email so the marketplace stays within the 5C community.
+        </p>
+
+        <p><strong>Designing the Browse Page</strong></p>
+        <p>
+          My team and I tested a few different design approaches for browsing. When we looked at existing resale and small business platforms, almost all of them used either a Pinterest-style or an Instagram-style layout. We went with Pinterest style, where the cards still sit in a grid but each one is a different height. That offset adds some visual interest, so the feed doesn't look as boring as a uniform grid.
         </p>
 
         <p><strong>My Role</strong></p>
         <p>
-          I worked on the frontend. The project runs on a React.js + Tailwind CSS stack, with a Node.js/Express backend and Supabase handling auth, database (PostgreSQL), and file storage. My contributions included:
+          I worked on the frontend of a React and Tailwind CSS app, with a Node.js/Express backend and Supabase handling sign-in, the PostgreSQL database, and file storage. Here's what I built:
         </p>
         <ul>
           <li>Browse/search page, listing cards, and individual listing detail pages</li>
-          <li>Category filters, search bar, and the Instagram-style grid layout for service browsing</li>
+          <li>Category filters, search bar, and the Pinterest-style layout for browsing services</li>
           <li>Seller profile pages (portfolio, bio, ratings display) and the buyer-facing booking flow</li>
           <li>"Create Listing" and "My Listings" management pages, including image upload connected to Supabase Storage</li>
           <li>Chat interface integrated with the Socket.io real-time layer</li>
@@ -99,7 +104,7 @@
         </ul>
 
         <p>
-          A P-ai project, co-managed by Arushi Bhandari and Vanisha Kheterpal (both Harvey Mudd '29) and built by a team of 5–7 students over a 10-week sprint.
+          A P-ai project, co-managed by Arushi Bhandari and Vanisha Kheterpal (both Harvey Mudd '29) and built by a team of 5 to 7 students over a 10-week sprint.
         </p>
 
         <p><strong>Through This Project I've Learned and Practiced</strong></p>
@@ -117,7 +122,7 @@
           <a class="primary-button" href="https://www.5c2c.app/#/login" target="_blank" rel="noopener noreferrer">
             Visit the app
           </a>
-          <a class="primary-button" href="https://www.canva.com/design/DAHHVDe_9lg/sNCIbz15lFfc8OwaXas4Vg/view" target="_blank" rel="noopener noreferrer" style="margin-left: 10px;">
+          <a class="primary-button" href="https://www.canva.com/design/DAHHVDe_9lg/sNCIbz15lFfc8OwaXas4Vg/view" target="_blank" rel="noopener noreferrer">
             View project poster
           </a>
         </p>
