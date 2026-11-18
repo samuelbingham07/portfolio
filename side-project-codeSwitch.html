@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Code Switch – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png?v=2">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
+  <style>
+    .placeholder-shot { margin-top: 24px; border: 2px dashed #6b5a2e; border-radius: 12px; padding: 48px 20px; text-align: center; color: #9aa0ad; font-size: 0.95rem; background: rgba(255,255,255,0.03); }
+    .placeholder-shot b { display: block; color: #e8b64a; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 6px; }
+    .todo { background: rgba(232,182,74,0.15); border-bottom: 1px dashed #e8b64a; color: #f1ede1; padding: 0 3px; }
+    .results-table { width: 100%; max-width: 760px; border-collapse: collapse; margin: 12px 0 20px; font-size: 0.92rem; }
+    .results-table th, .results-table td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--champ-line); color: var(--champ-ink-dim); vertical-align: top; }
+    .results-table th { color: var(--champ-gold); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .results-table td b { color: var(--champ-ink); }
+    .table-wrap { overflow-x: auto; max-width: 760px; }
+  </style>
+</head>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/codeSwitchHeader.jpg')">
+    <div class="champ-header-bg"></div><span class="champ-crest"></span>
+    <div class="champ-header-nav">
+      <a href="games.html">← Back to Games</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(72% 0.16 10)"></span>Games · Arcade Game</div>
+      <h1 class="champ-header-name">Code Switch</h1>
+      <p class="champ-header-role">Solo project for Interactive Media Studio · Keyboard arcade game about code switching, made for the 5C Nikkei Student Union</p>
+      <div class="champ-tags">
+        <span class="champ-tag">Unity</span>
+        <span class="champ-tag">C#</span>
+        <span class="champ-tag">Aseprite</span>
+        <span class="champ-tag">Arcade</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail champ-body">
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/codeSwitchStart.jpg" alt="Code Switch start screen with "Space to start," the controls, and the high score over falling binary digits">
+        </div>
+        <p style="margin-top: 24px;"><a class="primary-button" href="https://samuelbingham07.itch.io/codeswitch" target="_blank" rel="noopener noreferrer">Play on itch.io</a></p>
+        <p>
+          Code Switch is a keyboard arcade game about code switching between Japanese family culture and American peer culture. I made it in Unity for my club, the 5C Nikkei Student Union, as part of an "Arcades Everywhere" assignment for Interactive Media Studio at Pomona, over about two weeks.
+        </p>
+
+        <p><strong>The Idea</strong></p>
+        <p>
+          Code switching is moving between two sets of social rules depending on who you're with. For a lot of Nikkei (Japanese American) students, that means acting one way with grandparents and at family dinners and another way with friends and teammates. Most people who do it never think about it, because the switch happens on instinct, so I wanted to turn that instinct into the game's mechanic.
+        </p>
+        <p>
+          I pictured it set up at an NSU social event, with a keyboard and a monitor, short rounds, a crowd watching, and the next person walking up. It's made for people who already live this, so I was going for recognition and pride, not teaching anyone the "right" way to act. The answers are my own read from my own experience. Classmates outside the community can relate to code switching in general but will miss some of the Japanese cues, and that gap is on purpose, since it makes a usually invisible fluency visible!
+        </p>
+
+        <p><strong>How the Design Changed</strong></p>
+        <p>
+          My first pitch was a single game. A context would flash on screen, like a call from grandma or a gift from an aunt, and you'd answer with two keys that meant different things depending on the context, which flipped without warning. While brainstorming, I switched to a WarioWare-style format with a start screen, three quick minigames picked at random, and a results screen with the high score, and that original idea became one of the minigames.
+        </p>
+        <p>
+          After the in-class prototype, I narrowed the controls to just the arrow keys and space bar, with an on-screen cursor showing what's selected, and dropped the mouse completely. It felt closer to a real arcade cabinet, which is basically a joystick and one button, and it meant anyone could walk up and play without an explanation.
+        </p>
+
+        <p><strong>The Minigames</strong></p>
+        <ul>
+          <li><b>The Gift:</b> your aunt hands you a gift, and the right move is to politely refuse first. The answers shuffle every time.</li>
+          <li><b>Context Flip:</b> the setting switches between dinner with Obaachan and dinner with friends, and the same question has a different right answer for each. Catching a switch right away scores a bonus.</li>
+          <li><b>Honorific Rush:</b> people flash by one at a time, and you pick -sensei, -san, -chan, or just their name.</li>
+          <li><b>Bow Depth:</b> stop a swinging marker in the right zone, since a grandparent or boss calls for a deep bow and a teammate only needs a nod.</li>
+          <li><b>Don't Eat Yet!:</b> at family dinner you wait for Baachan to say "itadakimasu," but with friends you can just dig in.</li>
+          <li><b>Pick the Fit:</b> choose the right outfit for New Year's at Grandma's. (The skull rock tee isn't it.)</li>
+        </ul>
+        <p>
+          A Host character reacts to every answer with a pose, a sound, and a random line from that minigame's pool, like "WHY DIDN'T YOU WAIT?" when you eat too soon. Scoring only ever goes up, with base points for a right answer plus a speed bonus, which keeps it fun for a crowd.
+        </p>
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/codeSwitchPickTheFit.jpg" alt="Pick the Fit: grandma says "Mom is giving you the look" while the player picks an outfit for New Year's at Grandma's">
+        </div>
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/codeSwitchBowDepth.jpg" alt="Bow Depth: a meter swings between small nod and deep bow while the prompt says to greet your grandfather">
+        </div>
+
+        <p><strong>How It's Built</strong></p>
+        <p>
+          Part of the assignment was being able to explain every line in critique, so the code sticks to what our course tutorials covered. A GameManager that persists between scenes picks three minigames at random without repeats, adds up the score, and checks the high score. Each mechanic has one script and each scenario has its own scene, so The Gift and Pick the Fit share a script with different content. Prompts, answers, timings, and the Host's lines all live in the Inspector, which means I could change content without touching code.
+        </p>
+        <p>
+          I came up with the concept, the scenarios and their answers, and the minigame designs, made all the pixel art in Aseprite, and built and wired every scene in Unity. I used Claude Code to write the C# scripts, kept to the techniques from our course, and made sure I could explain how each system worked for critique.
+        </p>
+
+        <p><strong>Problems I Solved</strong></p>
+        <p>
+          Typing "START" showed up as "w~s~" because the pixel font was a variable font that TextMeshPro couldn't read, so I rebuilt the font asset and raised the atlas padding. My start animation seemed to do nothing until I realized it was placed in Canvas pixel coordinates instead of world units, so it was playing far off camera. Spamming space in Context Flip scored forever because an unassigned text field crashed the script halfway through checking an answer, leaving the same answer on screen.
+        </p>
+        <p><strong>Through This Project I've Learned and Practiced</strong></p>
+        <div class="champ-tags">
+          <span class="champ-tag">Unity</span>
+          <span class="champ-tag">C#</span>
+          <span class="champ-tag">Game Design</span>
+          <span class="champ-tag">Aseprite</span>
+          <span class="champ-tag">Pixel Art</span>
+          <span class="champ-tag">Playtesting</span>
+        </div>
+
+        <p style="margin-top: 24px;"><a href="games.html">← Back to Games</a></p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="champ-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script src="champion.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

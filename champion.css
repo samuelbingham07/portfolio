@@ -1001,13 +1001,16 @@ a[href="side-project-autobattler.html"] .champ-tile-portrait { view-transition-n
 
 .champ-history[hidden] { display: none; }
 .champ-games-hub .champ-standard-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  max-width: 960px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 }
 .champ-games-hub .champ-section-label,
-.champ-games-hub > p { max-width: 960px; }
+.champ-games-hub > p { max-width: 1100px; }
+@media (max-width: 900px) {
+  .champ-games-hub .champ-standard-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 @media (max-width: 640px) {
   .champ-games-hub .champ-standard-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

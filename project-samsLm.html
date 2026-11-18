@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sam's LM – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png?v=2">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
+  <style>
+    .placeholder-shot { margin-top: 24px; border: 2px dashed #6b5a2e; border-radius: 12px; padding: 48px 20px; text-align: center; color: #9aa0ad; font-size: 0.95rem; background: rgba(255,255,255,0.03); }
+    .placeholder-shot b { display: block; color: #e8b64a; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 6px; }
+    .todo { background: rgba(232,182,74,0.15); border-bottom: 1px dashed #e8b64a; color: #f1ede1; padding: 0 3px; }
+    .results-table { width: 100%; max-width: 760px; border-collapse: collapse; margin: 12px 0 20px; font-size: 0.92rem; }
+    .results-table th, .results-table td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--champ-line); color: var(--champ-ink-dim); vertical-align: top; }
+    .results-table th { color: var(--champ-gold); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .results-table td b { color: var(--champ-ink); }
+    .table-wrap { overflow-x: auto; max-width: 760px; }
+  </style>
+</head>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/samsLmHeader.jpg')">
+    <div class="champ-header-bg"></div><span class="champ-crest"></span>
+    <div class="champ-header-nav">
+      <a href="index.html#projects">← Back to Roster</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(75% 0.13 230)"></span>Engineering · ML Project</div>
+      <h1 class="champ-header-name">Sam's LM</h1>
+      <p class="champ-header-role">A GPT built from scratch, planted with fake secrets, then attacked · Privacy attacks and defenses · Interactive in-browser demo</p>
+      <div class="champ-tags">
+        <span class="champ-tag">PyTorch</span>
+        <span class="champ-tag">Python</span>
+        <span class="champ-tag">Differential Privacy</span>
+        <span class="champ-tag">ML Security</span>
+        <span class="champ-tag">ONNX</span>
+        <span class="champ-tag">JavaScript</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail champ-body">
+        <div class="image-wrapper">
+          <img src="images/samsLmDemo.gif" alt="The in-browser demo: picking a planted secret and running the extraction attack">
+        </div>
+        <p style="margin-top: 24px;">
+          <a class="primary-button" href="https://huggingface.co/spaces/samuelbingham07/sams-lm-demo" target="_blank" rel="noopener noreferrer">Try the demo</a>
+          <a class="primary-button" href="https://github.com/samuelbingham07/sams-lm" target="_blank" rel="noopener noreferrer">Code and write-up</a>
+        </p>
+        <p>
+          I built a small GPT from scratch, hid fake secrets in its training data, and then attacked it to see what it memorized and which defenses stop the leaks. The models, attacks, and analysis were my solo final project for CS 181E: Ethical Software Systems at Pomona, and the interactive demo is an extension beyond the course project. You can run the attacks yourself in the browser!
+        </p>
+
+        <p><strong>Why I Built It</strong></p>
+        <p>
+          Language models don't only learn patterns. They also memorize specific training examples, which means private data that ends up in a training set, like names, phone numbers, or secrets, can come back out. I wanted to show that happening on a model of my own and measure whether the standard defenses actually work, and what they cost.
+        </p>
+
+        <p><strong>The Model</strong></p>
+        <p>
+          The model has a byte-level BPE tokenizer with 4,096 tokens, an 8-layer transformer with 27.5 million parameters and a 512-token context, and its own training loop, with PyTorch handling the tensors and gradients. I trained it on TinyStories, a set of 2.1 million short children's stories (484 million tokens), on my own desktop GPU, an AMD RX 7800 XT, at about 2 hours per training run. It writes coherent short stories.
+        </p>
+
+        <p><strong>Planting Secrets</strong></p>
+        <p>
+          I hid 160 fake secrets, called canaries, in the training data. Each one looks like part of a story, for example: <em>"Kazhavar was a little bunny… Kazhavar's secret number was 4 4 4 0 0 1."</em> Each secret was repeated 0, 1, 2, 4, 8, 16, 32, or 64 times so I could see how repetition affects memorization. The names are made up and the numbers are random, so no real personal data is involved.
+        </p>
+
+        <p><strong>Attacks and Defenses</strong></p>
+        <p>
+          For secret extraction, the attacker knows the sentence pattern and the name but not the number, and asks the model for its 100 most likely 6-digit numbers. For membership inference, the question is "was this story in the training data?" The strongest version compares my model against a reference model trained on different stories.
+        </p>
+        <p>
+          I tested two defenses. Deduplication removes repeated copies from the training data. DP-SGD, or differentially private training, limits how much any one example can change the model by clipping each example's gradient and adding noise, with a formal privacy budget (ε). I implemented DP-SGD by hand, including the privacy accounting.
+        </p>
+
+        <p><strong>Results</strong></p>
+        <div class="table-wrap"><table class="results-table">
+          <thead><tr><th>Model</th><th>Story quality (validation loss, lower is better)</th><th>Secret in top 100 guesses (64 copies)</th><th>Membership attack AUC (0.5 = guessing)</th></tr></thead>
+          <tbody>
+            <tr><td><b>No defense</b></td><td>1.35</td><td><b>70%</b> (top guess: 15%)</td><td><b>0.80</b></td></tr>
+            <tr><td><b>Deduplication</b></td><td>1.35</td><td>0%</td><td>0.78</td></tr>
+            <tr><td><b>DP-SGD (ε = 8)</b></td><td>3.86</td><td>0%</td><td>about 0.50</td></tr>
+          </tbody>
+        </table></div>
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/samsLmCanary.png" alt="Chart of secret extraction rate by number of copies in the training data">
+        </div>
+        <p>
+          The model memorizes repeated data. A secret it saw 64 times showed up in the attacker's top 100 guesses 70% of the time, while secrets seen 8 times or fewer weren't recovered. It also turned out memorization happens late in training, since the secrets stayed hidden for the first half and then leaked quickly as training finished.
+        </p>
+        <p>
+          A simple membership test barely worked (AUC 0.54), but comparing against a reference model reached 0.80, so the model does leak which stories it trained on and the simple attack just missed it.
+        </p>
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/samsLmPrivacyUtility.png" alt="Chart of privacy versus story quality for each defense">
+        </div>
+        <p>
+          Deduplication costs nothing and stops secret extraction, but it doesn't stop membership inference. DP-SGD stops both attacks, but it costs a lot of quality, and you can see how much worse its stories are in the demo.
+        </p>
+
+        <p><strong>The Ethics Side</strong></p>
+        <p>
+          This was an ethics course, and memorization is a concrete privacy harm, since private data in a training set can come back out. The defenses show the real trade-off. The strong formal guarantee from DP-SGD costs a lot of usefulness, and the free fix only covers part of the problem.
+        </p>
+
+        <p><strong>Bugs I Caught</strong></p>
+        <p>
+          A few results looked plausible but turned out to be wrong once I tested them. My memorization measure was overstated whenever a search hit its time limit, a privacy setting was silently capped so two "different" privacy levels were actually the same, and a GPU driver crash came from feeding it too many different tensor shapes.
+        </p>
+
+        <p><strong>The Demo</strong></p>
+        <p>
+          As an extension beyond the course project, I built a demo that runs entirely in your browser with no server. I converted the models to ONNX, ran them with ONNX Runtime Web, and ported the tokenizer and the attack to JavaScript, so an attack takes about 2 seconds. I checked it against the original PyTorch models and got identical tokens, stories, and attack results. It has three tabs: Steal a secret, Was it trained on this?, and Write a story.
+        </p>
+        <p>
+          I wrote the code with Claude Code as a coding assistant. I directed the design and experiments and reviewed the code and results.
+        </p>
+        <p><strong>Through This Project I've Learned and Practiced</strong></p>
+        <div class="champ-tags">
+          <span class="champ-tag">PyTorch</span>
+          <span class="champ-tag">Transformers</span>
+          <span class="champ-tag">Differential Privacy</span>
+          <span class="champ-tag">ML Security</span>
+          <span class="champ-tag">ONNX</span>
+          <span class="champ-tag">JavaScript</span>
+        </div>
+
+        <p style="margin-top: 24px;"><a href="index.html#projects">← Back to Roster</a></p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="champ-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script src="champion.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

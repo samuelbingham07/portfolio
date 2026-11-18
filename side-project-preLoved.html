@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pre-Loved – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png?v=2">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
+  <style>
+    .placeholder-shot { margin-top: 24px; border: 2px dashed #6b5a2e; border-radius: 12px; padding: 48px 20px; text-align: center; color: #9aa0ad; font-size: 0.95rem; background: rgba(255,255,255,0.03); }
+    .placeholder-shot b { display: block; color: #e8b64a; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 6px; }
+    .todo { background: rgba(232,182,74,0.15); border-bottom: 1px dashed #e8b64a; color: #f1ede1; padding: 0 3px; }
+    .results-table { width: 100%; max-width: 760px; border-collapse: collapse; margin: 12px 0 20px; font-size: 0.92rem; }
+    .results-table th, .results-table td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--champ-line); color: var(--champ-ink-dim); vertical-align: top; }
+    .results-table th { color: var(--champ-gold); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .results-table td b { color: var(--champ-ink); }
+    .table-wrap { overflow-x: auto; max-width: 760px; }
+  </style>
+</head>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/preLovedHeader.jpg')">
+    <div class="champ-header-bg"></div><span class="champ-crest"></span>
+    <div class="champ-header-nav">
+      <a href="games.html">← Back to Games</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(72% 0.16 10)"></span>Games · Interactive Narrative</div>
+      <h1 class="champ-header-name">Pre-Loved</h1>
+      <p class="champ-header-role">Solo project · A browser game built from photos of my real closet, where you guess each garment's decade and explore its details</p>
+      <div class="champ-tags">
+        <span class="champ-tag">Unity</span>
+        <span class="champ-tag">C#</span>
+        <span class="champ-tag">WebGL</span>
+        <span class="champ-tag">Photography</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail champ-body">
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/preLovedCloset.jpg" alt="The closet rack with scroll arrows and the Converse Tee label">
+        </div>
+        <p style="margin-top: 24px;"><a class="primary-button" href="https://samuelbingham07.itch.io/pre-loved" target="_blank" rel="noopener noreferrer">Play on itch.io</a></p>
+        <p>
+          Pre-Loved is a small browser game built from photos of my own closet. You scroll the rack, pull out a thrifted or vintage piece, guess what decade it's from, and then look closely at its details and see it worn. I made it solo in Unity for a "Media Island" project in my interactive media course this fall.
+        </p>
+
+        <p><strong>The Idea</strong></p>
+        <p>
+          Most of my clothes had a life before me, so I wanted to turn my closet into a space you can explore where each garment holds a small story. There's a Catalina Island crewneck that reminds me of home, a soccer jersey my dad brought back from Bilbao, a Nagano tee I dug out of a pile in Thailand, a leather jacket, and Japanese selvedge denim, which is the only thing in my wardrobe I bought retail.
+        </p>
+
+        <p><strong>How It Plays</strong></p>
+        <p>
+          The left and right arrows scroll the rack, and the garment in the center is labeled. Clicking it takes it out to a mirror view, where you guess the decade (1980s, 1990s, 2000s, or 2010s+) until you get it right. Then you click spots on the garment, like the tag, crest, cuffs, or print, to see close-up photos with notes on how those details date a piece of clothing. A "try it on" spot shows a mirror photo of me wearing it.
+        </p>
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/preLovedDecade.jpg" alt="The Catalina Island sweater with the prompt "When do you think the Catalina Island Sweater was made?" and four decade buttons">
+        </div>
+
+        <p><strong>Built From Photos</strong></p>
+        <p>
+          Instead of drawn art, the whole game is built from about 40 phone photos I shot in one setup. The closet is a single photo swapped between frames as you scroll, so each garment slides to the center in turn. I used Caveat as the font to keep it feeling handwritten and personal, and it ships as a WebGL build you play in the browser.
+        </p>
+
+        <p><strong>How It's Built</strong></p>
+        <p>
+          The game runs on 14 C# scripts, including a view manager with arrow navigation, a frame-based rack, a mouse interactor, a mirror view, an inspect viewer, and the decade quiz. Each garment is its own data asset with a name, mirror photo, caption, and decade answer, so adding a garment means making a new asset rather than writing new code. Like my other class projects, the code sticks to concepts from our course tutorials so I could explain every system in class.
+        </p>
+        <p>
+          The concept, photography, writing, and scene setup are mine, and I wrote the C# scripts with help from Claude. Sound effects are from Pixabay.
+        </p>
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img src="images/preLovedTryOn.jpg" alt="Try it on: a mirror selfie in the leather jacket captioned "My favorite vintage jacket"">
+        </div>
+        <p><strong>Through This Project I've Learned and Practiced</strong></p>
+        <div class="champ-tags">
+          <span class="champ-tag">Unity</span>
+          <span class="champ-tag">C#</span>
+          <span class="champ-tag">Photography</span>
+          <span class="champ-tag">Interactive Narrative</span>
+          <span class="champ-tag">Data-Driven Design</span>
+        </div>
+
+        <p style="margin-top: 24px;"><a href="games.html">← Back to Games</a></p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="champ-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script src="champion.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
