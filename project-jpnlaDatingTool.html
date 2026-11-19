@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vintage Garment Dater – Samuel Bingham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png?v=2">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="champion.css" />
+  <style>
+    .results-table { width: 100%; max-width: 760px; border-collapse: collapse; margin: 12px 0 20px; font-size: 0.92rem; }
+    .results-table th, .results-table td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--champ-line); color: var(--champ-ink-dim); vertical-align: top; }
+    .results-table th { color: var(--champ-gold); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .results-table td b { color: var(--champ-ink); }
+    .table-wrap { overflow-x: auto; max-width: 760px; }
+  </style>
+</head>
+<body class="champ-page">
+  <div class="champ-header" style="--champ-header-img:url('images/jpnlaDatingToolThumbnail.jpg')">
+    <div class="champ-header-bg"></div><span class="champ-crest"></span>
+    <div class="champ-header-nav">
+      <a href="index.html#projects">← Back to Roster</a>
+    </div>
+    <div class="champ-header-body">
+      <div class="champ-header-eyebrow"><span class="champ-dot" style="background:oklch(75% 0.13 230)"></span>Engineering · AI</div>
+      <h1 class="champ-header-name">Vintage Garment Dater</h1>
+      <p class="champ-header-role">Solo project · Dates vintage clothing from photos of the garment and its tags, using a vision model and a rules engine</p>
+      <div class="champ-tags">
+        <span class="champ-tag">Machine Learning</span>
+        <span class="champ-tag">Computer Vision</span>
+        <span class="champ-tag">Python</span>
+        <span class="champ-tag">PyTorch</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="project-details">
+      <article class="project-detail champ-body">
+        <div class="image-wrapper" style="margin-top: 0;">
+          <img src="images/garmentDaterUpload.jpg" alt="Vintage Garment Dater upload screen with five example garments">
+        </div>
+        <p style="margin-top: 24px;">
+          <a class="primary-button" href="https://huggingface.co/spaces/samuelbingham07/vintage-garment-dater" target="_blank" rel="noopener noreferrer">Try it live</a>
+          <a class="primary-button" href="https://github.com/samuelbingham07/JPNLADatingTool" target="_blank" rel="noopener noreferrer">Source code</a>
+        </p>
+        <p>
+          Vintage Garment Dater estimates when a piece of clothing was made from photos of the garment and its tags. Upload a few pictures and it gives you a date range, tells you whether the piece counts as vintage (made before 2006), and lists the evidence behind the call.
+        </p>
+
+        <p><strong>Why I Built It</strong></p>
+        <p>
+          When I ran <a href="project-jpnla.html">JPNLAvintage</a>, dating garments by eye was one of the most important parts of the job. I'd read the tag style, care label, union label, RN number, and country of origin to pin down an era, and getting it right was the difference between accurate pricing and guessing. This project turns that expertise into a tool, so it's built on what I actually know about clothing, not just a generic image classifier.
+        </p>
+
+        <p><strong>How It Works</strong></p>
+        <p>
+          Each photo goes through a frozen open-source image encoder (CLIP ViT-B/32), and a decade classifier I trained on my own dataset of dated eBay listings scores it. At the same time, on-device OCR reads the tag text, like the country of origin, RN or WPL numbers, union names, fiber content, care instructions, and zipper brands.
+        </p>
+        <p>
+          Each signal it finds maps to a rule in a knowledge base I built from regulatory and industry history, like the 1971 FTC care-label rule, the 1960 Textile Fiber Act, RN registration ranges, union merger dates, and countries that no longer exist. Hard rules rule out impossible years, softer ones shift the odds, and when rules conflict, the low-confidence ones get dropped first.
+        </p>
+        <p>
+          The result shows a date range, a confidence score, a vintage verdict, the top signals behind the estimate, and whether the model or the rules made the call. There's no third-party AI or vision API involved, since everything runs on my own trained weights and rules. Here are two of my own garments: on the Alstyle tee, the rules made the call from its "Made in Mexico" tag, and on the Johnstons sweater, the visual model did.
+        </p>
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img style="max-width: min(520px, 100%);" src="images/garmentDaterRulesResult.jpg" alt="Result for the Alstyle tee, 1990 to 2009, decided by knowledge-base rules">
+        </div>
+        <div class="image-wrapper" style="margin-top: 24px;">
+          <img style="max-width: min(520px, 100%);" src="images/garmentDaterModelResult.jpg" alt="Result for the Johnstons wool sweater, 1960 to 1979, decided by the visual model">
+        </div>
+
+        <p><strong>What I Built</strong></p>
+        <p>
+          I built an eBay data pipeline that scraped more than 18,000 listings and about 147,000 photos, pulling labels automatically from the listing titles. I also wrote the knowledge base of dating rules, covering care labels, union labels, brand tag histories, and RN lookups, then trained the model with separate train, validation, and test listings and compared logistic regression and MLP heads. The rules engine combines the model's guesses with those rules, and the whole thing runs in your browser, so your photos never leave your device.
+        </p>
+
+        <p><strong>Results</strong></p>
+        <p>
+          On held-out test listings, the visual model on its own (covering the 1940s to 2010s) got:
+        </p>
+        <div class="table-wrap"><table class="results-table">
+          <thead><tr><th>Metric</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>Exact decade correct</td><td><b>67%</b> (vs. 35% for always guessing the most common decade)</td></tr>
+            <tr><td>Within one decade</td><td><b>87%</b></td></tr>
+            <tr><td>Test set</td><td>2,245 listings</td></tr>
+          </tbody>
+        </table></div>
+        <p>
+          The training labels come from listing titles, which sellers write themselves and which are often a little off, so these numbers are conservative. When a tag is readable, the rules engine adds precision on top.
+        </p>
+
+        <p><strong>Limitations</strong></p>
+        <p>
+          It's built for American-market garments and covers the 1940s to 2010s, so pre-1940 pieces lean mostly on the rules. It's also an estimate, not an appraisal or authentication.
+        </p>
+        <p><strong>Through This Project I've Learned and Practiced</strong></p>
+        <div class="champ-tags">
+          <span class="champ-tag">Machine Learning</span>
+          <span class="champ-tag">Computer Vision</span>
+          <span class="champ-tag">Python</span>
+          <span class="champ-tag">PyTorch</span>
+          <span class="champ-tag">Data Pipeline</span>
+          <span class="champ-tag">Domain Expertise</span>
+        </div>
+
+        <p style="margin-top: 24px;"><a href="index.html#projects">← Back to Roster</a></p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="champ-footer">
+    <p>© <span id="year"></span> Samuel Bingham</p>
+  </footer>
+
+  <script src="champion.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
