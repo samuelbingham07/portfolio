@@ -99,6 +99,10 @@
     'vt-mlart': { href: 'side-project-mlArt.html', name: 'Machine Learning Art', img: 'images/mlArtThumbnail.png' },
     'vt-games': { href: 'games.html', name: 'Game Design', img: 'images/gamesThumbnail.jpg' },
     'vt-autobattler': { href: 'side-project-autobattler.html', name: 'Autobattler', img: 'images/autobattlerThumbnail.jpg' },
+    'vt-samslm': { href: 'project-samsLm.html', name: 'Sam\'s LM', img: 'images/samsLmThumbnail.jpg' },
+    'vt-codeswitch': { href: 'side-project-codeSwitch.html', name: 'Code Switch', img: 'images/codeSwitchThumbnail.jpg' },
+    'vt-preloved': { href: 'side-project-preLoved.html', name: 'Pre-Loved', img: 'images/preLovedThumbnail.jpg' },
+    'vt-garmentdater': { href: 'project-jpnlaDatingTool.html', name: 'Garment Dater', img: 'images/garmentDaterThumbnail.jpg' },
     'vt-hobbies': { href: 'projects-hobbies.html', name: 'Hobbies', img: 'images/backpackingThumbnail.png' }
   };
 
